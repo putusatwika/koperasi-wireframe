@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="id" data-bs-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Kartu Piutang · Anggota · KSU Mitra Sejahtera</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+</head>
+<body class="bg-body-tertiary">
+<nav class="navbar navbar-expand-lg bg-primary border-bottom" data-bs-theme="dark">
+  <div class="container-xxl">
+    <a class="navbar-brand d-flex align-items-center gap-2" href="../index.html">
+      <i class="bi bi-bank2"></i><span class="fw-semibold">KSU Mitra Sejahtera</span>
+    </a>
+    <span class="badge text-bg-light d-none d-xl-inline">Portal Anggota</span>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navUtama"
+            aria-controls="navUtama" aria-expanded="false" aria-label="Buka navigasi">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navUtama">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0"><li class="nav-item"><a class="nav-link" href="dashboard.html">Dashboard</a></li><li class="nav-item"><a class="nav-link" href="simulasi-form.html">Simulasi Pinjaman</a></li><li class="nav-item"><a class="nav-link" href="pengajuan-form.html">Ajukan Pinjaman</a></li><li class="nav-item"><a class="nav-link" href="pengajuan-status.html">Status Pengajuan</a></li><li class="nav-item"><a class="nav-link" href="pinjaman-aktif.html">Cicilan Aktif</a></li><li class="nav-item"><a class="nav-link active fw-semibold" href="kartu-piutang.html">Kartu Piutang</a></li><li class="nav-item"><a class="nav-link" href="riwayat.html">Riwayat & Penutupan</a></li></ul>
+      <ul class="navbar-nav">
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <i class="bi bi-person-circle"></i> Budi Santoso
+          </a>
+          <ul class="dropdown-menu dropdown-menu-end">
+            <li><h6 class="dropdown-header">Anggota AG-0142</h6></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><h6 class="dropdown-header">Pindah role (wireframe)</h6></li>
+            <li><a class="dropdown-item active" href="dashboard.html">Anggota</a></li><li><a class="dropdown-item" href="../admin/dashboard.html">Admin Koperasi / Bendahara</a></li><li><a class="dropdown-item" href="../ketua/dashboard.html">Ketua Koperasi</a></li><li><a class="dropdown-item" href="../pengawas/dashboard.html">Pengawas Koperasi</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="../index.html"><i class="bi bi-diagram-3"></i> Peta alur sistem</a></li>
+            <li><a class="dropdown-item" href="#"><i class="bi bi-box-arrow-right"></i> Keluar</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<main class="container-xxl py-4">
+<nav aria-label="breadcrumb"><ol class="breadcrumb small mb-2"><li class="breadcrumb-item"><a href="pinjaman-aktif.html">Cicilan aktif</a></li><li class="breadcrumb-item active">Kartu piutang</li></ol></nav>
+  <div class="d-flex justify-content-between align-items-start flex-wrap gap-3 mb-3">
+    <div>
+      <h1 class="h4 fw-bold mb-1">Kartu Piutang</h1>
+      <div class="d-flex flex-wrap align-items-center gap-2">
+        <span class="badge text-bg-primary">Anggota</span>
+        <span class="badge text-info-emphasis bg-info-subtle border border-info-subtle">Wireframe · Langkah 11</span>
+        <span class="small text-body-secondary">Detail mutasi piutang per pinjaman</span>
+      </div>
+    </div>
+    <div class="d-flex flex-wrap gap-2"></div>
+  </div>
+
+<div class="alert alert-secondary d-flex gap-2 py-2 mb-4"><i class="bi bi-journal-text"></i><div class="small">Kartu piutang adalah <strong>satu halaman per pinjaman</strong>. Sumber update: file autodebet XLSX dari bank yang diunggah bendahara, ditambah pembayaran manual yang diverifikasi kasir. Anggota tidak mengubah data ini.</div></div>
+<div class="card mb-4"><div class="card-header bg-body-tertiary d-flex justify-content-between align-items-center flex-wrap gap-2">
+    <div>
+      <h2 class="h6 fw-bold mb-0">Kartu Piutang &mdash; PJM-2026-0031</h2>
+      <div class="small text-body-secondary">KSU Mitra Sejahtera &middot; dicetak 10 Okt 2026</div>
+    </div>
+    <div class="d-flex gap-2">
+      <button class="btn btn-sm btn-outline-secondary" type="button"><i class="bi bi-printer"></i> Cetak</button>
+      <button class="btn btn-sm btn-outline-secondary" type="button"><i class="bi bi-file-earmark-pdf"></i> Unduh PDF</button>
+      <a class="btn btn-sm btn-outline-secondary" href="pinjaman-aktif.html">Kembali</a>
+    </div>
+  </div>
+  <div class="card-body">
+    <div class="row g-4">
+      <div class="col-lg-6"><dl class="row g-0 mb-0"><dt class="col-sm-4 col-lg-3 fw-normal text-body-secondary py-2 border-bottom">Nama / no. anggota</dt><dd class="col-sm-8 col-lg-9 py-2 mb-0 border-bottom">Budi Santoso, S.Kom., M.T. (AG-0142)</dd><dt class="col-sm-4 col-lg-3 fw-normal text-body-secondary py-2 border-bottom">No. pinjaman</dt><dd class="col-sm-8 col-lg-9 py-2 mb-0 border-bottom">PJM-2026-0031</dd><dt class="col-sm-4 col-lg-3 fw-normal text-body-secondary py-2 border-bottom">Produk &amp; metode bunga</dt><dd class="col-sm-8 col-lg-9 py-2 mb-0 border-bottom">PJ-RG &middot; bunga tetap (flat) 1,10%/bulan</dd><dt class="col-sm-4 col-lg-3 fw-normal text-body-secondary py-2 border-bottom">Pokok pinjaman</dt><dd class="col-sm-8 col-lg-9 py-2 mb-0 border-bottom">Rp 25.000.000</dd><dt class="col-sm-4 col-lg-3 fw-normal text-body-secondary py-2 border-bottom">Tenor</dt><dd class="col-sm-8 col-lg-9 py-2 mb-0 border-bottom">24 bulan &middot; mulai 10 Feb 2026</dd><dt class="col-sm-4 col-lg-3 fw-normal text-body-secondary py-2 border-bottom">Sifat pembayaran</dt><dd class="col-sm-8 col-lg-9 py-2 mb-0 border-bottom">Autodebet BSI 7100 2299 441</dd><dt class="col-sm-4 col-lg-3 fw-normal text-body-secondary py-2 border-bottom">Keperluan</dt><dd class="col-sm-8 col-lg-9 py-2 mb-0 border-bottom">Biaya pendidikan anak</dd><dt class="col-sm-4 col-lg-3 fw-normal text-body-secondary py-2 border-bottom">Status</dt><dd class="col-sm-8 col-lg-9 py-2 mb-0 border-bottom"><span class="badge rounded-pill text-bg-primary">Aktif</span></dd></dl></div>
+      <div class="col-lg-6"><dl class="row g-0 mb-0"><dt class="col-sm-4 col-lg-3 fw-normal text-body-secondary py-2 border-bottom">Angsuran per bulan</dt><dd class="col-sm-8 col-lg-9 py-2 mb-0 border-bottom">Rp 1.316.667</dd><dt class="col-sm-4 col-lg-3 fw-normal text-body-secondary py-2 border-bottom">Sudah dibayar</dt><dd class="col-sm-8 col-lg-9 py-2 mb-0 border-bottom">8 cicilan &middot; Rp 10.533.336</dd><dt class="col-sm-4 col-lg-3 fw-normal text-body-secondary py-2 border-bottom">Tunggakan</dt><dd class="col-sm-8 col-lg-9 py-2 mb-0 border-bottom">1 cicilan (jatuh tempo hari ini)</dd><dt class="col-sm-4 col-lg-3 fw-normal text-body-secondary py-2 border-bottom">Sisa pokok</dt><dd class="col-sm-8 col-lg-9 py-2 mb-0 border-bottom">Rp 16.666.667</dd><dt class="col-sm-4 col-lg-3 fw-normal text-body-secondary py-2 border-bottom">Sisa bunga sampai lunas</dt><dd class="col-sm-8 col-lg-9 py-2 mb-0 border-bottom">Rp 4.400.000</dd><dt class="col-sm-4 col-lg-3 fw-normal text-body-secondary py-2 border-bottom">Estimasi lunas</dt><dd class="col-sm-8 col-lg-9 py-2 mb-0 border-bottom">10 Jan 2028</dd></dl></div>
+    </div>
+  </div>
+</div>
+<div class="row g-4">
+  <div class="col-xl-8">
+    <div class="card mb-4"><div class="card-header bg-body-tertiary d-flex justify-content-between align-items-center flex-wrap gap-2"><div><h2 class="h6 fw-bold mb-0">Mutasi kartu piutang</h2><div class="small text-body-secondary">Urutan kronologis: pencairan lalu setiap cicilan</div></div><div class="d-flex flex-wrap gap-2"></div></div><div class="card-body "><div class="table-responsive"><table class="table table-sm table-hover align-middle mb-0"><thead class="table-light"><tr><th scope='col'>Tanggal</th><th scope='col'>No. bukti</th><th scope='col'>Uraian</th><th scope='col'>Angsuran</th><th scope='col'>Pokok</th><th scope='col'>Bunga</th><th scope='col'>Denda</th><th scope='col'>Sisa pokok</th><th scope='col'>Status</th></tr></thead><tbody><tr><td><span class='fw-semibold'>10 Feb 2026</span></td><td>PC-2026-0031</td><td>Pencairan pinjaman (kas bertambah / piutang muncul)</td><td>&mdash;</td><td>Rp 25.000.000</td><td>&mdash;</td><td>&mdash;</td><td>Rp 25.000.000</td><td><span class="badge rounded-pill text-bg-dark">Dicairkan</span></td></tr><tr><td>10 Feb 2026</td><td>AD-2026-1001</td><td>Angsuran ke-1 (pokok + bunga)</td><td>Rp 1.316.667</td><td>Rp 1.041.667</td><td>Rp 275.000</td><td>Rp 0</td><td>Rp 23.958.333</td><td><span class="badge rounded-pill text-bg-success">Lunas</span></td></tr><tr><td>10 Mar 2026</td><td>AD-2026-1002</td><td>Angsuran ke-2 (pokok + bunga)</td><td>Rp 1.316.667</td><td>Rp 1.041.667</td><td>Rp 275.000</td><td>Rp 0</td><td>Rp 22.916.667</td><td><span class="badge rounded-pill text-bg-success">Lunas</span></td></tr><tr><td>10 Apr 2026</td><td>AD-2026-1003</td><td>Angsuran ke-3 (pokok + bunga)</td><td>Rp 1.316.667</td><td>Rp 1.041.667</td><td>Rp 275.000</td><td>Rp 0</td><td>Rp 21.875.000</td><td><span class="badge rounded-pill text-bg-success">Lunas</span></td></tr><tr><td>10 Mei 2026</td><td>AD-2026-1004</td><td>Angsuran ke-4 (pokok + bunga)</td><td>Rp 1.316.667</td><td>Rp 1.041.667</td><td>Rp 275.000</td><td>Rp 0</td><td>Rp 20.833.333</td><td><span class="badge rounded-pill text-bg-success">Lunas</span></td></tr><tr><td>10 Jun 2026</td><td>AD-2026-1005</td><td>Angsuran ke-5 (pokok + bunga)</td><td>Rp 1.316.667</td><td>Rp 1.041.667</td><td>Rp 275.000</td><td>Rp 0</td><td>Rp 19.791.667</td><td><span class="badge rounded-pill text-bg-success">Lunas</span></td></tr><tr><td>10 Jul 2026</td><td>AD-2026-1006</td><td>Angsuran ke-6 (pokok + bunga)</td><td>Rp 1.316.667</td><td>Rp 1.041.667</td><td>Rp 275.000</td><td>Rp 0</td><td>Rp 18.750.000</td><td><span class="badge rounded-pill text-bg-success">Lunas</span></td></tr><tr><td>10 Agu 2026</td><td>AD-2026-1007</td><td>Angsuran ke-7 (pokok + bunga)</td><td>Rp 1.316.667</td><td>Rp 1.041.667</td><td>Rp 275.000</td><td>Rp 0</td><td>Rp 17.708.333</td><td><span class="badge rounded-pill text-bg-success">Lunas</span></td></tr><tr><td>10 Sep 2026</td><td>AD-2026-1008</td><td>Angsuran ke-8 (pokok + bunga)</td><td>Rp 1.316.667</td><td>Rp 1.041.667</td><td>Rp 275.000</td><td>Rp 0</td><td>Rp 16.666.667</td><td><span class="badge rounded-pill text-bg-success">Lunas</span></td></tr><tr><td>10 Okt 2026</td><td>&mdash;</td><td>Angsuran ke-9 (pokok + bunga)</td><td>Rp 1.316.667</td><td>Rp 1.041.667</td><td>Rp 275.000</td><td>Rp 0</td><td>Rp 15.625.000</td><td><span class="badge rounded-pill text-bg-warning">Menunggu autodebet</span></td></tr></tbody><tfoot class="table-group-divider table-light">Total sudah dibayar: Rp 10.533.336 &middot; sisa pokok Rp 16.666.667 &middot; tidak ada denda.</tfoot></table></div></div></div>
+  </div>
+  <div class="col-xl-4">
+    <div class="card mb-4"><div class="card-header bg-body-tertiary d-flex justify-content-between align-items-center flex-wrap gap-2"><div><h2 class="h6 fw-bold mb-0">Ringkasan saldo</h2><div class="small text-body-secondary">Visual progres pelunasan pinjaman</div></div><div class="d-flex flex-wrap gap-2"></div></div><div class="card-body "><div class="d-flex align-items-center gap-2 mb-2"><div class="small text-body-secondary text-nowrap">Pokok terbayar</div><div class="progress flex-fill" role="progressbar" aria-label="Pokok terbayar" aria-valuenow="33" aria-valuemin="0" aria-valuemax="100" ><div class="progress-bar w-35 bg-primary">33%</div></div></div><div class="d-flex align-items-center gap-2 mb-2"><div class="small text-body-secondary text-nowrap">Bunga terbayar</div><div class="progress flex-fill" role="progressbar" aria-label="Bunga terbayar" aria-valuenow="58" aria-valuemin="0" aria-valuemax="100" ><div class="progress-bar w-60 bg-primary">58%</div></div></div><div class="d-flex align-items-center gap-2 mb-2"><div class="small text-body-secondary text-nowrap">Sisa pokok dari pokok awal</div><div class="progress flex-fill" role="progressbar" aria-label="Sisa pokok dari pokok awal" aria-valuenow="67" aria-valuemin="0" aria-valuemax="100" ><div class="progress-bar w-65 bg-primary">67%</div></div></div></div></div>
+    <div class="card mb-4"><div class="card-header bg-body-tertiary d-flex justify-content-between align-items-center flex-wrap gap-2"><div><h2 class="h6 fw-bold mb-0">Catatan bendahara pada pinjaman ini</h2></div><div class="d-flex flex-wrap gap-2"></div></div><div class="card-body "><ul class="list-group list-group-flush small">
+        <li class="list-group-item px-0">10 Feb 2026 &mdash; pencairan via transfer BSI, bukti PC-2026-0031.</li>
+        <li class="list-group-item px-0">10 Sep 2026 &mdash; autodebet berhasil, tanpa denda.</li>
+        <li class="list-group-item px-0">06 Okt 2026 &mdash; file autodebet bank diunggah, cicilan ke-9 menunggu.</li>
+      </ul></div></div>
+    <div class="card mb-4"><div class="card-header bg-body-tertiary d-flex justify-content-between align-items-center flex-wrap gap-2"><div><h2 class="h6 fw-bold mb-0">Sumber pembaruan data</h2></div><div class="d-flex flex-wrap gap-2"></div></div><div class="card-body "><ul class="ps-3 mb-0 small">
+        <li>File XLSX autodebet dari bank (nama nasabah, NIK, status autodebet).</li>
+        <li>Bukti transfer manual yang diverifikasi bendahara.</li>
+        <li>Jurnal denda / penalti bila ada tunggakan atau pelunasan dipercepat.</li>
+      </ul></div></div>
+  </div>
+</div>
+</main>
+<footer class="border-top bg-body py-4 mt-5">
+  <div class="container-xxl small text-body-secondary d-flex justify-content-between flex-wrap gap-2">
+    <span><i class="bi bi-bank2"></i> KSU Mitra Sejahtera — Modul Simpan Pinjam (wireframe statis)</span>
+    <span>Bootstrap 5.3 · tanpa backend · data dummy untuk diskusi dengan programmer</span>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

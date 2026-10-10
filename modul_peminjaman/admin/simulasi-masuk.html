@@ -1,0 +1,203 @@
+<!doctype html>
+<html lang="id" data-bs-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Simulasi Pinjaman Masuk · Admin Koperasi / Bendahara · KSU Mitra Sejahtera</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+</head>
+<body class="bg-body-tertiary">
+<nav class="navbar navbar-expand-lg bg-dark border-bottom" data-bs-theme="dark">
+  <div class="container-xxl">
+    <a class="navbar-brand d-flex align-items-center gap-2" href="../index.html">
+      <i class="bi bi-bank2"></i><span class="fw-semibold">KSU Mitra Sejahtera</span>
+    </a>
+    <span class="badge text-bg-light d-none d-xl-inline">Back Office Bendahara</span>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navUtama"
+            aria-controls="navUtama" aria-expanded="false" aria-label="Buka navigasi">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navUtama">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0"><li class="nav-item"><a class="nav-link" href="dashboard.html">Dashboard</a></li><li class="nav-item"><a class="nav-link active fw-semibold" href="simulasi-masuk.html">Simulasi Masuk</a></li><li class="nav-item"><a class="nav-link" href="pengajuan.html">Verifikasi Pengajuan</a></li><li class="nav-item"><a class="nav-link" href="rekomendasi.html">Rekomendasi ke Ketua</a></li><li class="nav-item"><a class="nav-link" href="pencairan.html">Pencairan Dana</a></li><li class="nav-item"><a class="nav-link" href="autodebet-upload.html">Upload Autodebet</a></li><li class="nav-item"><a class="nav-link" href="autodebet-gagal.html">Autodebet Gagal</a></li><li class="nav-item"><a class="nav-link" href="parameter.html">Parameter Pinjaman</a></li><li class="nav-item"><a class="nav-link" href="anggota.html">Data Anggota</a></li></ul>
+      <ul class="navbar-nav">
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <i class="bi bi-person-circle"></i> Siti Rahmawati
+          </a>
+          <ul class="dropdown-menu dropdown-menu-end">
+            <li><h6 class="dropdown-header">Bendahara Koperasi</h6></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><h6 class="dropdown-header">Pindah role (wireframe)</h6></li>
+            <li><a class="dropdown-item" href="../anggota/dashboard.html">Anggota</a></li><li><a class="dropdown-item active" href="dashboard.html">Admin Koperasi / Bendahara</a></li><li><a class="dropdown-item" href="../ketua/dashboard.html">Ketua Koperasi</a></li><li><a class="dropdown-item" href="../pengawas/dashboard.html">Pengawas Koperasi</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="../index.html"><i class="bi bi-diagram-3"></i> Peta alur sistem</a></li>
+            <li><a class="dropdown-item" href="#"><i class="bi bi-box-arrow-right"></i> Keluar</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<main class="container-xxl py-4">
+<nav aria-label="breadcrumb"><ol class="breadcrumb small mb-2"><li class="breadcrumb-item"><a href="dashboard.html">Back Office Bendahara</a></li><li class="breadcrumb-item active">Simulasi masuk</li></ol></nav>
+  <div class="d-flex justify-content-between align-items-start flex-wrap gap-3 mb-3">
+    <div>
+      <h1 class="h4 fw-bold mb-1">Simulasi Pinjaman Masuk</h1>
+      <div class="d-flex flex-wrap align-items-center gap-2">
+        <span class="badge text-bg-dark">Admin Koperasi / Bendahara</span>
+        <span class="badge text-info-emphasis bg-info-subtle border border-info-subtle">Wireframe · Langkah 2&ndash;3</span>
+        <span class="small text-body-secondary">Proses permintaan simulasi anggota dengan bunga efektif yang berlaku</span>
+      </div>
+    </div>
+    <div class="d-flex flex-wrap gap-2"></div>
+  </div>
+
+<div class="d-flex flex-wrap align-items-center gap-2 mb-4"><span class="badge rounded-pill border px-3 py-2 fw-normal text-bg-primary border border-primary">1. Permintaan simulasi</span><i class="bi bi-chevron-right small text-body-secondary"></i><span class="badge rounded-pill border px-3 py-2 fw-normal text-body-secondary bg-body-secondary border">2. Verifikasi & rekomendasi</span><i class="bi bi-chevron-right small text-body-secondary"></i><span class="badge rounded-pill border px-3 py-2 fw-normal text-body-secondary bg-body-secondary border">3. Persetujuan ketua</span><i class="bi bi-chevron-right small text-body-secondary"></i><span class="badge rounded-pill border px-3 py-2 fw-normal text-body-secondary bg-body-secondary border">4. Pencairan</span><i class="bi bi-chevron-right small text-body-secondary"></i><span class="badge rounded-pill border px-3 py-2 fw-normal text-body-secondary bg-body-secondary border">5. Cicilan & autodebet</span></div>
+<div class="alert alert-info d-flex gap-2 py-2 mb-4"><i class="bi bi-info-circle"></i><div class="small"><strong>Langkah 2:</strong> admin koperasi memproses tabel simulasi pinjaman berdasarkan informasi jenis bunga (tetap/menurun/anuitas), lama tenor, pembayaran bulanan, dan bunga efektif saat ini. <strong>Langkah 3:</strong> tabel hasil diserahkan kembali ke anggota.</div></div>
+<div class="row g-4">
+  <div class="col-xl-12">
+    <div class="card mb-4"><div class="card-header bg-body-tertiary d-flex justify-content-between align-items-center flex-wrap gap-2"><div><h2 class="h6 fw-bold mb-0">Permintaan simulasi dari anggota</h2><div class="small text-body-secondary">Diurutkan dari yang paling lama menunggu</div></div><div class="d-flex flex-wrap gap-2"><div class="input-group input-group-sm"><input type="search" class="form-control" placeholder="Cari nama / nomor"><button class="btn btn-outline-secondary" type="button">Cari</button></div></div></div><div class="card-body "><div class="table-responsive"><table class="table table-sm table-hover align-middle mb-0"><thead class="table-light"><tr><th scope='col'>No. simulasi</th><th scope='col'>Anggota</th><th scope='col'>Produk</th><th scope='col'>Pokok</th><th scope='col'>Tenor</th><th scope='col'>Metode diminta</th><th scope='col'>Tanggal</th><th scope='col'>Status</th><th scope='col'>Aksi</th></tr></thead><tbody><tr><td><span class="fw-semibold">SIM-2026-0143</span></td><td>Ratna Kusumawati<div class="small text-body-secondary">AG-0231</div></td><td>PJ-MG</td><td>Rp 120.000.000</td><td>36 bln</td><td>Anuitas</td><td>05 Okt 2026</td><td><span class="badge rounded-pill text-bg-warning">Menunggu Simulasi</span></td><td><a class="btn btn-sm btn-primary" href="#panel-proses">Proses</a></td></tr><tr><td><span class="fw-semibold">SIM-2026-0142</span></td><td>Budi Santoso<div class="small text-body-secondary">AG-0142</div></td><td>PJ-RG</td><td>Rp 25.000.000</td><td>24 bln</td><td>Menurun</td><td>06 Okt 2026</td><td><span class="badge rounded-pill text-bg-info">Simulasi Selesai</span></td><td><a class="btn btn-sm btn-primary" href="#panel-proses">Proses</a></td></tr><tr><td><span class="fw-semibold">SIM-2026-0140</span></td><td>Ahmad Fauzi<div class="small text-body-secondary">AG-0117</div></td><td>PJ-DR</td><td>Rp 5.000.000</td><td>10 bln</td><td>Tetap (flat)</td><td>04 Okt 2026</td><td><span class="badge rounded-pill text-bg-info">Simulasi Selesai</span></td><td><a class="btn btn-sm btn-primary" href="#panel-proses">Proses</a></td></tr><tr><td><span class="fw-semibold">SIM-2026-0139</span></td><td>Sri Handayani<div class="small text-body-secondary">AG-0305</div></td><td>PJ-PD</td><td>Rp 18.000.000</td><td>18 bln</td><td>Menurun</td><td>03 Okt 2026</td><td><span class="badge rounded-pill text-bg-warning">Menunggu Simulasi</span></td><td><a class="btn btn-sm btn-primary" href="#panel-proses">Proses</a></td></tr><tr><td><span class="fw-semibold">SIM-2026-0138</span></td><td>Joko Prasetyo<div class="small text-body-secondary">AG-0098</div></td><td>PJ-RG</td><td>Rp 40.000.000</td><td>30 bln</td><td>Anuitas</td><td>02 Okt 2026</td><td><span class="badge rounded-pill text-bg-info">Simulasi Selesai</span></td><td><a class="btn btn-sm btn-primary" href="#panel-proses">Proses</a></td></tr></tbody><tfoot class="table-group-divider table-light">3 permintaan masih berstatus Menunggu Simulasi. Bendahara wajib memakai bunga efektif yang berlaku saat memproses (bukan tarif lama).</tfoot></table></div></div></div>
+  </div>
+  <div class="col-xl-8">
+    <div id="panel-proses"></div>
+    <div class="card mb-4"><div class="card-header bg-body-tertiary d-flex justify-content-between align-items-center flex-wrap gap-2"><div><h2 class="h6 fw-bold mb-0">Form proses simulasi</h2><div class="small text-body-secondary">Bendahara menetapkan parameter final sebelum tabel dikirim</div></div><div class="d-flex flex-wrap gap-2"></div></div><div class="card-body "><form class="row g-3">
+  <div class="col-12">
+    <div class="alert alert-info py-2 mb-0 small">
+      <i class="bi bi-info-circle"></i> Bunga efektif yang berlaku saat ini: <strong>1,10% per bulan</strong>
+      (setara 14,03% efektif per tahun) untuk PJ-RG, berlaku sejak 01 Okt 2026 (SK Pengurus No. 07/SK/X/2026).
+    </div>
+  </div>
+  <div class="col-md-4">
+    <label class="form-label" for="nosim">Nomor simulasi</label>
+    <input type="text" class="form-control" id="nosim" value="SIM-2026-0143" readonly>
+  </div>
+  <div class="col-md-4">
+    <label class="form-label" for="anggota">Anggota pemohon</label>
+    <input type="text" class="form-control" id="anggota" value="Ratna Kusumawati (AG-0231)" readonly>
+  </div>
+  <div class="col-md-4">
+    <label class="form-label" for="produk">Produk pinjaman</label>
+    <select class="form-select" id="produk">
+      <option>PJ-MG &mdash; Multiguna / Kendaraan (anuitas 1,35%/bln)</option>
+      <option selected>PJ-RG &mdash; Reguler (menurun 1,10%/bln)</option>
+      <option>PJ-PD &mdash; Pendidikan (menurun 1,00%/bln)</option>
+      <option>PJ-DR &mdash; Darurat (tetap 0,90%/bln)</option>
+    </select>
+  </div>
+  <div class="col-md-3">
+    <label class="form-label" for="pokok">Pokok pinjaman yang disimulasikan</label>
+    <div class="input-group">
+      <span class="input-group-text">Rp</span>
+      <input type="number" class="form-control" id="pokok" value="25000000" step="1000000">
+    </div>
+  </div>
+  <div class="col-md-3">
+    <label class="form-label" for="tenor">Tenor final (bulan)</label>
+    <input type="number" class="form-control" id="tenor" value="24" min="6" max="48">
+  </div>
+  <div class="col-md-3">
+    <label class="form-label" for="rate">Bunga efektif saat ini (% / bulan)</label>
+    <input type="number" class="form-control" id="rate" value="1.10" step="0.05">
+    <div class="form-text">Diambil dari parameter produk &amp; SK bunga berjalan.</div>
+  </div>
+  <div class="col-md-3">
+    <label class="form-label" for="tipe">Jenis perhitungan bunga</label>
+    <select class="form-select" id="tipe">
+      <option>Bunga tetap (flat)</option>
+      <option selected>Bunga menurun (efektif)</option>
+      <option>Bunga anuitas</option>
+    </select>
+  </div>
+  <div class="col-md-4">
+    <label class="form-label" for="adm">Biaya administrasi</label>
+    <div class="input-group">
+      <span class="input-group-text">%</span>
+      <input type="number" class="form-control" id="adm" value="0.50" step="0.05">
+      <span class="input-group-text">dari pokok</span>
+    </div>
+  </div>
+  <div class="col-md-4">
+    <label class="form-label" for="asuransi">Asuransi / dana risiko</label>
+    <div class="input-group">
+      <span class="input-group-text">Rp</span>
+      <input type="number" class="form-control" id="asuransi" value="0" step="50000">
+    </div>
+  </div>
+  <div class="col-md-4">
+    <label class="form-label" for="bulat">Pembulatan angsuran</label>
+    <select class="form-select" id="bulat">
+      <option>Rupiah penuh</option>
+      <option selected>Ke atas per Rp 1.000</option>
+      <option>Ke atas per Rp 10.000</option>
+    </select>
+  </div>
+  <div class="col-12">
+    <label class="form-label" for="catatan">Catatan untuk anggota (tampil di tabel hasil simulasi)</label>
+    <textarea class="form-control" id="catatan" rows="2">Simulasi memakai bunga menurun 1,10%/bulan dengan tenor
+24 bulan. Angsuran menurun setiap bulan dari Rp 1.466.667 menjadi Rp 1.218.750.</textarea>
+  </div>
+  <div class="col-md-6">
+    <label class="form-label" for="berlaku">Tabel berlaku sampai</label>
+    <input type="date" class="form-control" id="berlaku" value="2026-11-07">
+  </div>
+  <div class="col-md-6 d-flex align-items-end">
+    <div class="form-check">
+      <input class="form-check-input" type="checkbox" id="bandingkan" checked>
+      <label class="form-check-label" for="bandingkan">Sertakan tabel pembanding tiga jenis bunga untuk anggota</label>
+    </div>
+  </div>
+  <div class="col-12 d-flex flex-wrap gap-2">
+    <button class="btn btn-primary" type="button"><i class="bi bi-calculator"></i> Hitung tabel angsuran</button>
+    <button class="btn btn-success" type="button" data-bs-toggle="modal" data-bs-target="#modalKirim">
+      <i class="bi bi-send"></i> Kirim tabel ke anggota</button>
+    <button class="btn btn-outline-secondary" type="button">Simpan draft simulasi</button>
+  </div>
+</form></div></div>
+  </div>
+  <div class="col-xl-4">
+    <div class="card mb-4"><div class="card-header bg-body-tertiary d-flex justify-content-between align-items-center flex-wrap gap-2"><div><h2 class="h6 fw-bold mb-0">Pratinjau hasil perhitungan</h2></div><div class="d-flex flex-wrap gap-2"></div></div><div class="card-body "><dl class="row g-0 mb-0"><dt class="col-sm-4 col-lg-3 fw-normal text-body-secondary py-2 border-bottom">Angsuran pertama</dt><dd class="col-sm-8 col-lg-9 py-2 mb-0 border-bottom">Rp 1.316.667</dd><dt class="col-sm-4 col-lg-3 fw-normal text-body-secondary py-2 border-bottom">Angsuran terakhir</dt><dd class="col-sm-8 col-lg-9 py-2 mb-0 border-bottom">Rp 1.053.125</dd><dt class="col-sm-4 col-lg-3 fw-normal text-body-secondary py-2 border-bottom">Total bunga</dt><dd class="col-sm-8 col-lg-9 py-2 mb-0 border-bottom">Rp 3.437.500</dd><dt class="col-sm-4 col-lg-3 fw-normal text-body-secondary py-2 border-bottom">Total pembayaran</dt><dd class="col-sm-8 col-lg-9 py-2 mb-0 border-bottom">Rp 28.437.500</dd><dt class="col-sm-4 col-lg-3 fw-normal text-body-secondary py-2 border-bottom">Bunga efektif per tahun</dt><dd class="col-sm-8 col-lg-9 py-2 mb-0 border-bottom">14,03% p.a.</dd><dt class="col-sm-4 col-lg-3 fw-normal text-body-secondary py-2 border-bottom">Biaya administrasi</dt><dd class="col-sm-8 col-lg-9 py-2 mb-0 border-bottom">Rp 125.000</dd></dl></div><div class="card-footer bg-body-tertiary small text-body-secondary">Angka mengikuti skenario dummy: Rp 25,0 jt / 24 bulan / 1,10% per bulan (menurun).</div></div>
+    <div class="card mb-4"><div class="card-header bg-body-tertiary d-flex justify-content-between align-items-center flex-wrap gap-2"><div><h2 class="h6 fw-bold mb-0">Parameter produk terpilih</h2><div class="small text-body-secondary">Dipakai bendahara saat memproses simulasi</div></div><div class="d-flex flex-wrap gap-2"></div></div><div class="card-body "><div class="table-responsive"><table class="table table-sm table-hover align-middle mb-0"><thead class="table-light"><tr><th scope='col'>Produk</th><th scope='col'>Bunga</th><th scope='col'>Metode</th><th scope='col'>Denda</th><th scope='col'>Penalti lunas dini</th></tr></thead><tbody><tr><td>Pinjaman Reguler</td><td>1,10%/bln</td><td>Saldo Menurun (efektif)</td><td>0,50%/bln</td><td>1,0% dari sisa pokok</td></tr><tr><td>Pinjaman Multiguna (Kendaraan)</td><td>1,35%/bln</td><td>Anuitas</td><td>0,50%/bln</td><td>2,0% dari sisa pokok</td></tr><tr><td>Pinjaman Pendidikan</td><td>1,00%/bln</td><td>Saldo Menurun (efektif)</td><td>0,50%/bln</td><td>0,5% dari sisa pokok</td></tr><tr><td>Pinjaman Darurat</td><td>0,90%/bln</td><td>Bunga Tetap (flat)</td><td>0,30%/bln</td><td>0,0% dari sisa pokok</td></tr></tbody></table></div></div></div>
+  </div>
+  <div class="col-12">
+    <div class="card mb-4"><div class="card-header bg-body-tertiary d-flex justify-content-between align-items-center flex-wrap gap-2"><div><h2 class="h6 fw-bold mb-0">Tabel pembanding yang akan dikirim ke anggota</h2></div><div class="d-flex flex-wrap gap-2"></div></div><div class="card-body "><div class="table-responsive"><table class="table table-sm table-hover align-middle mb-0"><thead class="table-light"><tr><th scope='col'>Metode</th><th scope='col'>Angsuran / bulan</th><th scope='col'>Total bunga</th><th scope='col'>Total bayar</th><th scope='col'>Bunga efektif bulanan</th><th scope='col'>Bunga efektif per tahun</th></tr></thead><tbody><tr><td><span class="fw-semibold">Bunga Tetap (flat)</span></td><td>Rp 1.316.667 – Rp 1.316.667</td><td>Rp 6.600.000</td><td>Rp 31.600.008</td><td>1,97% <span class='text-body-secondary small'>/bln</span></td><td><span class="badge rounded-pill text-bg-secondary">26,32% p.a.</span></td></tr><tr><td><span class="fw-semibold">Bunga Menurun (efektif)</span></td><td>Rp 1.053.125 – Rp 1.316.667</td><td>Rp 3.437.500</td><td>Rp 28.437.500</td><td>1,10% <span class='text-body-secondary small'>/bln</span></td><td><span class="badge rounded-pill text-bg-secondary">14,03% p.a.</span></td></tr><tr><td><span class="fw-semibold">Bunga Anuitas</span></td><td>Rp 1.190.895 – Rp 1.190.895</td><td>Rp 3.581.493</td><td>Rp 28.581.480</td><td>1,10% <span class='text-body-secondary small'>/bln</span></td><td><span class="badge rounded-pill text-bg-secondary">14,03% p.a.</span></td></tr></tbody><tfoot class="table-group-divider table-light">Tabel inilah yang diserahkan ke anggota (Langkah 3) agar bisa dibandingkan sebelum mengajukan.</tfoot></table></div></div></div>
+  </div>
+</div>
+</main>
+<footer class="border-top bg-body py-4 mt-5">
+  <div class="container-xxl small text-body-secondary d-flex justify-content-between flex-wrap gap-2">
+    <span><i class="bi bi-bank2"></i> KSU Mitra Sejahtera — Modul Simpan Pinjam (wireframe statis)</span>
+    <span>Bootstrap 5.3 · tanpa backend · data dummy untuk diskusi dengan programmer</span>
+  </div>
+</footer>
+<div class="modal fade" id="modalKirim" tabindex="-1" aria-labelledby="modalKirimLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="modalKirimLabel">Kirim tabel simulasi ke anggota</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Tutup"></button>
+      </div>
+      <div class="modal-body">
+        <p class="small">Tabel SIM-2026-0143 akan dikirim ke Ratna Kusumawati (AG-0231) melalui portal anggota dan
+          e-mail <code>ratna@koperasi.example.id</code>.</p>
+        <ul class="small">
+          <li>Pokok Rp 25.000.000 &middot; tenor 24 bulan &middot; bunga menurun 1,10%/bulan.</li>
+          <li>Termasuk tabel pembanding (tetap / menurun / anuitas).</li>
+          <li>Status permintaan berubah menjadi <em>Simulasi Selesai</em>.</li>
+        </ul>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" id="setsim" checked>
+          <label class="form-check-label small" for="setsim">Kirim juga salinan ke bendahara dan arsipkan di berkas
+            simulasi anggota.</label>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Batal</button>
+        <a class="btn btn-success" href="simulasi-masuk.html">Kirim sekarang</a>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

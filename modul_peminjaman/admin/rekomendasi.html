@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="id" data-bs-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Rekomendasi ke Ketua Koperasi · Admin Koperasi / Bendahara · KSU Mitra Sejahtera</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+</head>
+<body class="bg-body-tertiary">
+<nav class="navbar navbar-expand-lg bg-dark border-bottom" data-bs-theme="dark">
+  <div class="container-xxl">
+    <a class="navbar-brand d-flex align-items-center gap-2" href="../index.html">
+      <i class="bi bi-bank2"></i><span class="fw-semibold">KSU Mitra Sejahtera</span>
+    </a>
+    <span class="badge text-bg-light d-none d-xl-inline">Back Office Bendahara</span>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navUtama"
+            aria-controls="navUtama" aria-expanded="false" aria-label="Buka navigasi">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navUtama">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0"><li class="nav-item"><a class="nav-link" href="dashboard.html">Dashboard</a></li><li class="nav-item"><a class="nav-link" href="simulasi-masuk.html">Simulasi Masuk</a></li><li class="nav-item"><a class="nav-link" href="pengajuan.html">Verifikasi Pengajuan</a></li><li class="nav-item"><a class="nav-link active fw-semibold" href="rekomendasi.html">Rekomendasi ke Ketua</a></li><li class="nav-item"><a class="nav-link" href="pencairan.html">Pencairan Dana</a></li><li class="nav-item"><a class="nav-link" href="autodebet-upload.html">Upload Autodebet</a></li><li class="nav-item"><a class="nav-link" href="autodebet-gagal.html">Autodebet Gagal</a></li><li class="nav-item"><a class="nav-link" href="parameter.html">Parameter Pinjaman</a></li><li class="nav-item"><a class="nav-link" href="anggota.html">Data Anggota</a></li></ul>
+      <ul class="navbar-nav">
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <i class="bi bi-person-circle"></i> Siti Rahmawati
+          </a>
+          <ul class="dropdown-menu dropdown-menu-end">
+            <li><h6 class="dropdown-header">Bendahara Koperasi</h6></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><h6 class="dropdown-header">Pindah role (wireframe)</h6></li>
+            <li><a class="dropdown-item" href="../anggota/dashboard.html">Anggota</a></li><li><a class="dropdown-item active" href="dashboard.html">Admin Koperasi / Bendahara</a></li><li><a class="dropdown-item" href="../ketua/dashboard.html">Ketua Koperasi</a></li><li><a class="dropdown-item" href="../pengawas/dashboard.html">Pengawas Koperasi</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="../index.html"><i class="bi bi-diagram-3"></i> Peta alur sistem</a></li>
+            <li><a class="dropdown-item" href="#"><i class="bi bi-box-arrow-right"></i> Keluar</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<main class="container-xxl py-4">
+<nav aria-label="breadcrumb"><ol class="breadcrumb small mb-2"><li class="breadcrumb-item"><a href="dashboard.html">Back Office Bendahara</a></li><li class="breadcrumb-item active">Rekomendasi ke ketua</li></ol></nav>
+  <div class="d-flex justify-content-between align-items-start flex-wrap gap-3 mb-3">
+    <div>
+      <h1 class="h4 fw-bold mb-1">Rekomendasi ke Ketua Koperasi</h1>
+      <div class="d-flex flex-wrap align-items-center gap-2">
+        <span class="badge text-bg-dark">Admin Koperasi / Bendahara</span>
+        <span class="badge text-info-emphasis bg-info-subtle border border-info-subtle">Wireframe · Langkah 6</span>
+        <span class="small text-body-secondary">Lembar rekomendasi dan pengiriman keputusan ke ketua</span>
+      </div>
+    </div>
+    <div class="d-flex flex-wrap gap-2"><a class="btn btn-outline-primary" href="../ketua/daftar-peminjam.html">Lihat layar ketua</a></div>
+  </div>
+
+<div class="d-flex flex-wrap align-items-center gap-2 mb-4"><span class="badge rounded-pill border px-3 py-2 fw-normal text-primary-emphasis bg-primary-subtle border border-primary-subtle">1. Permintaan simulasi</span><i class="bi bi-chevron-right small text-body-secondary"></i><span class="badge rounded-pill border px-3 py-2 fw-normal text-bg-primary border border-primary">2. Verifikasi & rekomendasi</span><i class="bi bi-chevron-right small text-body-secondary"></i><span class="badge rounded-pill border px-3 py-2 fw-normal text-body-secondary bg-body-secondary border">3. Persetujuan ketua</span><i class="bi bi-chevron-right small text-body-secondary"></i><span class="badge rounded-pill border px-3 py-2 fw-normal text-body-secondary bg-body-secondary border">4. Pencairan</span><i class="bi bi-chevron-right small text-body-secondary"></i><span class="badge rounded-pill border px-3 py-2 fw-normal text-body-secondary bg-body-secondary border">5. Cicilan & autodebet</span></div>
+<div class="alert alert-info d-flex gap-2 py-2 mb-4"><i class="bi bi-info-circle"></i><div class="small"><strong>Langkah 6:</strong> berdasarkan hasil pemeriksaan kas dan dokumen, bendahara merekomendasikan pengajuan kepada ketua koperasi. Revisi / penolakan ketua akan kembali terlihat di halaman ini (status pengajuan pada tabel riwayat).</div></div>
+<div class="row g-4">
+  <div class="col-xl-8">
+    <div class="card mb-4"><div class="card-header bg-body-tertiary d-flex justify-content-between align-items-center flex-wrap gap-2"><div><h2 class="h6 fw-bold mb-0">Lembar rekomendasi &mdash; PGJ-2026-0088</h2><div class="small text-body-secondary">Dokumen ini yang dibaca ketua sebelum memutuskan</div></div><div class="d-flex flex-wrap gap-2"><button class="btn btn-sm btn-outline-secondary" type="button"><i class="bi bi-printer"></i> Cetak</button></div></div><div class="card-body "><div class="card">
+      <div class="card-body">
+        <div class="text-center mb-4">
+          <h3 class="h5 fw-bold mb-0">LEMBAR REKOMENDASI PINJAMAN</h3>
+          <div class="small text-body-secondary">Koperasi Serba Usaha Mitra Sejahtera &mdash; Unit Simpan Pinjam</div>
+          <div class="small text-body-secondary">No. REK-2026-0088 &middot; 09 Oktober 2026</div>
+        </div>
+        <dl class="row g-0 small">
+          <dt class="col-sm-4 fw-normal text-body-secondary py-2 border-bottom">Nama anggota</dt>
+          <dd class="col-sm-8 py-2 mb-0 border-bottom">Budi Santoso, S.Kom., M.T. (AG-0142)</dd>
+          <dt class="col-sm-4 fw-normal text-body-secondary py-2 border-bottom">Jumlah pinjaman</dt>
+          <dd class="col-sm-8 py-2 mb-0 border-bottom">Rp 25.000.000 (dua puluh lima juta rupiah)</dd>
+          <dt class="col-sm-4 fw-normal text-body-secondary py-2 border-bottom">Tenor &amp; metode bunga</dt>
+          <dd class="col-sm-8 py-2 mb-0 border-bottom">24 bulan &middot; bunga menurun 1,10%/bulan</dd>
+          <dt class="col-sm-4 fw-normal text-body-secondary py-2 border-bottom">Angsuran per bulan</dt>
+          <dd class="col-sm-8 py-2 mb-0 border-bottom">Rp 1.466.667 (menurun sampai Rp 1.218.750)</dd>
+          <dt class="col-sm-4 fw-normal text-body-secondary py-2 border-bottom">Keperluan &amp; urgensi</dt>
+          <dd class="col-sm-8 py-2 mb-0 border-bottom">Biaya pendidikan anak &middot; urgensi tinggi</dd>
+          <dt class="col-sm-4 fw-normal text-body-secondary py-2 border-bottom">Sifat pembayaran</dt>
+          <dd class="col-sm-8 py-2 mb-0 border-bottom">Autodebet BSI 7100 2299 441</dd>
+          <dt class="col-sm-4 fw-normal text-body-secondary py-2 border-bottom">Hasil pemeriksaan kas</dt>
+          <dd class="col-sm-8 py-2 mb-0 border-bottom">Kas tersedia Rp 412.750.000 &mdash; cukup untuk pencairan</dd>
+          <dt class="col-sm-4 fw-normal text-body-secondary py-2 border-bottom">Kelengkapan dokumen</dt>
+          <dd class="col-sm-8 py-2 mb-0 border-bottom">6 dari 6 dokumen lengkap &middot; form kesediaan autodebet valid</dd>
+          <dt class="col-sm-4 fw-normal text-body-secondary py-2 border-bottom">Kolateral</dt>
+          <dd class="col-sm-8 py-2 mb-0 border-bottom">Tidak diperlukan untuk produk PJ-RG</dd>
+          <dt class="col-sm-4 fw-normal text-body-secondary py-2 border-bottom">Analisis bendahara</dt>
+          <dd class="col-sm-8 py-2 mb-0 border-bottom">Kolektibilitas lancar, rasio cicilan 34% dari penghasilan
+            (batas 44%), riwayat pinjaman sebelumnya lunas tepat waktu.</dd>
+          <dt class="col-sm-4 fw-normal text-body-secondary py-2 border-bottom">Rekomendasi</dt>
+          <dd class="col-sm-8 py-2 mb-0 border-bottom"><span class="badge text-bg-success">Direkomendasikan untuk
+            disetujui</span></dd>
+        </dl>
+        <div class="row g-4 mt-4 text-center small">
+          <div class="col-4">Diajukan oleh,<div class="border-bottom mt-4 mb-1"></div>Siti Rahmawati (Bendahara)</div>
+          <div class="col-4">Diperiksa oleh,<div class="border-bottom mt-4 mb-1"></div>Pengurus Unit Simpan Pinjam</div>
+          <div class="col-4">Diputuskan oleh,<div class="border-bottom mt-4 mb-1"></div>Dr. Hendra Wijaya (Ketua)</div>
+        </div>
+      </div>
+    </div></div></div>
+    <div class="card mb-4"><div class="card-header bg-body-tertiary d-flex justify-content-between align-items-center flex-wrap gap-2"><div><h2 class="h6 fw-bold mb-0">Form pengiriman rekomendasi</h2><div class="small text-body-secondary">Langkah 6 &mdash; kirim ke meja ketua</div></div><div class="d-flex flex-wrap gap-2"></div></div><div class="card-body "><form class="row g-3">
+  <div class="col-md-6">
+    <label class="form-label" for="rjns">Sikap bendahara</label>
+    <select class="form-select" id="rjns">
+      <option selected>Rekomendasikan untuk disetujui</option>
+      <option>Rekomendasikan dengan catatan</option>
+      <option>Tunda &mdash; minta kelengkapan</option>
+      <option>Tidak direkomendasikan</option>
+    </select>
+  </div>
+  <div class="col-md-6">
+    <label class="form-label" for="rprio">Usulan urutan prioritas</label>
+    <select class="form-select" id="rprio">
+      <option selected>1 &mdash; keperluan pendidikan anak (tenggat Desember 2026)</option>
+      <option>2 &mdash; kesehatan</option>
+      <option>3 &mdash; modal usaha</option>
+      <option>4 &mdash; lainnya</option>
+    </select>
+  </div>
+  <div class="col-12">
+    <label class="form-label" for="rnota">Catatan untuk ketua</label>
+    <textarea class="form-control" id="rnota" rows="3">Mohon diputuskan sebelum 15 November 2026 agar biaya masuk
+sekolah anak dapat dibayar tepat waktu. Kolateral tidak diperlukan untuk produk PJ-RG; anggota bersedia autodebet.</textarea>
+  </div>
+  <div class="col-md-6">
+    <label class="form-label" for="rlamp">Lampiran</label>
+    <input type="file" class="form-control" id="rlamp" multiple>
+    <div class="form-text">Tabel simulasi, kartu piutang pinjaman lama, hasil pemeriksaan kas.</div>
+  </div>
+  <div class="col-md-6 d-flex align-items-end">
+    <div class="form-check">
+      <input class="form-check-input" type="checkbox" id="rtembus" checked>
+      <label class="form-check-label" for="rtembus">Kirim salinan rekomendasi ke e-mail ketua dan arsip koperasi</label>
+    </div>
+  </div>
+  <div class="col-12 d-flex flex-wrap gap-2">
+    <a class="btn btn-primary" href="../ketua/persetujuan.html"><i class="bi bi-send"></i> Kirim ke ketua koperasi</a>
+    <button class="btn btn-outline-secondary" type="button"><i class="bi bi-printer"></i> Cetak lembar rekomendasi</button>
+    <a class="btn btn-link" href="pengajuan.html">Kembali ke daftar pengajuan</a>
+  </div>
+</form></div></div>
+  </div>
+  <div class="col-xl-4">
+    <div class="card mb-4"><div class="card-header bg-body-tertiary d-flex justify-content-between align-items-center flex-wrap gap-2"><div><h2 class="h6 fw-bold mb-0">Ringkasan kas saat mengajukan rekomendasi</h2></div><div class="d-flex flex-wrap gap-2"></div></div><div class="card-body "><dl class="row g-0 mb-0"><dt class="col-sm-4 col-lg-3 fw-normal text-body-secondary py-2 border-bottom">Kas tersedia</dt><dd class="col-sm-8 col-lg-9 py-2 mb-0 border-bottom">Rp 412.750.000</dd><dt class="col-sm-4 col-lg-3 fw-normal text-body-secondary py-2 border-bottom">Komitmen pencairan</dt><dd class="col-sm-8 col-lg-9 py-2 mb-0 border-bottom">Rp 88.500.000</dd><dt class="col-sm-4 col-lg-3 fw-normal text-body-secondary py-2 border-bottom">Kebutuhan pengajuan ini</dt><dd class="col-sm-8 col-lg-9 py-2 mb-0 border-bottom">Rp 25.000.000</dd><dt class="col-sm-4 col-lg-3 fw-normal text-body-secondary py-2 border-bottom">Batas kas minimum</dt><dd class="col-sm-8 col-lg-9 py-2 mb-0 border-bottom">Rp 150.000.000</dd><dt class="col-sm-4 col-lg-3 fw-normal text-body-secondary py-2 border-bottom">Status</dt><dd class="col-sm-8 col-lg-9 py-2 mb-0 border-bottom"><span class="badge rounded-pill text-bg-success">Cukup</span></dd></dl></div></div>
+    <div class="card mb-4"><div class="card-header bg-body-tertiary d-flex justify-content-between align-items-center flex-wrap gap-2"><div><h2 class="h6 fw-bold mb-0">Alur setelah rekomendasi dikirim</h2></div><div class="d-flex flex-wrap gap-2"></div></div><div class="card-body "><ol class="ps-3 mb-0 small">
+        <li>Ketua melihat daftar peminjam &amp; prioritas keperluan (Langkah 7).</li>
+        <li>Ketua menyetujui / memberi revisi / menolak dengan alasan (Langkah 8).</li>
+        <li>Bila disetujui, bendahara menyiapkan dana pencairan dan bukti transaksi (Langkah 9).</li>
+        <li>Revisi dari ketua tampil di halaman ini dan di portal anggota.</li>
+      </ol></div></div>
+  </div>
+  <div class="col-12">
+    <div class="card mb-4"><div class="card-header bg-body-tertiary d-flex justify-content-between align-items-center flex-wrap gap-2"><div><h2 class="h6 fw-bold mb-0">Riwayat rekomendasi bendahara</h2><div class="small text-body-secondary">Termasuk hasil keputusan ketua: disetujui, revisi, atau ditolak</div></div><div class="d-flex flex-wrap gap-2"></div></div><div class="card-body "><div class="table-responsive"><table class="table table-sm table-hover align-middle mb-0"><thead class="table-light"><tr><th scope='col'>Tanggal</th><th scope='col'>No. pengajuan</th><th scope='col'>Anggota</th><th scope='col'>Pokok</th><th scope='col'>Sikap bendahara</th><th scope='col'>Status di ketua</th><th scope='col'>Catatan</th></tr></thead><tbody><tr><td>09 Okt 2026</td><td>PGJ-2026-0088</td><td>Budi Santoso</td><td>Rp 25.000.000</td><td><span class="badge rounded-pill text-bg-success">Direkomendasikan</span></td><td><span class="badge rounded-pill text-bg-warning">Menunggu Persetujuan</span></td><td>Minta tabel angsuran 36 bulan (revisi ketua)</td></tr><tr><td>09 Okt 2026</td><td>PGJ-2026-0087</td><td>Ratna Kusumawati</td><td>Rp 120.000.000</td><td><span class="badge rounded-pill text-bg-success">Direkomendasikan</span></td><td><span class="badge rounded-pill text-bg-warning">Menunggu Persetujuan</span></td><td>Kolateral BPKB sudah diverifikasi bendahara</td></tr><tr><td>08 Okt 2026</td><td>PGJ-2026-0086</td><td>Ahmad Fauzi</td><td>Rp 5.000.000</td><td><span class="badge rounded-pill text-bg-success">Direkomendasikan</span></td><td><span class="badge rounded-pill text-bg-success">Disetujui</span></td><td>Disetujui tanpa revisi</td></tr><tr><td>07 Okt 2026</td><td>PGJ-2026-0084</td><td>Joko Prasetyo</td><td>Rp 40.000.000</td><td><span class="badge rounded-pill text-bg-danger">Tidak direkomendasikan</span></td><td><span class="badge rounded-pill text-bg-danger">Ditolak</span></td><td>Tidak direkomendasikan: rasio cicilan 51%</td></tr><tr><td>05 Okt 2026</td><td>PGJ-2026-0083</td><td>Dewi Lestari</td><td>Rp 15.000.000</td><td><span class="badge rounded-pill text-bg-success">Direkomendasikan</span></td><td><span class="badge rounded-pill text-bg-dark">Dicairkan</span></td><td>Dicairkan 09 Okt 2026</td></tr></tbody></table></div></div></div>
+  </div>
+</div>
+</main>
+<footer class="border-top bg-body py-4 mt-5">
+  <div class="container-xxl small text-body-secondary d-flex justify-content-between flex-wrap gap-2">
+    <span><i class="bi bi-bank2"></i> KSU Mitra Sejahtera — Modul Simpan Pinjam (wireframe statis)</span>
+    <span>Bootstrap 5.3 · tanpa backend · data dummy untuk diskusi dengan programmer</span>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

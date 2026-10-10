@@ -1,0 +1,262 @@
+<!doctype html>
+<html lang="id" data-bs-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Pencairan Dana · Admin Koperasi / Bendahara · KSU Mitra Sejahtera</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+</head>
+<body class="bg-body-tertiary">
+<nav class="navbar navbar-expand-lg bg-dark border-bottom" data-bs-theme="dark">
+  <div class="container-xxl">
+    <a class="navbar-brand d-flex align-items-center gap-2" href="../index.html">
+      <i class="bi bi-bank2"></i><span class="fw-semibold">KSU Mitra Sejahtera</span>
+    </a>
+    <span class="badge text-bg-light d-none d-xl-inline">Back Office Bendahara</span>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navUtama"
+            aria-controls="navUtama" aria-expanded="false" aria-label="Buka navigasi">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navUtama">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0"><li class="nav-item"><a class="nav-link" href="dashboard.html">Dashboard</a></li><li class="nav-item"><a class="nav-link" href="simulasi-masuk.html">Simulasi Masuk</a></li><li class="nav-item"><a class="nav-link" href="pengajuan.html">Verifikasi Pengajuan</a></li><li class="nav-item"><a class="nav-link" href="rekomendasi.html">Rekomendasi ke Ketua</a></li><li class="nav-item"><a class="nav-link active fw-semibold" href="pencairan.html">Pencairan Dana</a></li><li class="nav-item"><a class="nav-link" href="autodebet-upload.html">Upload Autodebet</a></li><li class="nav-item"><a class="nav-link" href="autodebet-gagal.html">Autodebet Gagal</a></li><li class="nav-item"><a class="nav-link" href="parameter.html">Parameter Pinjaman</a></li><li class="nav-item"><a class="nav-link" href="anggota.html">Data Anggota</a></li></ul>
+      <ul class="navbar-nav">
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <i class="bi bi-person-circle"></i> Siti Rahmawati
+          </a>
+          <ul class="dropdown-menu dropdown-menu-end">
+            <li><h6 class="dropdown-header">Bendahara Koperasi</h6></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><h6 class="dropdown-header">Pindah role (wireframe)</h6></li>
+            <li><a class="dropdown-item" href="../anggota/dashboard.html">Anggota</a></li><li><a class="dropdown-item active" href="dashboard.html">Admin Koperasi / Bendahara</a></li><li><a class="dropdown-item" href="../ketua/dashboard.html">Ketua Koperasi</a></li><li><a class="dropdown-item" href="../pengawas/dashboard.html">Pengawas Koperasi</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="../index.html"><i class="bi bi-diagram-3"></i> Peta alur sistem</a></li>
+            <li><a class="dropdown-item" href="#"><i class="bi bi-box-arrow-right"></i> Keluar</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<main class="container-xxl py-4">
+<nav aria-label="breadcrumb"><ol class="breadcrumb small mb-2"><li class="breadcrumb-item"><a href="dashboard.html">Back Office Bendahara</a></li><li class="breadcrumb-item active">Pencairan dana</li></ol></nav>
+  <div class="d-flex justify-content-between align-items-start flex-wrap gap-3 mb-3">
+    <div>
+      <h1 class="h4 fw-bold mb-1">Pencairan Dana</h1>
+      <div class="d-flex flex-wrap align-items-center gap-2">
+        <span class="badge text-bg-dark">Admin Koperasi / Bendahara</span>
+        <span class="badge text-info-emphasis bg-info-subtle border border-info-subtle">Wireframe · Langkah 9</span>
+        <span class="small text-body-secondary">Siapkan dana dan bukti transaksi pencairan pinjaman yang disetujui</span>
+      </div>
+    </div>
+    <div class="d-flex flex-wrap gap-2"></div>
+  </div>
+
+<div class="d-flex flex-wrap align-items-center gap-2 mb-4"><span class="badge rounded-pill border px-3 py-2 fw-normal text-primary-emphasis bg-primary-subtle border border-primary-subtle">1. Permintaan simulasi</span><i class="bi bi-chevron-right small text-body-secondary"></i><span class="badge rounded-pill border px-3 py-2 fw-normal text-primary-emphasis bg-primary-subtle border border-primary-subtle">2. Verifikasi & rekomendasi</span><i class="bi bi-chevron-right small text-body-secondary"></i><span class="badge rounded-pill border px-3 py-2 fw-normal text-bg-primary border border-primary">3. Persetujuan ketua</span><i class="bi bi-chevron-right small text-body-secondary"></i><span class="badge rounded-pill border px-3 py-2 fw-normal text-body-secondary bg-body-secondary border">4. Pencairan</span><i class="bi bi-chevron-right small text-body-secondary"></i><span class="badge rounded-pill border px-3 py-2 fw-normal text-body-secondary bg-body-secondary border">5. Cicilan & autodebet</span></div>
+<div class="alert alert-info d-flex gap-2 py-2 mb-4"><i class="bi bi-info-circle"></i><div class="small"><strong>Langkah 9:</strong> bendahara melihat informasi pada dashboard, menyiapkan dana untuk pencairan dan mengunggah bukti transaksi pencairan. Setelah dicairkan, kartu piutang anggota otomatis terbentuk.</div></div>
+<div class="row g-3 mb-4"><div class="col-sm-6 col-xl-3">
+  <div class="card h-100">
+    <div class="card-body">
+      <div class="d-flex justify-content-between align-items-start gap-2">
+        <div>
+          <div class="text-body-secondary text-uppercase fw-semibold small">Siap dicairkan</div>
+          <div class="fs-4 fw-bold mt-1">4 pinjaman</div>
+          <div class="small text-body-secondary mt-1">nilai Rp 149.500.000</div>
+        </div>
+        <i class="bi bi-hourglass-split fs-3 text-warning"></i>
+      </div>
+    </div>
+  </div>
+</div><div class="col-sm-6 col-xl-3">
+  <div class="card h-100">
+    <div class="card-body">
+      <div class="d-flex justify-content-between align-items-start gap-2">
+        <div>
+          <div class="text-body-secondary text-uppercase fw-semibold small">Kas tersedia</div>
+          <div class="fs-4 fw-bold mt-1">Rp 412.750.000</div>
+          <div class="small text-body-secondary mt-1">setelah komitmen lain Rp 263.250.000</div>
+        </div>
+        <i class="bi bi-safe2 fs-3 text-success"></i>
+      </div>
+    </div>
+  </div>
+</div><div class="col-sm-6 col-xl-3">
+  <div class="card h-100">
+    <div class="card-body">
+      <div class="d-flex justify-content-between align-items-start gap-2">
+        <div>
+          <div class="text-body-secondary text-uppercase fw-semibold small">Dicairkan bulan ini</div>
+          <div class="fs-4 fw-bold mt-1">Rp 45.200.000</div>
+          <div class="small text-body-secondary mt-1">4 pinjaman &middot; Oktober 2026</div>
+        </div>
+        <i class="bi bi-cash-coin fs-3 text-primary"></i>
+      </div>
+    </div>
+  </div>
+</div><div class="col-sm-6 col-xl-3">
+  <div class="card h-100">
+    <div class="card-body">
+      <div class="d-flex justify-content-between align-items-start gap-2">
+        <div>
+          <div class="text-body-secondary text-uppercase fw-semibold small">Bukti transaksi belum lengkap</div>
+          <div class="fs-4 fw-bold mt-1">1 pinjaman</div>
+          <div class="small text-body-secondary mt-1">wajib dilengkapi sebelum tutup buku</div>
+        </div>
+        <i class="bi bi-file-earmark-x fs-3 text-danger"></i>
+      </div>
+    </div>
+  </div>
+</div></div>
+<div class="row g-4">
+  <div class="col-12">
+    <div class="card mb-4"><div class="card-header bg-body-tertiary d-flex justify-content-between align-items-center flex-wrap gap-2"><div><h2 class="h6 fw-bold mb-0">Pinjaman disetujui &mdash; antrian pencairan</h2><div class="small text-body-secondary">Hanya pinjaman berstatus Disetujui yang muncul di antrian ini</div></div><div class="d-flex flex-wrap gap-2"></div></div><div class="card-body "><div class="table-responsive"><table class="table table-sm table-hover align-middle mb-0"><thead class="table-light"><tr><th scope='col'>No. pinjaman</th><th scope='col'>Anggota</th><th scope='col'>No. anggota</th><th scope='col'>Pokok</th><th scope='col'>Tanggal disetujui</th><th scope='col'>Sifat bayar</th><th scope='col'>Rekening pencairan</th><th scope='col'>Kelengkapan</th><th scope='col'>Status</th><th scope='col'>Aksi</th></tr></thead><tbody><tr><td>PJM-2026-0034</td><td>Ahmad Fauzi</td><td>AG-0117</td><td>Rp 5.000.000</td><td>05 Okt 2026</td><td>Bayar bulanan</td><td>Transfer &mdash; BRI 0021 3344 55</td><td>Bukti belum diunggah</td><td><span class="badge rounded-pill text-bg-warning">Siap dicairkan</span></td><td><a class="btn btn-sm btn-primary" href="#formcair">Siapkan dana</a></td></tr><tr><td>PJM-2026-0035</td><td>Ratna Kusumawati</td><td>AG-0231</td><td>Rp 120.000.000</td><td>05 Okt 2026</td><td>Autodebet</td><td>Transfer &mdash; BSI 7100 3344 2</td><td>Kolateral BPKB diterima</td><td><span class="badge rounded-pill text-bg-info">Menunggu pencairan bank</span></td><td><a class="btn btn-sm btn-outline-primary" href="#formcair">Lihat</a></td></tr><tr><td>PJM-2026-0036</td><td>Dewi Lestari</td><td>AG-0264</td><td>Rp 15.000.000</td><td>04 Okt 2026</td><td>Autodebet</td><td>Transfer &mdash; BSI 7100 5566 1</td><td>Bukti terunggah</td><td><span class="badge rounded-pill text-bg-warning">Siap dicairkan</span></td><td><a class="btn btn-sm btn-primary" href="#formcair">Siapkan dana</a></td></tr><tr><td>PJM-2026-0033</td><td>Dewi Lestari</td><td>AG-0264</td><td>Rp 9.500.000</td><td>01 Okt 2026</td><td>Autodebet</td><td>Transfer &mdash; BSI 7100 5566 1</td><td>PC-2026-0033 &middot; sudah dicairkan</td><td><span class="badge rounded-pill text-bg-dark">Dicairkan</span></td><td><a class="btn btn-sm btn-outline-secondary" href="#">Bukti</a></td></tr></tbody><tfoot class="table-group-divider table-light">Pencairan hanya boleh dilakukan setelah ketua menyetujui dan bukti transfer pencairan diunggah sebagai bukti transaksi.</tfoot></table></div></div></div>
+  </div>
+  <div class="col-xl-8">
+    <div id="formcair"></div>
+    <div class="card mb-4"><div class="card-header bg-body-tertiary d-flex justify-content-between align-items-center flex-wrap gap-2"><div><h2 class="h6 fw-bold mb-0">Form penyiapan dana &amp; pencairan</h2><div class="small text-body-secondary">Langkah 9 &mdash; siapkan dana dan bukti transaksi</div></div><div class="d-flex flex-wrap gap-2"></div></div><div class="card-body "><form class="row g-3">
+  <div class="col-md-6">
+    <label class="form-label" for="nopjm">Pinjaman yang akan dicairkan</label>
+    <select class="form-select" id="nopjm">
+      <option selected>PJM-2026-0034 &mdash; Ahmad Fauzi (AG-0117) &mdash; Rp 5.000.000</option>
+      <option>PJM-2026-0036 &mdash; Dewi Lestari (AG-0264) &mdash; Rp 15.000.000</option>
+      <option>PJM-2026-0035 &mdash; Ratna Kusumawati (AG-0231) &mdash; Rp 120.000.000</option>
+    </select>
+  </div>
+  <div class="col-md-3">
+    <label class="form-label" for="tglcair">Tanggal pencairan</label>
+    <input type="date" class="form-control" id="tglcair" value="2026-10-10">
+  </div>
+  <div class="col-md-3">
+    <label class="form-label" for="nobukti">Nomor bukti transaksi</label>
+    <input type="text" class="form-control" id="nobukti" value="PC-2026-0034" readonly>
+  </div>
+  <div class="col-md-4">
+    <label class="form-label" for="sumber">Sumber dana</label>
+    <select class="form-select" id="sumber">
+      <option selected>Kas koperasi</option>
+      <option>Simpanan anggota (revolving)</option>
+      <option>Dana pinjaman bank</option>
+      <option>Kas unit usaha</option>
+    </select>
+  </div>
+  <div class="col-md-4">
+    <label class="form-label" for="metode">Metode pencairan</label>
+    <select class="form-select" id="metode">
+      <option selected>Transfer bank ke rekening anggota</option>
+      <option>Tunai di kasir koperasi</option>
+      <option>Transfer ke rekening pihak ketiga (vendor/penyedia)</option>
+    </select>
+  </div>
+  <div class="col-md-4">
+    <label class="form-label" for="rek">Rekening penerima</label>
+    <input type="text" class="form-control" id="rek" value="BRI 0021 3344 55 a.n. Ahmad Fauzi">
+  </div>
+  <div class="col-md-4">
+    <label class="form-label" for="adm">Biaya administrasi (0,5% dari pokok)</label>
+    <div class="input-group">
+      <span class="input-group-text">Rp</span>
+      <input type="number" class="form-control" id="adm" value="25000" readonly>
+    </div>
+  </div>
+  <div class="col-md-4">
+    <label class="form-label" for="asur">Asuransi / dana risiko</label>
+    <div class="input-group">
+      <span class="input-group-text">Rp</span>
+      <input type="number" class="form-control" id="asur" value="0">
+    </div>
+  </div>
+  <div class="col-md-4">
+    <label class="form-label" for="netto">Dana bersih diterima anggota</label>
+    <div class="input-group">
+      <span class="input-group-text">Rp</span>
+      <input type="number" class="form-control" id="netto" value="4975000" readonly>
+    </div>
+  </div>
+  <div class="col-md-6">
+    <label class="form-label" for="bukti">Bukti transaksi pencairan (transfer/slip)</label>
+    <input type="file" class="form-control" id="bukti">
+    <div class="form-text">Wajib diunggah agar kartu piutang dan jurnal kas dapat diverifikasi pengawas.</div>
+  </div>
+  <div class="col-md-6">
+    <label class="form-label" for="perjanjian">Perjanjian pinjaman &amp; form autodebet</label>
+    <input type="file" class="form-control" id="perjanjian" multiple>
+  </div>
+  <div class="col-12">
+    <label class="form-label" for="catcair">Catatan pencairan</label>
+    <textarea class="form-control" id="catcair" rows="2">Dana ditransfer sesuai permintaan anggota. Angsuran pertama
+jatuh pada 10 November 2026 melalui autodebet.</textarea>
+  </div>
+  <div class="col-12">
+    <div class="form-check mb-2">
+      <input class="form-check-input" type="checkbox" id="c1" checked>
+      <label class="form-check-label" for="c1">Perjanjian pinjaman sudah ditandatangani anggota dan ketua.</label>
+    </div>
+    <div class="form-check">
+      <input class="form-check-input" type="checkbox" id="c2" checked>
+      <label class="form-check-label" for="c2">Form kesediaan autodebet sudah diterima bank.</label>
+    </div>
+  </div>
+  <div class="col-12 d-flex flex-wrap gap-2">
+    <button class="btn btn-primary" type="button" data-bs-toggle="modal" data-bs-target="#modalCair">
+      <i class="bi bi-cash-coin"></i> Cairkan &amp; catat jurnal</button>
+    <button class="btn btn-outline-secondary" type="button">Simpan sebagai draft pencairan</button>
+    <a class="btn btn-link" href="pengajuan.html">Kembali ke verifikasi</a>
+  </div>
+</form></div></div>
+  </div>
+  <div class="col-xl-4">
+    <div class="card mb-4"><div class="card-header bg-body-tertiary d-flex justify-content-between align-items-center flex-wrap gap-2"><div><h2 class="h6 fw-bold mb-0">Ringkasan pencairan terpilih</h2></div><div class="d-flex flex-wrap gap-2"></div></div><div class="card-body "><dl class="row g-0 mb-0"><dt class="col-sm-4 col-lg-3 fw-normal text-body-secondary py-2 border-bottom">Anggota</dt><dd class="col-sm-8 col-lg-9 py-2 mb-0 border-bottom">Ahmad Fauzi (AG-0117)</dd><dt class="col-sm-4 col-lg-3 fw-normal text-body-secondary py-2 border-bottom">Pokok disetujui</dt><dd class="col-sm-8 col-lg-9 py-2 mb-0 border-bottom">Rp 5.000.000</dd><dt class="col-sm-4 col-lg-3 fw-normal text-body-secondary py-2 border-bottom">Biaya administrasi</dt><dd class="col-sm-8 col-lg-9 py-2 mb-0 border-bottom">Rp 25.000</dd><dt class="col-sm-4 col-lg-3 fw-normal text-body-secondary py-2 border-bottom">Dana bersih</dt><dd class="col-sm-8 col-lg-9 py-2 mb-0 border-bottom">Rp 4.975.000</dd><dt class="col-sm-4 col-lg-3 fw-normal text-body-secondary py-2 border-bottom">Cicilan pertama</dt><dd class="col-sm-8 col-lg-9 py-2 mb-0 border-bottom">10 Nov 2026 &middot; Rp 545.000</dd><dt class="col-sm-4 col-lg-3 fw-normal text-body-secondary py-2 border-bottom">Tenor</dt><dd class="col-sm-8 col-lg-9 py-2 mb-0 border-bottom">10 bulan &middot; bunga tetap 0,90%/bln</dd></dl></div></div>
+    <div class="card mb-4"><div class="card-header bg-body-tertiary d-flex justify-content-between align-items-center flex-wrap gap-2"><div><h2 class="h6 fw-bold mb-0">Ceklis sebelum mencairkan</h2></div><div class="d-flex flex-wrap gap-2"></div></div><div class="card-body "><ul class="list-group list-group-flush small">
+        <li class="list-group-item d-flex justify-content-between px-0">Persetujuan ketua
+          <span class="badge text-bg-success">Ada</span></li>
+        <li class="list-group-item d-flex justify-content-between px-0">Kelengkapan dokumen
+          <span class="badge text-bg-success">6/6</span></li>
+        <li class="list-group-item d-flex justify-content-between px-0">Ketersediaan kas
+          <span class="badge text-bg-success">Cukup</span></li>
+        <li class="list-group-item d-flex justify-content-between px-0">Perjanjian ditandatangani
+          <span class="badge text-bg-warning">Menunggu unggah</span></li>
+        <li class="list-group-item d-flex justify-content-between px-0">Bukti transfer
+          <span class="badge text-bg-warning">Menunggu unggah</span></li>
+      </ul></div></div>
+  </div>
+  <div class="col-12">
+    <div class="card mb-4"><div class="card-header bg-body-tertiary d-flex justify-content-between align-items-center flex-wrap gap-2"><div><h2 class="h6 fw-bold mb-0">Riwayat pencairan terakhir</h2></div><div class="d-flex flex-wrap gap-2"></div></div><div class="card-body "><div class="table-responsive"><table class="table table-sm table-hover align-middle mb-0"><thead class="table-light"><tr><th scope='col'>Tanggal</th><th scope='col'>No. bukti</th><th scope='col'>Anggota</th><th scope='col'>Pokok</th><th scope='col'>Sumber dana</th><th scope='col'>Bukti transaksi</th><th scope='col'>Status</th></tr></thead><tbody><tr><td>09 Okt 2026</td><td>PC-2026-0033</td><td>Dewi Lestari</td><td>Rp 9.500.000</td><td>Kas koperasi</td><td><a href="#">slip_transfer.pdf</a></td><td><span class="badge rounded-pill text-bg-dark">Dicairkan</span></td></tr><tr><td>08 Okt 2026</td><td>PC-2026-0032</td><td>Ahmad Fauzi</td><td>Rp 4.800.000</td><td>Kas koperasi</td><td><a href="#">slip_transfer.pdf</a></td><td><span class="badge rounded-pill text-bg-dark">Dicairkan</span></td></tr><tr><td>02 Okt 2026</td><td>PC-2026-0031</td><td>Budi Santoso</td><td>Rp 25.000.000</td><td>Simpanan anggota</td><td><a href="#">slip_transfer.pdf</a></td><td><span class="badge rounded-pill text-bg-dark">Dicairkan</span></td></tr></tbody><tfoot class="table-group-divider table-light">Total pencairan bulan ini: Rp 45.200.000 (4 pinjaman).</tfoot></table></div></div></div>
+  </div>
+</div>
+</main>
+<footer class="border-top bg-body py-4 mt-5">
+  <div class="container-xxl small text-body-secondary d-flex justify-content-between flex-wrap gap-2">
+    <span><i class="bi bi-bank2"></i> KSU Mitra Sejahtera — Modul Simpan Pinjam (wireframe statis)</span>
+    <span>Bootstrap 5.3 · tanpa backend · data dummy untuk diskusi dengan programmer</span>
+  </div>
+</footer>
+<div class="modal fade" id="modalCair" tabindex="-1" aria-labelledby="modalCairLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="modalCairLabel">Konfirmasi pencairan dana</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Tutup"></button>
+      </div>
+      <div class="modal-body">
+        <p class="small mb-2">Anda akan mencairkan <strong>Rp 5.000.000</strong> kepada Ahmad Fauzi (AG-0117)
+          melalui transfer BRI.</p>
+        <ul class="small">
+          <li>Nomor bukti transaksi: <code>PC-2026-0034</code></li>
+          <li>Kartu piutang anggota otomatis dibuat dengan 10 cicilan &times; Rp 545.000.</li>
+          <li>Status pengajuan berubah menjadi <em>Dicairkan</em> dan terlihat oleh pengawas.</li>
+        </ul>
+        <div class="alert alert-warning small py-2 mb-0">
+          <i class="bi bi-exclamation-triangle"></i> Pastikan bukti transfer sudah diunggah sebelum menekan Cairkan.
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Batal</button>
+        <a class="btn btn-primary" href="pencairan.html">Cairkan sekarang</a>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

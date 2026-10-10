@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="id" data-bs-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Dashboard Pengawasan · Pengawas Koperasi · KSU Mitra Sejahtera</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+</head>
+<body class="bg-body-tertiary">
+<nav class="navbar navbar-expand-lg bg-secondary border-bottom" data-bs-theme="dark">
+  <div class="container-xxl">
+    <a class="navbar-brand d-flex align-items-center gap-2" href="../index.html">
+      <i class="bi bi-bank2"></i><span class="fw-semibold">KSU Mitra Sejahtera</span>
+    </a>
+    <span class="badge text-bg-light d-none d-xl-inline">Ruang Pengawas</span>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navUtama"
+            aria-controls="navUtama" aria-expanded="false" aria-label="Buka navigasi">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navUtama">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0"><li class="nav-item"><a class="nav-link active fw-semibold" href="dashboard.html">Dashboard Pengawasan</a></li><li class="nav-item"><a class="nav-link" href="daftar-peminjam.html">Daftar Peminjam</a></li><li class="nav-item"><a class="nav-link" href="pencairan.html">Monitoring Pencairan</a></li></ul>
+      <ul class="navbar-nav">
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <i class="bi bi-person-circle"></i> Prof. Anwar Makmur
+          </a>
+          <ul class="dropdown-menu dropdown-menu-end">
+            <li><h6 class="dropdown-header">Pengawas Koperasi</h6></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><h6 class="dropdown-header">Pindah role (wireframe)</h6></li>
+            <li><a class="dropdown-item" href="../anggota/dashboard.html">Anggota</a></li><li><a class="dropdown-item" href="../admin/dashboard.html">Admin Koperasi / Bendahara</a></li><li><a class="dropdown-item" href="../ketua/dashboard.html">Ketua Koperasi</a></li><li><a class="dropdown-item active" href="dashboard.html">Pengawas Koperasi</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="../index.html"><i class="bi bi-diagram-3"></i> Peta alur sistem</a></li>
+            <li><a class="dropdown-item" href="#"><i class="bi bi-box-arrow-right"></i> Keluar</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<main class="container-xxl py-4">
+<nav aria-label="breadcrumb"><ol class="breadcrumb small mb-2"><li class="breadcrumb-item"><a href="dashboard.html">Ruang Pengawas</a></li><li class="breadcrumb-item active">Dashboard</li></ol></nav>
+  <div class="d-flex justify-content-between align-items-start flex-wrap gap-3 mb-3">
+    <div>
+      <h1 class="h4 fw-bold mb-1">Dashboard Pengawasan</h1>
+      <div class="d-flex flex-wrap align-items-center gap-2">
+        <span class="badge text-bg-secondary">Pengawas Koperasi</span>
+        <span class="badge text-info-emphasis bg-info-subtle border border-info-subtle">Wireframe · Langkah 12</span>
+        <span class="small text-body-secondary">Pengawasan portofolio pinjaman, pencairan, dan kepatuhan prosedur</span>
+      </div>
+    </div>
+    <div class="d-flex flex-wrap gap-2"><a class="btn btn-primary" href="daftar-peminjam.html"><i class="bi bi-table"></i> Daftar peminjam</a></div>
+  </div>
+
+<div class="row g-3 mb-4"><div class="col-sm-6 col-xl-3">
+  <div class="card h-100">
+    <div class="card-body">
+      <div class="d-flex justify-content-between align-items-start gap-2">
+        <div>
+          <div class="text-body-secondary text-uppercase fw-semibold small">Pinjaman aktif diawasi</div>
+          <div class="fs-4 fw-bold mt-1">214 pinjaman</div>
+          <div class="small text-body-secondary mt-1">outstanding Rp 1.245.600.000</div>
+        </div>
+        <i class="bi bi-journal-check fs-3 text-primary"></i>
+      </div>
+    </div>
+  </div>
+</div><div class="col-sm-6 col-xl-3">
+  <div class="card h-100">
+    <div class="card-body">
+      <div class="d-flex justify-content-between align-items-start gap-2">
+        <div>
+          <div class="text-body-secondary text-uppercase fw-semibold small">Piutang macet</div>
+          <div class="fs-4 fw-bold mt-1">Rp 18.400.000</div>
+          <div class="small text-body-secondary mt-1">1,48% dari total piutang</div>
+        </div>
+        <i class="bi bi-graph-down fs-3 text-warning"></i>
+      </div>
+    </div>
+  </div>
+</div><div class="col-sm-6 col-xl-3">
+  <div class="card h-100">
+    <div class="card-body">
+      <div class="d-flex justify-content-between align-items-start gap-2">
+        <div>
+          <div class="text-body-secondary text-uppercase fw-semibold small">Autodebet gagal</div>
+          <div class="fs-4 fw-bold mt-1">7 anggota</div>
+          <div class="small text-body-secondary mt-1">nominal Rp 9.240.000</div>
+        </div>
+        <i class="bi bi-x-circle fs-3 text-danger"></i>
+      </div>
+    </div>
+  </div>
+</div><div class="col-sm-6 col-xl-3">
+  <div class="card h-100">
+    <div class="card-body">
+      <div class="d-flex justify-content-between align-items-start gap-2">
+        <div>
+          <div class="text-body-secondary text-uppercase fw-semibold small">Perubahan parameter (bulan ini)</div>
+          <div class="fs-4 fw-bold mt-1">2 perubahan</div>
+          <div class="small text-body-secondary mt-1">bunga efektif &amp; penalti lunas dini</div>
+        </div>
+        <i class="bi bi-sliders fs-3 text-info"></i>
+      </div>
+    </div>
+  </div>
+</div></div>
+<div class="row g-4">
+  <div class="col-xl-8">
+    <div class="card mb-4"><div class="card-header bg-body-tertiary d-flex justify-content-between align-items-center flex-wrap gap-2"><div><h2 class="h6 fw-bold mb-0">Temuan &amp; rekomendasi pengawasan</h2><div class="small text-body-secondary">Hasil pengawasan atas proses simpan pinjam bulan ini</div></div><div class="d-flex flex-wrap gap-2"><button class="btn btn-sm btn-outline-secondary" type="button">Cetak laporan pengawasan</button></div></div><div class="card-body "><div class="table-responsive"><table class="table table-sm table-hover align-middle mb-0"><thead class="table-light"><tr><th scope='col'>No.</th><th scope='col'>Temuan pengawasan</th><th scope='col'>Risiko</th><th scope='col'>Rekomendasi pengawas</th><th scope='col'>Status</th></tr></thead><tbody><tr><td>1</td><td>7 anggota autodebet gagal belum seluruhnya ditindaklanjuti (2 dari 7)</td><td><span class="badge rounded-pill text-bg-warning">Sedang</span></td><td>Minta laporan tindak lanjut mingguan dari bendahara</td><td><span class="badge rounded-pill text-bg-warning">Menunggu Konfirmasi</span></td></tr><tr><td>2</td><td>2 NIK pada berkas autodebet bank tidak cocok dengan data anggota</td><td><span class="badge rounded-pill text-bg-warning">Sedang</span></td><td>Perbaiki data anggota &amp; verifikasi ulang NIK</td><td><span class="badge rounded-pill text-bg-warning">Menunggu Konfirmasi</span></td></tr><tr><td>3</td><td>Bukti transaksi pencairan PC-2026-0030 belum diunggah</td><td><span class="badge rounded-pill text-bg-danger">Tinggi</span></td><td>Lengkapi bukti sebelum tutup buku bulan ini</td><td><span class="badge rounded-pill text-bg-warning">Menunggu Konfirmasi</span></td></tr><tr><td>4</td><td>Bunga efektif naik dari 1,05% menjadi 1,10%/bulan pada 01 Okt 2026</td><td><span class="badge rounded-pill text-bg-secondary">Rendah</span></td><td>Pastikan sosialisasi ke anggota &amp; simulasi baru memakai tarif terbaru</td><td><span class="badge rounded-pill text-bg-success">Diterima</span></td></tr><tr><td>5</td><td>Kas koperasi setelah seluruh komitmen Rp 263.250.000</td><td><span class="badge rounded-pill text-bg-secondary">Rendah</span></td><td>Pantau agar tetap di atas kas minimum Rp 150.000.000</td><td><span class="badge rounded-pill text-bg-success">Diterima</span></td></tr></tbody></table></div></div></div>
+    <div class="card mb-4"><div class="card-header bg-body-tertiary d-flex justify-content-between align-items-center flex-wrap gap-2"><div><h2 class="h6 fw-bold mb-0">Jejak audit aktivitas koperasi</h2><div class="small text-body-secondary">Pengawas memverifikasi setiap langkah: simulasi, verifikasi, persetujuan, pencairan, autodebet</div></div><div class="d-flex flex-wrap gap-2"></div></div><div class="card-body "><div class="table-responsive"><table class="table table-sm table-hover align-middle mb-0"><thead class="table-light"><tr><th scope='col'>Waktu</th><th scope='col'>Objek audit</th><th scope='col'>Aktivitas</th><th scope='col'>Pelaku</th><th scope='col'>Hasil</th></tr></thead><tbody><tr><td>10 Okt 2026 09:15</td><td>File autodebet Okt 2026</td><td>Upload 214 baris berkas bank</td><td>S. Rahmawati</td><td><span class="badge rounded-pill text-bg-warning">214 baris, 7 gagal</span></td></tr><tr><td>09 Okt 2026 16:40</td><td>Rekomendasi PGJ-2026-0088</td><td>Pengiriman rekomendasi ke ketua</td><td>S. Rahmawati</td><td><span class="badge rounded-pill text-bg-success">Sesuai prosedur</span></td></tr><tr><td>09 Okt 2026 14:05</td><td>Pencairan PJM-2026-0033</td><td>Pencairan Rp 9,5 jt + bukti transfer</td><td>S. Rahmawati</td><td><span class="badge rounded-pill text-bg-success">Bukti lengkap</span></td></tr><tr><td>01 Okt 2026 09:10</td><td>Parameter bunga &amp; penalti</td><td>Perubahan parameter produk</td><td>S. Rahmawati</td><td><span class="badge rounded-pill text-bg-success">Ada SK pengurus</span></td></tr></tbody></table></div></div></div>
+  </div>
+  <div class="col-xl-4">
+    <div class="card mb-4"><div class="card-header bg-body-tertiary d-flex justify-content-between align-items-center flex-wrap gap-2"><div><h2 class="h6 fw-bold mb-0">Kualitas portofolio pinjaman</h2><div class="small text-body-secondary">Klasifikasi kolektibilitas 214 pinjaman aktif</div></div><div class="d-flex flex-wrap gap-2"></div></div><div class="card-body "><div class="d-flex align-items-center gap-2 mb-2"><div class="small text-body-secondary text-nowrap">Lancar</div><div class="progress flex-fill" role="progressbar" aria-label="Lancar" aria-valuenow="96" aria-valuemin="0" aria-valuemax="100" ><div class="progress-bar w-95 bg-primary">205 pinjaman</div></div></div><div class="d-flex align-items-center gap-2 mb-2"><div class="small text-body-secondary text-nowrap">Perhatian khusus</div><div class="progress flex-fill" role="progressbar" aria-label="Perhatian khusus" aria-valuenow="3" aria-valuemin="0" aria-valuemax="100" ><div class="progress-bar w-5 bg-primary">7 pinjaman</div></div></div><div class="d-flex align-items-center gap-2 mb-2"><div class="small text-body-secondary text-nowrap">Kurang lancar</div><div class="progress flex-fill" role="progressbar" aria-label="Kurang lancar" aria-valuenow="1" aria-valuemin="0" aria-valuemax="100" ><div class="progress-bar w-5 bg-primary">2 pinjaman</div></div></div></div></div>
+    <div class="card mb-4"><div class="card-header bg-body-tertiary d-flex justify-content-between align-items-center flex-wrap gap-2"><div><h2 class="h6 fw-bold mb-0">Ringkasan keuangan yang diawasi</h2></div><div class="d-flex flex-wrap gap-2"></div></div><div class="card-body "><dl class="row g-0 mb-0"><dt class="col-sm-4 col-lg-3 fw-normal text-body-secondary py-2 border-bottom">Kas koperasi</dt><dd class="col-sm-8 col-lg-9 py-2 mb-0 border-bottom">Rp 412.750.000</dd><dt class="col-sm-4 col-lg-3 fw-normal text-body-secondary py-2 border-bottom">Kas terikat</dt><dd class="col-sm-8 col-lg-9 py-2 mb-0 border-bottom">Rp 75.000.000</dd><dt class="col-sm-4 col-lg-3 fw-normal text-body-secondary py-2 border-bottom">Piutang berjalan</dt><dd class="col-sm-8 col-lg-9 py-2 mb-0 border-bottom">Rp 1.245.600.000</dd><dt class="col-sm-4 col-lg-3 fw-normal text-body-secondary py-2 border-bottom">Piutang macet</dt><dd class="col-sm-8 col-lg-9 py-2 mb-0 border-bottom">Rp 18.400.000</dd><dt class="col-sm-4 col-lg-3 fw-normal text-body-secondary py-2 border-bottom">Simpanan anggota</dt><dd class="col-sm-8 col-lg-9 py-2 mb-0 border-bottom">Rp 1.780.400.000</dd><dt class="col-sm-4 col-lg-3 fw-normal text-body-secondary py-2 border-bottom">Dana disalurkan bulan ini</dt><dd class="col-sm-8 col-lg-9 py-2 mb-0 border-bottom">Rp 45.200.000</dd></dl></div></div>
+    <div class="card mb-4"><div class="card-header bg-body-tertiary d-flex justify-content-between align-items-center flex-wrap gap-2"><div><h2 class="h6 fw-bold mb-0">Akses pengawas</h2></div><div class="d-flex flex-wrap gap-2"></div></div><div class="card-body "><p class="small mb-2">Pengawas bersifat <strong>read-only</strong> &mdash; tidak mengubah transaksi, "
+      "tetapi dapat:</p>
+      <ul class="ps-3 mb-0 small">
+        <li>Melihat daftar peminjam &amp; informasi peminjaman yang dicairkan (Langkah 12).</li>
+        <li>Membuka kartu piutang tiap anggota.</li>
+        <li>Menelusuri perubahan parameter &amp; jejak audit.</li>
+        <li>Mengunduh laporan untuk rapat pengurus.</li>
+      </ul></div></div>
+  </div>
+</div>
+</main>
+<footer class="border-top bg-body py-4 mt-5">
+  <div class="container-xxl small text-body-secondary d-flex justify-content-between flex-wrap gap-2">
+    <span><i class="bi bi-bank2"></i> KSU Mitra Sejahtera — Modul Simpan Pinjam (wireframe statis)</span>
+    <span>Bootstrap 5.3 · tanpa backend · data dummy untuk diskusi dengan programmer</span>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

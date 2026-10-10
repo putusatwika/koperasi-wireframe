@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="id" data-bs-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Modul Simpan Pinjam — Wireframe UI · KSU Mitra Sejahtera</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+</head>
+<body class="bg-body-tertiary">
+<nav class="navbar navbar-expand-lg bg-dark border-bottom" data-bs-theme="dark">
+  <div class="container-xxl">
+    <a class="navbar-brand d-flex align-items-center gap-2" href="index.html">
+      <i class="bi bi-bank2"></i><span class="fw-semibold">KSU Mitra Sejahtera</span>
+    </a>
+    <span class="badge text-bg-light d-none d-xl-inline">Modul Simpan Pinjam — Wireframe</span>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navIndex"
+            aria-controls="navIndex" aria-expanded="false" aria-label="Buka navigasi">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navIndex">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link" href="anggota/dashboard.html">Anggota</a></li>
+        <li class="nav-item"><a class="nav-link" href="admin/dashboard.html">Admin / Bendahara</a></li>
+        <li class="nav-item"><a class="nav-link" href="ketua/dashboard.html">Ketua</a></li>
+        <li class="nav-item"><a class="nav-link" href="pengawas/dashboard.html">Pengawas</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<main class="container-xxl py-4">
+  <h1 class="h3 fw-bold mb-2">Wireframe UI — Modul Kegiatan Simpan Pinjam</h1>
+  <p class="text-body-secondary mb-4">
+    Koperasi Serba Usaha Mitra Sejahtera &middot; dokumen kerja untuk diskusi dengan programmer.
+    Semua halaman statis (tanpa backend), memakai <strong>Bootstrap 5.3</strong> lewat CDN tanpa CSS/JS kustom,
+    dan diisi data dummy agar alurnya mudah dipahami.
+  </p>
+  <div class="alert alert-info d-flex gap-2">
+    <i class="bi bi-signpost-split"></i>
+    <div class="small">
+      Cara memakai: buka <code>index.html</code> ini di browser, lalu masuk ke dashboard tiap role melalui menu di
+      atas (ada juga menu <em>Pindah role</em> pada navbar tiap halaman). Empat role: anggota, admin koperasi
+      (bendahara), ketua, dan pengawas koperasi.
+    </div>
+  </div>
+  <h2 class="h5 fw-bold mb-3">1. Peta alur sistem (12 langkah koperasi + mekanisme autodebet)</h2>
+  <div class="table-responsive"><table class="table table-sm table-hover align-middle mb-0"><thead class="table-light"><tr><th scope='col'>Langkah</th><th scope='col'>Aktivitas pada alur koperasi</th><th scope='col'>Role pemilik layar</th><th scope='col'>Halaman wireframe</th></tr></thead><tbody><tr><td><span class="badge text-bg-primary rounded-pill">1</span></td><td>Anggota meminta simulasi pinjaman (produk, pokok, tenor, metode bunga, keperluan).</td><td>Anggota</td><td><a href="anggota/simulasi-form.html">Form permintaan simulasi</a></td></tr><tr><td><span class="badge text-bg-primary rounded-pill">2</span></td><td>Admin koperasi memproses tabel simulasi: jenis bunga (tetap/menurun/anuitas), tenor, pembayaran bulanan, dan bunga efektif saat ini.</td><td>Admin / Bendahara</td><td><a href="admin/simulasi-masuk.html">Form proses simulasi</a></td></tr><tr><td><span class="badge text-bg-primary rounded-pill">3</span></td><td>Tabel simulasi diserahkan kembali kepada anggota.</td><td>Anggota (diterbitkan bendahara)</td><td><a href="anggota/simulasi-hasil.html">Hasil simulasi + pembanding 3 metode</a></td></tr><tr><td><span class="badge text-bg-primary rounded-pill">4</span></td><td>Anggota mengajukan peminjaman berdasarkan simulasi: keperluan (urgensi), sifat pembayaran (autodebet / bayar per bulan), unggah dokumen. Bendahara men-setup denda &amp; penalti pelunasan dini.</td><td>Anggota + Bendahara</td><td><a href="anggota/pengajuan-form.html">Form pengajuan</a> <a href="admin/parameter.html">Parameter denda &amp; penalti</a></td></tr><tr><td><span class="badge text-bg-primary rounded-pill">5</span></td><td>Bendahara memeriksa kas yang tersedia dan kelengkapan dokumen (form kesediaan autodebet, kolateral BPKB untuk kendaraan, kolateral lain bila ada).</td><td>Admin / Bendahara</td><td><a href="admin/pengajuan.html">Verifikasi kas &amp; dokumen</a></td></tr><tr><td><span class="badge text-bg-primary rounded-pill">6</span></td><td>Berdasarkan hasil pemeriksaan, bendahara merekomendasikan pengajuan kepada ketua koperasi.</td><td>Admin / Bendahara</td><td><a href="admin/rekomendasi.html">Lembar rekomendasi</a></td></tr><tr><td><span class="badge text-bg-primary rounded-pill">7</span></td><td>Ketua melihat tabel peminjam, jumlah kas saat ini, dan urutan berdasarkan prioritas keperluan.</td><td>Ketua</td><td><a href="ketua/daftar-peminjam.html">Daftar peminjam &amp; prioritas</a></td></tr><tr><td><span class="badge text-bg-primary rounded-pill">8</span></td><td>Ketua menyetujui / memberi revisi (terlihat bendahara) / menolak dengan alasan tertentu.</td><td>Ketua</td><td><a href="ketua/persetujuan.html">Form keputusan</a></td></tr><tr><td><span class="badge text-bg-primary rounded-pill">9</span></td><td>Bendahara melihat dashboard, menyiapkan dana pencairan dan bukti transaksi pencairan.</td><td>Admin / Bendahara</td><td><a href="admin/pencairan.html">Pencairan &amp; bukti transaksi</a></td></tr><tr><td><span class="badge text-bg-primary rounded-pill">10</span></td><td>Anggota menerima pencairan dan melakukan cicilan (autodebet atau bayar per bulan).</td><td>Anggota</td><td><a href="anggota/pinjaman-aktif.html">Cicilan aktif</a></td></tr><tr><td><span class="badge text-bg-primary rounded-pill">11</span></td><td>Anggota melihat status cicilan aktif, history hutang, dan kartu piutang setiap pinjaman (hutang aktif dipisahkan dari yang sudah ditutup).</td><td>Anggota</td><td><a href="anggota/kartu-piutang.html">Kartu piutang</a> <a href="anggota/riwayat.html">Hutang aktif vs ditutup</a></td></tr><tr><td><span class="badge text-bg-primary rounded-pill">12</span></td><td>Pengawas melihat tabel daftar peminjam dan informasi peminjaman yang dicairkan.</td><td>Pengawas</td><td><a href="pengawas/daftar-peminjam.html">Daftar peminjam</a> <a href="pengawas/pencairan.html">Pencairan dicairkan</a></td></tr><tr><td><span class="badge text-bg-primary rounded-pill">13</span></td><td>Mekanisme autodebet tanpa API bank: bendahara mengunggah XLSX dari bank (nama nasabah, NIK, status autodebet); kartu piutang otomatis terupdate; daftar gagal dapat ditindaklanjuti.</td><td>Admin / Bendahara</td><td><a href="admin/autodebet-upload.html">Upload berkas bank</a> <a href="admin/autodebet-gagal.html">Autodebet gagal</a></td></tr></tbody><tfoot class="table-group-divider table-light">Peta ini dipakai saat diskusi dengan programmer: satu langkah bisnis = satu atau lebih layar.</tfoot></table></div>
+  <h2 class="h5 fw-bold mt-5 mb-3">2. Daftar halaman per role</h2>
+  <div class="row g-4"><div class="col-lg-6 col-xxl-3"><div class="card h-100"><div class="card-header bg-primary" data-bs-theme="dark"><span class="fw-semibold text-white">Anggota</span></div><div class="card-body"><p class="small text-body-secondary">Portal Anggota</p><ul class='list-group list-group-flush'><li class="list-group-item"><a href="anggota/dashboard.html">Dashboard</a></li><li class="list-group-item"><a href="anggota/simulasi-form.html">Simulasi Pinjaman</a></li><li class="list-group-item"><a href="anggota/pengajuan-form.html">Ajukan Pinjaman</a></li><li class="list-group-item"><a href="anggota/pengajuan-status.html">Status Pengajuan</a></li><li class="list-group-item"><a href="anggota/pinjaman-aktif.html">Cicilan Aktif</a></li><li class="list-group-item"><a href="anggota/kartu-piutang.html">Kartu Piutang</a></li><li class="list-group-item"><a href="anggota/riwayat.html">Riwayat & Penutupan</a></li></ul></div></div></div><div class="col-lg-6 col-xxl-3"><div class="card h-100"><div class="card-header bg-dark" data-bs-theme="dark"><span class="fw-semibold text-white">Admin Koperasi / Bendahara</span></div><div class="card-body"><p class="small text-body-secondary">Back Office Bendahara</p><ul class='list-group list-group-flush'><li class="list-group-item"><a href="admin/dashboard.html">Dashboard</a></li><li class="list-group-item"><a href="admin/simulasi-masuk.html">Simulasi Masuk</a></li><li class="list-group-item"><a href="admin/pengajuan.html">Verifikasi Pengajuan</a></li><li class="list-group-item"><a href="admin/rekomendasi.html">Rekomendasi ke Ketua</a></li><li class="list-group-item"><a href="admin/pencairan.html">Pencairan Dana</a></li><li class="list-group-item"><a href="admin/autodebet-upload.html">Upload Autodebet</a></li><li class="list-group-item"><a href="admin/autodebet-gagal.html">Autodebet Gagal</a></li><li class="list-group-item"><a href="admin/parameter.html">Parameter Pinjaman</a></li><li class="list-group-item"><a href="admin/anggota.html">Data Anggota</a></li></ul></div></div></div><div class="col-lg-6 col-xxl-3"><div class="card h-100"><div class="card-header bg-success" data-bs-theme="dark"><span class="fw-semibold text-white">Ketua Koperasi</span></div><div class="card-body"><p class="small text-body-secondary">Ruang Ketua</p><ul class='list-group list-group-flush'><li class="list-group-item"><a href="ketua/dashboard.html">Dashboard</a></li><li class="list-group-item"><a href="ketua/daftar-peminjam.html">Daftar Peminjam & Prioritas</a></li><li class="list-group-item"><a href="ketua/persetujuan.html">Persetujuan</a></li><li class="list-group-item"><a href="ketua/pencairan.html">Pencairan</a></li></ul></div></div></div><div class="col-lg-6 col-xxl-3"><div class="card h-100"><div class="card-header bg-secondary" data-bs-theme="dark"><span class="fw-semibold text-white">Pengawas Koperasi</span></div><div class="card-body"><p class="small text-body-secondary">Ruang Pengawas</p><ul class='list-group list-group-flush'><li class="list-group-item"><a href="pengawas/dashboard.html">Dashboard Pengawasan</a></li><li class="list-group-item"><a href="pengawas/daftar-peminjam.html">Daftar Peminjam</a></li><li class="list-group-item"><a href="pengawas/pencairan.html">Monitoring Pencairan</a></li></ul></div></div></div></div>
+  <h2 class="h5 fw-bold mt-5 mb-3">3. Komponen Bootstrap yang dipakai</h2>
+  <div class="table-responsive"><table class="table table-sm table-hover align-middle mb-0"><thead class="table-light"><tr><th scope='col'>Kebutuhan tampilan</th><th scope='col'>Komponen Bootstrap yang dipakai</th></tr></thead><tbody><tr><td>Navigasi per role</td><td>navbar, dropdown, badge</td></tr><tr><td>Ringkasan angka</td><td>card, card-group, ikon Bootstrap Icons</td></tr><tr><td>Tabel data &amp; jadwal angsuran</td><td>table, table-responsive, table-hover, badge status</td></tr><tr><td>Form pengajuan &amp; parameter</td><td>form-control, input-group, form-select, form-check, fieldset</td></tr><tr><td>Unggah dokumen &amp; berkas XLSX</td><td>input type=file, form-text, list-group</td></tr><tr><td>Jejak proses pengajuan</td><td>list-group, badge, nav-tabs (tab bootstrap)</td></tr><tr><td>Detail anggota &amp; konfirmasi</td><td>modal (bawaan Bootstrap, tanpa JS tambahan)</td></tr><tr><td>Visual progres &amp; perbandingan</td><td>progress, ratio (placeholder), alert</td></tr></tbody></table></div>
+  <div class="row g-4 mt-4">
+    <div class="col-lg-6">
+      <div class="card h-100">
+        <div class="card-header bg-body-tertiary"><h3 class="h6 fw-bold mb-0">Catatan teknis untuk programmer</h3></div>
+        <div class="card-body">
+          <ul class="ps-3 mb-0 small">
+            <li>Semua halaman HTML statis: <code>bootstrap@5.3.3</code> (CSS + bundle JS) dan
+              <code>bootstrap-icons</code> dari CDN jsDelivr.</li>
+            <li>Tidak ada CSS kustom, tidak ada JavaScript tambahan &mdash; interaksi memakai komponen bawaan
+              Bootstrap (modal, dropdown, tab, collapse) lewat atribut <code>data-bs-*</code>.</li>
+            <li>Tata letak memakai grid + utility class (row, col, d-flex, gap, table-responsive, ratio).</li>
+            <li>Angka angsuran dihitung nyata (metode flat, menurun, dan anuitas) sehingga konsisten antar halaman
+              dan bisa dipakai programmer sebagai contoh keluaran yang diharapkan.</li>
+            <li>Form belum terhubung ke backend: nilai terisi statis, tombol hanya menggambarkan alur.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-6">
+      <div class="card h-100">
+        <div class="card-header bg-body-tertiary"><h3 class="h6 fw-bold mb-0">Perlu dikonfirmasi ke pengguna</h3></div>
+        <div class="card-body">
+          <ul class="ps-3 mb-0 small">
+            <li>Kriteria <strong>skor prioritas keperluan</strong> untuk ketua (urgensi, tenggat, kolektibilitas).</li>
+            <li>Rumus <strong>denda</strong> dan <strong>penalti pelunasan dipercepat</strong> per jenis pinjaman.</li>
+            <li>Kebijakan <strong>autodebet gagal</strong>: percobaan ulang, batas waktu denda, eskalasi.</li>
+            <li>Apakah pengawas cukup read-only atau perlu fitur catatan temuan yang tersimpan.</li>
+            <li>Format berkas XLSX dari bank (nama kolom &amp; validasi NIK) untuk proses impor.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+<footer class="border-top bg-body py-4 mt-5">
+  <div class="container-xxl small text-body-secondary d-flex justify-content-between flex-wrap gap-2">
+    <span><i class="bi bi-bank2"></i> KSU Mitra Sejahtera &mdash; Modul Simpan Pinjam (wireframe statis)</span>
+    <span>Bootstrap 5.3 &middot; tanpa backend &middot; data dummy</span>
+  </div>
+</footer>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

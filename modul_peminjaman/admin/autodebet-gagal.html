@@ -1,0 +1,220 @@
+<!doctype html>
+<html lang="id" data-bs-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Autodebet Gagal · Admin Koperasi / Bendahara · KSU Mitra Sejahtera</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+</head>
+<body class="bg-body-tertiary">
+<nav class="navbar navbar-expand-lg bg-dark border-bottom" data-bs-theme="dark">
+  <div class="container-xxl">
+    <a class="navbar-brand d-flex align-items-center gap-2" href="../index.html">
+      <i class="bi bi-bank2"></i><span class="fw-semibold">KSU Mitra Sejahtera</span>
+    </a>
+    <span class="badge text-bg-light d-none d-xl-inline">Back Office Bendahara</span>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navUtama"
+            aria-controls="navUtama" aria-expanded="false" aria-label="Buka navigasi">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navUtama">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0"><li class="nav-item"><a class="nav-link" href="dashboard.html">Dashboard</a></li><li class="nav-item"><a class="nav-link" href="simulasi-masuk.html">Simulasi Masuk</a></li><li class="nav-item"><a class="nav-link" href="pengajuan.html">Verifikasi Pengajuan</a></li><li class="nav-item"><a class="nav-link" href="rekomendasi.html">Rekomendasi ke Ketua</a></li><li class="nav-item"><a class="nav-link" href="pencairan.html">Pencairan Dana</a></li><li class="nav-item"><a class="nav-link" href="autodebet-upload.html">Upload Autodebet</a></li><li class="nav-item"><a class="nav-link active fw-semibold" href="autodebet-gagal.html">Autodebet Gagal</a></li><li class="nav-item"><a class="nav-link" href="parameter.html">Parameter Pinjaman</a></li><li class="nav-item"><a class="nav-link" href="anggota.html">Data Anggota</a></li></ul>
+      <ul class="navbar-nav">
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <i class="bi bi-person-circle"></i> Siti Rahmawati
+          </a>
+          <ul class="dropdown-menu dropdown-menu-end">
+            <li><h6 class="dropdown-header">Bendahara Koperasi</h6></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><h6 class="dropdown-header">Pindah role (wireframe)</h6></li>
+            <li><a class="dropdown-item" href="../anggota/dashboard.html">Anggota</a></li><li><a class="dropdown-item active" href="dashboard.html">Admin Koperasi / Bendahara</a></li><li><a class="dropdown-item" href="../ketua/dashboard.html">Ketua Koperasi</a></li><li><a class="dropdown-item" href="../pengawas/dashboard.html">Pengawas Koperasi</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="../index.html"><i class="bi bi-diagram-3"></i> Peta alur sistem</a></li>
+            <li><a class="dropdown-item" href="#"><i class="bi bi-box-arrow-right"></i> Keluar</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<main class="container-xxl py-4">
+<nav aria-label="breadcrumb"><ol class="breadcrumb small mb-2"><li class="breadcrumb-item"><a href="dashboard.html">Back Office Bendahara</a></li><li class="breadcrumb-item active">Autodebet gagal</li></ol></nav>
+  <div class="d-flex justify-content-between align-items-start flex-wrap gap-3 mb-3">
+    <div>
+      <h1 class="h4 fw-bold mb-1">Autodebet Gagal</h1>
+      <div class="d-flex flex-wrap align-items-center gap-2">
+        <span class="badge text-bg-dark">Admin Koperasi / Bendahara</span>
+        <span class="badge text-info-emphasis bg-info-subtle border border-info-subtle">Wireframe · Mekanisme autodebet</span>
+        <span class="small text-body-secondary">Daftar anggota dengan autodebet gagal dan tindak lanjutnya</span>
+      </div>
+    </div>
+    <div class="d-flex flex-wrap gap-2"><a class="btn btn-outline-primary" href="autodebet-upload.html">Upload berkas bank</a></div>
+  </div>
+
+<div class="d-flex flex-wrap align-items-center gap-2 mb-4"><span class="badge rounded-pill border px-3 py-2 fw-normal text-primary-emphasis bg-primary-subtle border border-primary-subtle">1. Permintaan simulasi</span><i class="bi bi-chevron-right small text-body-secondary"></i><span class="badge rounded-pill border px-3 py-2 fw-normal text-primary-emphasis bg-primary-subtle border border-primary-subtle">2. Verifikasi & rekomendasi</span><i class="bi bi-chevron-right small text-body-secondary"></i><span class="badge rounded-pill border px-3 py-2 fw-normal text-primary-emphasis bg-primary-subtle border border-primary-subtle">3. Persetujuan ketua</span><i class="bi bi-chevron-right small text-body-secondary"></i><span class="badge rounded-pill border px-3 py-2 fw-normal text-bg-primary border border-primary">4. Pencairan</span><i class="bi bi-chevron-right small text-body-secondary"></i><span class="badge rounded-pill border px-3 py-2 fw-normal text-body-secondary bg-body-secondary border">5. Cicilan & autodebet</span></div>
+<div class="alert alert-info d-flex gap-2 py-2 mb-4"><i class="bi bi-info-circle"></i><div class="small">Bendahara dapat melihat daftar nama anggota koperasi yang autodebetnya <strong>gagal</strong> dan melihat informasi detail dari anggota tersebut, lengkap dengan pinjaman terkait, tunggakan, dan riwayat autodebet 3 periode terakhir.</div></div>
+<div class="row g-3 mb-4"><div class="col-sm-6 col-xl-3">
+  <div class="card h-100">
+    <div class="card-body">
+      <div class="d-flex justify-content-between align-items-start gap-2">
+        <div>
+          <div class="text-body-secondary text-uppercase fw-semibold small">Anggota autodebet gagal</div>
+          <div class="fs-4 fw-bold mt-1">7 anggota</div>
+          <div class="small text-body-secondary mt-1">periode Oktober 2026</div>
+        </div>
+        <i class="bi bi-person-x fs-3 text-danger"></i>
+      </div>
+    </div>
+  </div>
+</div><div class="col-sm-6 col-xl-3">
+  <div class="card h-100">
+    <div class="card-body">
+      <div class="d-flex justify-content-between align-items-start gap-2">
+        <div>
+          <div class="text-body-secondary text-uppercase fw-semibold small">Nominal gagal tertagih</div>
+          <div class="fs-4 fw-bold mt-1">Rp 9.240.000</div>
+          <div class="small text-body-secondary mt-1">belum masuk kas koperasi</div>
+        </div>
+        <i class="bi bi-cash-stack fs-3 text-warning"></i>
+      </div>
+    </div>
+  </div>
+</div><div class="col-sm-6 col-xl-3">
+  <div class="card h-100">
+    <div class="card-body">
+      <div class="d-flex justify-content-between align-items-start gap-2">
+        <div>
+          <div class="text-body-secondary text-uppercase fw-semibold small">Sudah ditindaklanjuti</div>
+          <div class="fs-4 fw-bold mt-1">2 anggota</div>
+          <div class="small text-body-secondary mt-1">bayar manual terverifikasi</div>
+        </div>
+        <i class="bi bi-check2-circle fs-3 text-success"></i>
+      </div>
+    </div>
+  </div>
+</div><div class="col-sm-6 col-xl-3">
+  <div class="card h-100">
+    <div class="card-body">
+      <div class="d-flex justify-content-between align-items-start gap-2">
+        <div>
+          <div class="text-body-secondary text-uppercase fw-semibold small">Perlu eskalasi</div>
+          <div class="fs-4 fw-bold mt-1">1 anggota</div>
+          <div class="small text-body-secondary mt-1">gagal 2 bulan berturut-turut</div>
+        </div>
+        <i class="bi bi-exclamation-triangle fs-3 text-danger"></i>
+      </div>
+    </div>
+  </div>
+</div></div>
+<div class="row g-4">
+  <div class="col-xl-8">
+    <div class="card mb-4"><div class="card-header bg-body-tertiary d-flex justify-content-between align-items-center flex-wrap gap-2"><div><h2 class="h6 fw-bold mb-0">Daftar autodebet gagal</h2><div class="small text-body-secondary">Klik Detail anggota untuk melihat informasi lengkap dan mencatat tindak lanjut</div></div><div class="d-flex flex-wrap gap-2"><div class="d-flex gap-2"><select class="form-select form-select-sm"><option>Semua periode</option><option>Okt 2026</option><option>Sep 2026</option></select><button class="btn btn-sm btn-outline-secondary" type="button">Ekspor XLSX</button></div></div></div><div class="card-body "><div class="table-responsive"><table class="table table-sm table-hover align-middle mb-0"><thead class="table-light"><tr><th scope='col'>Nama anggota</th><th scope='col'>NIK</th><th scope='col'>No. pinjaman</th><th scope='col'>Nominal gagal</th><th scope='col'>Alasan dari bank</th><th scope='col'>Status tindak lanjut</th><th scope='col'>Aksi</th></tr></thead><tbody><tr><td>Ahmad Fauzi<div class="small text-body-secondary">anggota koperasi aktif</div></td><td><code>7371 0201 0330 0098</code></td><td>PJM-2026-0030</td><td>Rp 1.120.000</td><td>Saldo tidak cukup</td><td><span class="badge rounded-pill text-bg-warning">Belum ditindak</span></td><td><button class="btn btn-sm btn-outline-primary" type="button" data-bs-toggle="modal" data-bs-target="#modalAnggota">Detail anggota</button></td></tr><tr><td>Joko Prasetyo<div class="small text-body-secondary">anggota koperasi aktif</div></td><td><code>7371 0201 0087 0011</code></td><td>PJM-2026-0011</td><td>Rp 1.540.000</td><td>Rekening beku</td><td><span class="badge rounded-pill text-bg-warning">Belum ditindak</span></td><td><button class="btn btn-sm btn-outline-primary" type="button" data-bs-toggle="modal" data-bs-target="#modalAnggota">Detail anggota</button></td></tr><tr><td>Hendra Gunawan<div class="small text-body-secondary">anggota koperasi aktif</div></td><td><code>7371 0201 0512 0088</code></td><td>PJM-2026-0004</td><td>Rp 2.010.000</td><td>Kartu kedaluwarsa</td><td><span class="badge rounded-pill text-bg-warning">Belum ditindak</span></td><td><button class="btn btn-sm btn-outline-primary" type="button" data-bs-toggle="modal" data-bs-target="#modalAnggota">Detail anggota</button></td></tr><tr><td>Nurul Aini<div class="small text-body-secondary">anggota koperasi aktif</div></td><td><code>7371 0201 0076 0009</code></td><td>PJM-2026-0022</td><td>Rp 1.260.000</td><td>Rekening tidak ditemukan</td><td><span class="badge rounded-pill text-bg-warning">Belum ditindak</span></td><td><button class="btn btn-sm btn-outline-primary" type="button" data-bs-toggle="modal" data-bs-target="#modalAnggota">Detail anggota</button></td></tr><tr><td>Rina Marlina<div class="small text-body-secondary">anggota koperasi aktif</div></td><td><code>7371 0201 0665 0031</code></td><td>PJM-2026-0019</td><td>Rp 1.320.000</td><td>Rekening ditutup</td><td><span class="badge rounded-pill text-bg-warning">Belum ditindak</span></td><td><button class="btn btn-sm btn-outline-primary" type="button" data-bs-toggle="modal" data-bs-target="#modalAnggota">Detail anggota</button></td></tr><tr><td>Surya Darma<div class="small text-body-secondary">anggota koperasi aktif</div></td><td><code>7371 0201 0778 0042</code></td><td>PJM-2025-0355</td><td>Rp 2.150.000</td><td>Batas transaksi harian</td><td><span class="badge rounded-pill text-bg-warning">Belum ditindak</span></td><td><button class="btn btn-sm btn-outline-primary" type="button" data-bs-toggle="modal" data-bs-target="#modalAnggota">Detail anggota</button></td></tr><tr><td>Lilis Setiawati<div class="small text-body-secondary">anggota koperasi aktif</div></td><td><code>7371 0201 0899 0013</code></td><td>PJM-2026-0009</td><td>Rp 980.000</td><td>Bank menolak, perlu verifikasi ulang</td><td><span class="badge rounded-pill text-bg-warning">Belum ditindak</span></td><td><button class="btn btn-sm btn-outline-primary" type="button" data-bs-toggle="modal" data-bs-target="#modalAnggota">Detail anggota</button></td></tr></tbody><tfoot class="table-group-divider table-light">Total nominal gagal bulan ini: Rp 9.240.000 dari 7 anggota (data dummy).</tfoot></table></div></div></div>
+  </div>
+  <div class="col-xl-4">
+    <div class="card mb-4"><div class="card-header bg-body-tertiary d-flex justify-content-between align-items-center flex-wrap gap-2"><div><h2 class="h6 fw-bold mb-0">Alasan gagal dari bank</h2></div><div class="d-flex flex-wrap gap-2"></div></div><div class="card-body "><div class="d-flex align-items-center gap-2 mb-2"><div class="small text-body-secondary text-nowrap">Saldo tidak cukup</div><div class="progress flex-fill" role="progressbar" aria-label="Saldo tidak cukup" aria-valuenow="43" aria-valuemin="0" aria-valuemax="100" ><div class="progress-bar w-45 bg-primary">3 anggota</div></div></div><div class="d-flex align-items-center gap-2 mb-2"><div class="small text-body-secondary text-nowrap">Rekening beku/ditutup</div><div class="progress flex-fill" role="progressbar" aria-label="Rekening beku/ditutup" aria-valuenow="29" aria-valuemin="0" aria-valuemax="100" ><div class="progress-bar w-30 bg-primary">2 anggota</div></div></div><div class="d-flex align-items-center gap-2 mb-2"><div class="small text-body-secondary text-nowrap">Kartu kedaluwarsa</div><div class="progress flex-fill" role="progressbar" aria-label="Kartu kedaluwarsa" aria-valuenow="14" aria-valuemin="0" aria-valuemax="100" ><div class="progress-bar w-15 bg-primary">1 anggota</div></div></div><div class="d-flex align-items-center gap-2 mb-2"><div class="small text-body-secondary text-nowrap">Lain-lain</div><div class="progress flex-fill" role="progressbar" aria-label="Lain-lain" aria-valuenow="14" aria-valuemin="0" aria-valuemax="100" ><div class="progress-bar w-15 bg-primary">1 anggota</div></div></div></div></div>
+    <div class="card mb-4"><div class="card-header bg-body-tertiary d-flex justify-content-between align-items-center flex-wrap gap-2"><div><h2 class="h6 fw-bold mb-0">Tindak lanjut yang tercatat</h2></div><div class="d-flex flex-wrap gap-2"></div></div><div class="card-body "><ul class="list-group list-group-flush small">
+        <li class="list-group-item px-0">10 Okt 2026 &mdash; Ahmad Fauzi: dihubungi, akan bayar manual tanggal 12.</li>
+        <li class="list-group-item px-0">10 Okt 2026 &mdash; Joko Prasetyo: rekening beku, mengurus ke bank.</li>
+        <li class="list-group-item px-0">09 Okt 2026 &mdash; Rina Marlina: metode diubah ke bayar per bulan.</li>
+      </ul></div></div>
+  </div>
+</div>
+</main>
+<footer class="border-top bg-body py-4 mt-5">
+  <div class="container-xxl small text-body-secondary d-flex justify-content-between flex-wrap gap-2">
+    <span><i class="bi bi-bank2"></i> KSU Mitra Sejahtera — Modul Simpan Pinjam (wireframe statis)</span>
+    <span>Bootstrap 5.3 · tanpa backend · data dummy untuk diskusi dengan programmer</span>
+  </div>
+</footer>
+<div class="modal fade" id="modalAnggota" tabindex="-1" aria-labelledby="modalAnggotaLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-scrollable">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="modalAnggotaLabel">Detail anggota &mdash; autodebet gagal</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Tutup"></button>
+      </div>
+      <div class="modal-body">
+        <div class="row g-4">
+          <div class="col-lg-6">
+            <h6 class="fw-bold">Identitas anggota</h6>
+            <dl class="row g-0 small mb-0">
+              <dt class="col-5 fw-normal text-body-secondary py-1 border-bottom">Nama</dt>
+              <dd class="col-7 py-1 mb-0 border-bottom">Ahmad Fauzi</dd>
+              <dt class="col-5 fw-normal text-body-secondary py-1 border-bottom">No. anggota</dt>
+              <dd class="col-7 py-1 mb-0 border-bottom">AG-0117</dd>
+              <dt class="col-5 fw-normal text-body-secondary py-1 border-bottom">NIK</dt>
+              <dd class="col-7 py-1 mb-0 border-bottom">7371 0201 0330 0098</dd>
+              <dt class="col-5 fw-normal text-body-secondary py-1 border-bottom">Unit kerja</dt>
+              <dd class="col-7 py-1 mb-0 border-bottom">Bagian Umum</dd>
+              <dt class="col-5 fw-normal text-body-secondary py-1 border-bottom">Telepon</dt>
+              <dd class="col-7 py-1 mb-0 border-bottom">0812-9988-1122</dd>
+              <dt class="col-5 fw-normal text-body-secondary py-1 border-bottom">Rekening autodebet</dt>
+              <dd class="col-7 py-1 mb-0 border-bottom">BRI 0021 3344 55</dd>
+            </dl>
+          </div>
+          <div class="col-lg-6">
+            <h6 class="fw-bold">Pinjaman terkait</h6>
+            <dl class="row g-0 small mb-0">
+              <dt class="col-5 fw-normal text-body-secondary py-1 border-bottom">No. pinjaman</dt>
+              <dd class="col-7 py-1 mb-0 border-bottom">PJM-2026-0030</dd>
+              <dt class="col-5 fw-normal text-body-secondary py-1 border-bottom">Pokok / tenor</dt>
+              <dd class="col-7 py-1 mb-0 border-bottom">Rp 5.000.000 / 10 bulan</dd>
+              <dt class="col-5 fw-normal text-body-secondary py-1 border-bottom">Cicilan ke</dt>
+              <dd class="col-7 py-1 mb-0 border-bottom">7 dari 10</dd>
+              <dt class="col-5 fw-normal text-body-secondary py-1 border-bottom">Tunggakan</dt>
+              <dd class="col-7 py-1 mb-0 border-bottom">Rp 1.120.000 (1 cicilan)</dd>
+              <dt class="col-5 fw-normal text-body-secondary py-1 border-bottom">Denda berjalan</dt>
+              <dd class="col-7 py-1 mb-0 border-bottom">Rp 0 (belum 30 hari)</dd>
+              <dt class="col-5 fw-normal text-body-secondary py-1 border-bottom">Kolektibilitas</dt>
+              <dd class="col-7 py-1 mb-0 border-bottom"><span class="badge text-bg-warning">Dalam perhatian
+                khusus</span></dd>
+            </dl>
+          </div>
+          <div class="col-12">
+            <h6 class="fw-bold">Riwayat autodebet 3 periode terakhir</h6>
+            <div class="table-responsive"><table class="table table-sm mb-0">
+              <thead class="table-light"><tr><th>Periode</th><th>Status</th><th>Keterangan bank</th><th>Tanggal tindak lanjut</th></tr></thead>
+              <tbody>
+                <tr><td>Okt 2026</td><td><span class="badge text-bg-danger">Gagal</span></td><td>Saldo tidak cukup</td><td>Belum</td></tr>
+                <tr><td>Sep 2026</td><td><span class="badge text-bg-success">Berhasil</span></td><td>&mdash;</td><td>&mdash;</td></tr>
+                <tr><td>Agu 2026</td><td><span class="badge text-bg-success">Berhasil</span></td><td>&mdash;</td><td>&mdash;</td></tr>
+              </tbody>
+            </table></div>
+          </div>
+          <div class="col-12">
+            <h6 class="fw-bold">Tindak lanjut bendahara</h6>
+            <div class="row g-3">
+              <div class="col-md-6">
+                <label class="form-label" for="tl">Aksi</label>
+                <select class="form-select" id="tl">
+                  <option selected>Hubungi anggota &amp; minta bayar manual</option>
+                  <option>Jadwalkan ulang autodebet tanggal 20</option>
+                  <option>Ubah metode menjadi bayar per bulan</option>
+                  <option>Kenakan denda sesuai parameter</option>
+                  <option>Kunjungan lapangan (eskalasi)</option>
+                </select>
+              </div>
+              <div class="col-md-6">
+                <label class="form-label" for="tglt">Tanggal tindak lanjut</label>
+                <input type="date" class="form-control" id="tglt" value="2026-10-11">
+              </div>
+              <div class="col-12">
+                <label class="form-label" for="catt">Catatan hasil kontak</label>
+                <textarea class="form-control" id="catt" rows="2"></textarea>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Tutup</button>
+        <button type="button" class="btn btn-primary">Simpan tindak lanjut</button>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="id" data-bs-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Hasil Simulasi Pinjaman · Anggota · KSU Mitra Sejahtera</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+</head>
+<body class="bg-body-tertiary">
+<nav class="navbar navbar-expand-lg bg-primary border-bottom" data-bs-theme="dark">
+  <div class="container-xxl">
+    <a class="navbar-brand d-flex align-items-center gap-2" href="../index.html">
+      <i class="bi bi-bank2"></i><span class="fw-semibold">KSU Mitra Sejahtera</span>
+    </a>
+    <span class="badge text-bg-light d-none d-xl-inline">Portal Anggota</span>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navUtama"
+            aria-controls="navUtama" aria-expanded="false" aria-label="Buka navigasi">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navUtama">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0"><li class="nav-item"><a class="nav-link" href="dashboard.html">Dashboard</a></li><li class="nav-item"><a class="nav-link active fw-semibold" href="simulasi-form.html">Simulasi Pinjaman</a></li><li class="nav-item"><a class="nav-link" href="pengajuan-form.html">Ajukan Pinjaman</a></li><li class="nav-item"><a class="nav-link" href="pengajuan-status.html">Status Pengajuan</a></li><li class="nav-item"><a class="nav-link" href="pinjaman-aktif.html">Cicilan Aktif</a></li><li class="nav-item"><a class="nav-link" href="kartu-piutang.html">Kartu Piutang</a></li><li class="nav-item"><a class="nav-link" href="riwayat.html">Riwayat & Penutupan</a></li></ul>
+      <ul class="navbar-nav">
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <i class="bi bi-person-circle"></i> Budi Santoso
+          </a>
+          <ul class="dropdown-menu dropdown-menu-end">
+            <li><h6 class="dropdown-header">Anggota AG-0142</h6></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><h6 class="dropdown-header">Pindah role (wireframe)</h6></li>
+            <li><a class="dropdown-item active" href="dashboard.html">Anggota</a></li><li><a class="dropdown-item" href="../admin/dashboard.html">Admin Koperasi / Bendahara</a></li><li><a class="dropdown-item" href="../ketua/dashboard.html">Ketua Koperasi</a></li><li><a class="dropdown-item" href="../pengawas/dashboard.html">Pengawas Koperasi</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="../index.html"><i class="bi bi-diagram-3"></i> Peta alur sistem</a></li>
+            <li><a class="dropdown-item" href="#"><i class="bi bi-box-arrow-right"></i> Keluar</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<main class="container-xxl py-4">
+<nav aria-label="breadcrumb"><ol class="breadcrumb small mb-2"><li class="breadcrumb-item"><a href="simulasi-form.html">Simulasi Pinjaman</a></li><li class="breadcrumb-item active">Hasil simulasi</li></ol></nav>
+  <div class="d-flex justify-content-between align-items-start flex-wrap gap-3 mb-3">
+    <div>
+      <h1 class="h4 fw-bold mb-1">Hasil Simulasi Pinjaman</h1>
+      <div class="d-flex flex-wrap align-items-center gap-2">
+        <span class="badge text-bg-primary">Anggota</span>
+        <span class="badge text-info-emphasis bg-info-subtle border border-info-subtle">Wireframe · Langkah 2&ndash;3</span>
+        <span class="small text-body-secondary">Tabel simulasi dari bendahara yang diserahkan ke anggota</span>
+      </div>
+    </div>
+    <div class="d-flex flex-wrap gap-2"><a class="btn btn-outline-primary" href="pengajuan-form.html">Ajukan pinjaman</a></div>
+  </div>
+
+<div class="d-flex flex-wrap align-items-center gap-2 mb-4"><span class="badge rounded-pill border px-3 py-2 fw-normal text-bg-primary border border-primary">1. Simulasi</span><i class="bi bi-chevron-right small text-body-secondary"></i><span class="badge rounded-pill border px-3 py-2 fw-normal text-body-secondary bg-body-secondary border">2. Pengajuan</span><i class="bi bi-chevron-right small text-body-secondary"></i><span class="badge rounded-pill border px-3 py-2 fw-normal text-body-secondary bg-body-secondary border">3. Verifikasi Bendahara</span><i class="bi bi-chevron-right small text-body-secondary"></i><span class="badge rounded-pill border px-3 py-2 fw-normal text-body-secondary bg-body-secondary border">4. Persetujuan Ketua</span><i class="bi bi-chevron-right small text-body-secondary"></i><span class="badge rounded-pill border px-3 py-2 fw-normal text-body-secondary bg-body-secondary border">5. Pencairan</span></div>
+<div class="alert alert-success d-flex gap-2 py-2 mb-4"><i class="bi bi-clipboard2-check"></i><div class="small"><strong>Tabel simulasi diterbitkan oleh bendahara</strong> (Langkah 2&ndash;3 pada alur). Nomor simulasi <code>SIM-2026-0142</code> &middot; diterbitkan 07 Okt 2026 &middot; berlaku sampai 07 Nov 2026. Skema terpilih: <strong>Bunga Menurun (efektif)</strong>.</div></div>
+<div class="row g-3 mb-4"><div class="col-sm-6 col-xl-3">
+  <div class="card h-100">
+    <div class="card-body">
+      <div class="d-flex justify-content-between align-items-start gap-2">
+        <div>
+          <div class="text-body-secondary text-uppercase fw-semibold small">Pokok pinjaman</div>
+          <div class="fs-4 fw-bold mt-1">Rp 25.000.000</div>
+          <div class="small text-body-secondary mt-1">PJ-RG &middot; Pinjaman Reguler</div>
+        </div>
+        <i class="bi bi-cash-stack fs-3 text-primary"></i>
+      </div>
+    </div>
+  </div>
+</div><div class="col-sm-6 col-xl-3">
+  <div class="card h-100">
+    <div class="card-body">
+      <div class="d-flex justify-content-between align-items-start gap-2">
+        <div>
+          <div class="text-body-secondary text-uppercase fw-semibold small">Angsuran per bulan</div>
+          <div class="fs-4 fw-bold mt-1">Rp 1.053.125</div>
+          <div class="small text-body-secondary mt-1">menurun tiap bulan &middot; tertinggi Rp 1.316.667</div>
+        </div>
+        <i class="bi bi-calendar3 fs-3 text-info"></i>
+      </div>
+    </div>
+  </div>
+</div><div class="col-sm-6 col-xl-3">
+  <div class="card h-100">
+    <div class="card-body">
+      <div class="d-flex justify-content-between align-items-start gap-2">
+        <div>
+          <div class="text-body-secondary text-uppercase fw-semibold small">Total bunga</div>
+          <div class="fs-4 fw-bold mt-1">Rp 3.437.500</div>
+          <div class="small text-body-secondary mt-1">bunga efektif 14,03% p.a.</div>
+        </div>
+        <i class="bi bi-percent fs-3 text-warning"></i>
+      </div>
+    </div>
+  </div>
+</div><div class="col-sm-6 col-xl-3">
+  <div class="card h-100">
+    <div class="card-body">
+      <div class="d-flex justify-content-between align-items-start gap-2">
+        <div>
+          <div class="text-body-secondary text-uppercase fw-semibold small">Total yang dibayar</div>
+          <div class="fs-4 fw-bold mt-1">Rp 28.437.500</div>
+          <div class="small text-body-secondary mt-1">pokok + bunga (belum termasuk provisi)</div>
+        </div>
+        <i class="bi bi-receipt fs-3 text-success"></i>
+      </div>
+    </div>
+  </div>
+</div></div>
+<div class="row g-4">
+  <div class="col-xl-8">
+    <div class="card mb-4"><div class="card-header bg-body-tertiary d-flex justify-content-between align-items-center flex-wrap gap-2"><div><h2 class="h6 fw-bold mb-0">Perbandingan metode bunga</h2><div class="small text-body-secondary">Skenario sama: Rp 25,0 jt / 24 bulan / tarif 1,10% per bulan</div></div><div class="d-flex flex-wrap gap-2"><span class="badge text-bg-primary">Menurun = rekomendasi bendahara</span></div></div><div class="card-body "><div class="table-responsive"><table class="table table-sm table-hover align-middle mb-0"><thead class="table-light"><tr><th scope='col'>Metode</th><th scope='col'>Angsuran / bulan</th><th scope='col'>Total bunga</th><th scope='col'>Total bayar</th><th scope='col'>Bunga efektif bulanan</th><th scope='col'>Bunga efektif per tahun</th></tr></thead><tbody><tr><td><span class="fw-semibold">Bunga Tetap (flat)</span></td><td>Rp 1.316.667 – Rp 1.316.667</td><td>Rp 6.600.000</td><td>Rp 31.600.008</td><td>1,97% <span class='text-body-secondary small'>/bln</span></td><td><span class="badge rounded-pill text-bg-secondary">26,32% p.a.</span></td></tr><tr><td><span class="fw-semibold">Bunga Menurun (efektif)</span></td><td>Rp 1.053.125 – Rp 1.316.667</td><td>Rp 3.437.500</td><td>Rp 28.437.500</td><td>1,10% <span class='text-body-secondary small'>/bln</span></td><td><span class="badge rounded-pill text-bg-secondary">14,03% p.a.</span></td></tr><tr><td><span class="fw-semibold">Bunga Anuitas</span></td><td>Rp 1.190.895 – Rp 1.190.895</td><td>Rp 3.581.493</td><td>Rp 28.581.480</td><td>1,10% <span class='text-body-secondary small'>/bln</span></td><td><span class="badge rounded-pill text-bg-secondary">14,03% p.a.</span></td></tr></tbody></table></div></div></div>
+    <div class="card mb-4"><div class="card-header bg-body-tertiary d-flex justify-content-between align-items-center flex-wrap gap-2"><div><h2 class="h6 fw-bold mb-0">Jadwal angsuran 24 bulan &mdash; Bunga menurun (efektif)</h2></div><div class="d-flex flex-wrap gap-2"><button class="btn btn-sm btn-outline-secondary" type="button"><i class="bi bi-printer"></i> Cetak</button><button class="btn btn-sm btn-outline-secondary" type="button"><i class="bi bi-file-earmark-pdf"></i> Unduh PDF</button></div></div><div class="card-body "><div class="table-responsive"><table class="table table-sm table-hover align-middle mb-0"><thead class="table-light"><tr><th scope='col'>Bulan</th><th scope='col'>Saldo awal</th><th scope='col'>Angsuran pokok</th><th scope='col'>Bunga</th><th scope='col'>Total angsuran</th><th scope='col'>Saldo akhir</th></tr></thead><tbody><tr><td><span class="fw-semibold">1</span></td><td>Rp 25.000.000</td><td>Rp 1.041.667</td><td>Rp 275.000</td><td><span class="fw-semibold">Rp 1.316.667</span></td><td>Rp 23.958.333</td></tr><tr><td><span class="fw-semibold">2</span></td><td>Rp 23.958.333</td><td>Rp 1.041.667</td><td>Rp 263.542</td><td><span class="fw-semibold">Rp 1.305.208</span></td><td>Rp 22.916.667</td></tr><tr><td><span class="fw-semibold">3</span></td><td>Rp 22.916.667</td><td>Rp 1.041.667</td><td>Rp 252.083</td><td><span class="fw-semibold">Rp 1.293.750</span></td><td>Rp 21.875.000</td></tr><tr><td><span class="fw-semibold">4</span></td><td>Rp 21.875.000</td><td>Rp 1.041.667</td><td>Rp 240.625</td><td><span class="fw-semibold">Rp 1.282.292</span></td><td>Rp 20.833.333</td></tr><tr><td><span class="fw-semibold">5</span></td><td>Rp 20.833.333</td><td>Rp 1.041.667</td><td>Rp 229.167</td><td><span class="fw-semibold">Rp 1.270.833</span></td><td>Rp 19.791.667</td></tr><tr><td><span class="fw-semibold">6</span></td><td>Rp 19.791.667</td><td>Rp 1.041.667</td><td>Rp 217.708</td><td><span class="fw-semibold">Rp 1.259.375</span></td><td>Rp 18.750.000</td></tr><tr><td><span class="fw-semibold">7</span></td><td>Rp 18.750.000</td><td>Rp 1.041.667</td><td>Rp 206.250</td><td><span class="fw-semibold">Rp 1.247.917</span></td><td>Rp 17.708.333</td></tr><tr><td><span class="fw-semibold">8</span></td><td>Rp 17.708.333</td><td>Rp 1.041.667</td><td>Rp 194.792</td><td><span class="fw-semibold">Rp 1.236.458</span></td><td>Rp 16.666.667</td></tr><tr><td><span class="fw-semibold">9</span></td><td>Rp 16.666.667</td><td>Rp 1.041.667</td><td>Rp 183.333</td><td><span class="fw-semibold">Rp 1.225.000</span></td><td>Rp 15.625.000</td></tr><tr><td><span class="fw-semibold">10</span></td><td>Rp 15.625.000</td><td>Rp 1.041.667</td><td>Rp 171.875</td><td><span class="fw-semibold">Rp 1.213.542</span></td><td>Rp 14.583.333</td></tr><tr><td><span class="fw-semibold">11</span></td><td>Rp 14.583.333</td><td>Rp 1.041.667</td><td>Rp 160.417</td><td><span class="fw-semibold">Rp 1.202.083</span></td><td>Rp 13.541.667</td></tr><tr><td><span class="fw-semibold">12</span></td><td>Rp 13.541.667</td><td>Rp 1.041.667</td><td>Rp 148.958</td><td><span class="fw-semibold">Rp 1.190.625</span></td><td>Rp 12.500.000</td></tr><tr><td><span class="fw-semibold">13</span></td><td>Rp 12.500.000</td><td>Rp 1.041.667</td><td>Rp 137.500</td><td><span class="fw-semibold">Rp 1.179.167</span></td><td>Rp 11.458.333</td></tr><tr><td><span class="fw-semibold">14</span></td><td>Rp 11.458.333</td><td>Rp 1.041.667</td><td>Rp 126.042</td><td><span class="fw-semibold">Rp 1.167.708</span></td><td>Rp 10.416.667</td></tr><tr><td><span class="fw-semibold">15</span></td><td>Rp 10.416.667</td><td>Rp 1.041.667</td><td>Rp 114.583</td><td><span class="fw-semibold">Rp 1.156.250</span></td><td>Rp 9.375.000</td></tr><tr><td><span class="fw-semibold">16</span></td><td>Rp 9.375.000</td><td>Rp 1.041.667</td><td>Rp 103.125</td><td><span class="fw-semibold">Rp 1.144.792</span></td><td>Rp 8.333.333</td></tr><tr><td><span class="fw-semibold">17</span></td><td>Rp 8.333.333</td><td>Rp 1.041.667</td><td>Rp 91.667</td><td><span class="fw-semibold">Rp 1.133.333</span></td><td>Rp 7.291.667</td></tr><tr><td><span class="fw-semibold">18</span></td><td>Rp 7.291.667</td><td>Rp 1.041.667</td><td>Rp 80.208</td><td><span class="fw-semibold">Rp 1.121.875</span></td><td>Rp 6.250.000</td></tr><tr><td><span class="fw-semibold">19</span></td><td>Rp 6.250.000</td><td>Rp 1.041.667</td><td>Rp 68.750</td><td><span class="fw-semibold">Rp 1.110.417</span></td><td>Rp 5.208.333</td></tr><tr><td><span class="fw-semibold">20</span></td><td>Rp 5.208.333</td><td>Rp 1.041.667</td><td>Rp 57.292</td><td><span class="fw-semibold">Rp 1.098.958</span></td><td>Rp 4.166.667</td></tr><tr><td><span class="fw-semibold">21</span></td><td>Rp 4.166.667</td><td>Rp 1.041.667</td><td>Rp 45.833</td><td><span class="fw-semibold">Rp 1.087.500</span></td><td>Rp 3.125.000</td></tr><tr><td><span class="fw-semibold">22</span></td><td>Rp 3.125.000</td><td>Rp 1.041.667</td><td>Rp 34.375</td><td><span class="fw-semibold">Rp 1.076.042</span></td><td>Rp 2.083.333</td></tr><tr><td><span class="fw-semibold">23</span></td><td>Rp 2.083.333</td><td>Rp 1.041.667</td><td>Rp 22.917</td><td><span class="fw-semibold">Rp 1.064.583</span></td><td>Rp 1.041.667</td></tr><tr><td><span class="fw-semibold">24</span></td><td>Rp 1.041.667</td><td>Rp 1.041.667</td><td>Rp 11.458</td><td><span class="fw-semibold">Rp 1.053.125</span></td><td>Rp 0</td></tr></tbody><tfoot class="table-group-divider table-light"><tr class="fw-semibold"><td colspan="4">Total 24 bulan</td><td>Rp 28.437.500</td><td class="text-body-secondary">termasuk bunga Rp 3.437.500</td></tr></tfoot></table></div></div><div class="card-footer bg-body-tertiary small text-body-secondary">Kolom yang sama dipakai pada Kartu Piutang anggota dan mutasi pembayaran bendahara.</div></div>
+  </div>
+  <div class="col-xl-4">
+    <div class="card mb-4"><div class="card-header bg-body-tertiary d-flex justify-content-between align-items-center flex-wrap gap-2"><div><h2 class="h6 fw-bold mb-0">Ringkasan simulasi</h2></div><div class="d-flex flex-wrap gap-2"></div></div><div class="card-body "><dl class="row g-0 mb-0"><dt class="col-sm-4 col-lg-3 fw-normal text-body-secondary py-2 border-bottom">No. Simulasi</dt><dd class="col-sm-8 col-lg-9 py-2 mb-0 border-bottom">SIM-2026-0142</dd><dt class="col-sm-4 col-lg-3 fw-normal text-body-secondary py-2 border-bottom">Pemohon</dt><dd class="col-sm-8 col-lg-9 py-2 mb-0 border-bottom">Budi Santoso, S.Kom., M.T. (AG-0142)</dd><dt class="col-sm-4 col-lg-3 fw-normal text-body-secondary py-2 border-bottom">Produk</dt><dd class="col-sm-8 col-lg-9 py-2 mb-0 border-bottom">PJ-RG &middot; Pinjaman Reguler</dd><dt class="col-sm-4 col-lg-3 fw-normal text-body-secondary py-2 border-bottom">Pokok</dt><dd class="col-sm-8 col-lg-9 py-2 mb-0 border-bottom">Rp 25.000.000</dd><dt class="col-sm-4 col-lg-3 fw-normal text-body-secondary py-2 border-bottom">Tenor</dt><dd class="col-sm-8 col-lg-9 py-2 mb-0 border-bottom">24 bulan</dd><dt class="col-sm-4 col-lg-3 fw-normal text-body-secondary py-2 border-bottom">Metode bunga</dt><dd class="col-sm-8 col-lg-9 py-2 mb-0 border-bottom">Bunga Menurun (efektif)</dd><dt class="col-sm-4 col-lg-3 fw-normal text-body-secondary py-2 border-bottom">Angsuran pertama</dt><dd class="col-sm-8 col-lg-9 py-2 mb-0 border-bottom">Rp 1.316.667 <span class="small text-body-secondary">(pokok Rp 1.041.667 + bunga Rp 275.000)</span></dd><dt class="col-sm-4 col-lg-3 fw-normal text-body-secondary py-2 border-bottom">Maks. rasio cicilan</dt><dd class="col-sm-8 col-lg-9 py-2 mb-0 border-bottom">44% dari penghasilan</dd></dl></div><div class="card-footer bg-body-tertiary small text-body-secondary">Dasar perhitungan: SK Pengurus No. 07/SK/X/2026</div></div>
+    <div class="card mb-4"><div class="card-header bg-body-tertiary d-flex justify-content-between align-items-center flex-wrap gap-2"><div><h2 class="h6 fw-bold mb-0">Perbandingan vs bunga tetap</h2><div class="small text-body-secondary">Poin yang biasanya ditanyakan anggota</div></div><div class="d-flex flex-wrap gap-2"></div></div><div class="card-body "><p class="small mb-2">Dengan pokok dan tenor yang sama:</p>
+      <ul class="list-group list-group-flush small">
+        <li class="list-group-item d-flex justify-content-between px-0">Total bunga tetap (flat)
+          <span class="fw-semibold">Rp 6.600.000</span></li>
+        <li class="list-group-item d-flex justify-content-between px-0">Total bunga menurun
+          <span class="fw-semibold">Rp 3.437.500</span></li>
+        <li class="list-group-item d-flex justify-content-between px-0">Selisih (lebih hemat)
+          <span class="fw-semibold text-success">Rp 3.162.500</span></li>
+      </ul>
+      <p class="small text-body-secondary mt-2 mb-0">Catatan: bunga flat dihitung dari pokok awal sehingga bunga
+      efektifnya lebih tinggi meski tarif per bulan sama.</p></div></div>
+    <div class="card mb-4"><div class="card-header bg-body-tertiary d-flex justify-content-between align-items-center flex-wrap gap-2"><div><h2 class="h6 fw-bold mb-0">Lanjut ke pengajuan</h2></div><div class="d-flex flex-wrap gap-2"></div></div><div class="card-body "><p class="small">Ajukan pinjaman memakai tabel simulasi ini. Dokumen dan data keperluan akan diminta
+      pada langkah berikutnya.</p>
+      <div class="d-grid gap-2">
+        <a class="btn btn-primary" href="pengajuan-form.html"><i class="bi bi-send"></i> Ajukan pinjaman dengan simulasi ini</a>
+        <a class="btn btn-outline-secondary" href="simulasi-form.html">Ubah parameter &amp; simulasi ulang</a>
+        <button class="btn btn-link" type="button">Tidak, simpan saja tabel ini</button>
+      </div></div></div>
+  </div>
+</div>
+</main>
+<footer class="border-top bg-body py-4 mt-5">
+  <div class="container-xxl small text-body-secondary d-flex justify-content-between flex-wrap gap-2">
+    <span><i class="bi bi-bank2"></i> KSU Mitra Sejahtera — Modul Simpan Pinjam (wireframe statis)</span>
+    <span>Bootstrap 5.3 · tanpa backend · data dummy untuk diskusi dengan programmer</span>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,216 @@
+<!doctype html>
+<html lang="id" data-bs-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Cicilan Aktif · Anggota · KSU Mitra Sejahtera</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+</head>
+<body class="bg-body-tertiary">
+<nav class="navbar navbar-expand-lg bg-primary border-bottom" data-bs-theme="dark">
+  <div class="container-xxl">
+    <a class="navbar-brand d-flex align-items-center gap-2" href="../index.html">
+      <i class="bi bi-bank2"></i><span class="fw-semibold">KSU Mitra Sejahtera</span>
+    </a>
+    <span class="badge text-bg-light d-none d-xl-inline">Portal Anggota</span>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navUtama"
+            aria-controls="navUtama" aria-expanded="false" aria-label="Buka navigasi">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navUtama">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0"><li class="nav-item"><a class="nav-link" href="dashboard.html">Dashboard</a></li><li class="nav-item"><a class="nav-link" href="simulasi-form.html">Simulasi Pinjaman</a></li><li class="nav-item"><a class="nav-link" href="pengajuan-form.html">Ajukan Pinjaman</a></li><li class="nav-item"><a class="nav-link" href="pengajuan-status.html">Status Pengajuan</a></li><li class="nav-item"><a class="nav-link active fw-semibold" href="pinjaman-aktif.html">Cicilan Aktif</a></li><li class="nav-item"><a class="nav-link" href="kartu-piutang.html">Kartu Piutang</a></li><li class="nav-item"><a class="nav-link" href="riwayat.html">Riwayat & Penutupan</a></li></ul>
+      <ul class="navbar-nav">
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <i class="bi bi-person-circle"></i> Budi Santoso
+          </a>
+          <ul class="dropdown-menu dropdown-menu-end">
+            <li><h6 class="dropdown-header">Anggota AG-0142</h6></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><h6 class="dropdown-header">Pindah role (wireframe)</h6></li>
+            <li><a class="dropdown-item active" href="dashboard.html">Anggota</a></li><li><a class="dropdown-item" href="../admin/dashboard.html">Admin Koperasi / Bendahara</a></li><li><a class="dropdown-item" href="../ketua/dashboard.html">Ketua Koperasi</a></li><li><a class="dropdown-item" href="../pengawas/dashboard.html">Pengawas Koperasi</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="../index.html"><i class="bi bi-diagram-3"></i> Peta alur sistem</a></li>
+            <li><a class="dropdown-item" href="#"><i class="bi bi-box-arrow-right"></i> Keluar</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<main class="container-xxl py-4">
+<nav aria-label="breadcrumb"><ol class="breadcrumb small mb-2"><li class="breadcrumb-item"><a href="dashboard.html">Portal Anggota</a></li><li class="breadcrumb-item active">Cicilan aktif</li></ol></nav>
+  <div class="d-flex justify-content-between align-items-start flex-wrap gap-3 mb-3">
+    <div>
+      <h1 class="h4 fw-bold mb-1">Cicilan Aktif</h1>
+      <div class="d-flex flex-wrap align-items-center gap-2">
+        <span class="badge text-bg-primary">Anggota</span>
+        <span class="badge text-info-emphasis bg-info-subtle border border-info-subtle">Wireframe · Langkah 10&ndash;11</span>
+        <span class="small text-body-secondary">Status cicilan aktif, jadwal bayar, denda, dan pelunasan dipercepat</span>
+      </div>
+    </div>
+    <div class="d-flex flex-wrap gap-2"></div>
+  </div>
+
+<div class="row g-3 mb-4"><div class="col-sm-6 col-xl-3">
+  <div class="card h-100">
+    <div class="card-body">
+      <div class="d-flex justify-content-between align-items-start gap-2">
+        <div>
+          <div class="text-body-secondary text-uppercase fw-semibold small">Sisa pokok</div>
+          <div class="fs-4 fw-bold mt-1">Rp 16.666.667</div>
+          <div class="small text-body-secondary mt-1">15 cicilan tersisa</div>
+        </div>
+        <i class="bi bi-wallet2 fs-3 text-danger"></i>
+      </div>
+    </div>
+  </div>
+</div><div class="col-sm-6 col-xl-3">
+  <div class="card h-100">
+    <div class="card-body">
+      <div class="d-flex justify-content-between align-items-start gap-2">
+        <div>
+          <div class="text-body-secondary text-uppercase fw-semibold small">Angsuran per bulan</div>
+          <div class="fs-4 fw-bold mt-1">Rp 1.316.667</div>
+          <div class="small text-body-secondary mt-1">pokok + bunga tetap</div>
+        </div>
+        <i class="bi bi-calendar3 fs-3 text-primary"></i>
+      </div>
+    </div>
+  </div>
+</div><div class="col-sm-6 col-xl-3">
+  <div class="card h-100">
+    <div class="card-body">
+      <div class="d-flex justify-content-between align-items-start gap-2">
+        <div>
+          <div class="text-body-secondary text-uppercase fw-semibold small">Progres cicilan</div>
+          <div class="fs-4 fw-bold mt-1">8 dari 24</div>
+          <div class="small text-body-secondary mt-1">33% selesai &middot; mulai Feb 2026</div>
+        </div>
+        <i class="bi bi-activity fs-3 text-info"></i>
+      </div>
+    </div>
+  </div>
+</div><div class="col-sm-6 col-xl-3">
+  <div class="card h-100">
+    <div class="card-body">
+      <div class="d-flex justify-content-between align-items-start gap-2">
+        <div>
+          <div class="text-body-secondary text-uppercase fw-semibold small">Status autodebet</div>
+          <div class="fs-4 fw-bold mt-1">Menunggu konfirmasi</div>
+          <div class="small text-body-secondary mt-1">file bank Okt 2026 sudah diunggah bendahara</div>
+        </div>
+        <i class="bi bi-credit-card-2-front fs-3 text-warning"></i>
+      </div>
+    </div>
+  </div>
+</div></div>
+<div class="row g-4">
+  <div class="col-xl-8">
+    <div class="card mb-4"><div class="card-header bg-body-tertiary d-flex justify-content-between align-items-center flex-wrap gap-2"><div><h2 class="h6 fw-bold mb-0">Jadwal cicilan PJM-2026-0031 &mdash; PJ-RG Rp 25.000.000 / 24 bulan / bunga tetap 1,10%</h2></div><div class="d-flex flex-wrap gap-2"><button class="btn btn-sm btn-outline-secondary" type="button"><i class="bi bi-printer"></i> Cetak jadwal</button><a class="btn btn-sm btn-outline-primary" href="kartu-piutang.html">Kartu piutang</a></div></div><div class="card-body "><div class="table-responsive"><table class="table table-sm table-hover align-middle mb-0"><thead class="table-light"><tr><th scope='col'>Cicilan</th><th scope='col'>Jatuh tempo</th><th scope='col'>Angsuran</th><th scope='col'>Pokok</th><th scope='col'>Bunga</th><th scope='col'>Metode</th><th scope='col'>No. bukti</th><th scope='col'>Status</th><th scope='col'>Aksi</th></tr></thead><tbody><tr><td><span class='fw-semibold'>ke-1</span></td><td>10 Feb 2026</td><td>Rp 1.316.667</td><td>Rp 1.041.667</td><td>Rp 275.000</td><td>Autodebet</td><td>AD-2026-1001</td><td><span class="badge rounded-pill text-bg-success">Lunas</span></td><td><a class="btn btn-sm btn-outline-secondary" href="kartu-piutang.html">Detail</a></td></tr><tr><td><span class='fw-semibold'>ke-2</span></td><td>10 Mar 2026</td><td>Rp 1.316.667</td><td>Rp 1.041.667</td><td>Rp 275.000</td><td>Autodebet</td><td>AD-2026-1002</td><td><span class="badge rounded-pill text-bg-success">Lunas</span></td><td><a class="btn btn-sm btn-outline-secondary" href="kartu-piutang.html">Detail</a></td></tr><tr><td><span class='fw-semibold'>ke-3</span></td><td>10 Apr 2026</td><td>Rp 1.316.667</td><td>Rp 1.041.667</td><td>Rp 275.000</td><td>Autodebet</td><td>AD-2026-1003</td><td><span class="badge rounded-pill text-bg-success">Lunas</span></td><td><a class="btn btn-sm btn-outline-secondary" href="kartu-piutang.html">Detail</a></td></tr><tr><td><span class='fw-semibold'>ke-4</span></td><td>10 Mei 2026</td><td>Rp 1.316.667</td><td>Rp 1.041.667</td><td>Rp 275.000</td><td>Autodebet</td><td>AD-2026-1004</td><td><span class="badge rounded-pill text-bg-success">Lunas</span></td><td><a class="btn btn-sm btn-outline-secondary" href="kartu-piutang.html">Detail</a></td></tr><tr><td><span class='fw-semibold'>ke-5</span></td><td>10 Jun 2026</td><td>Rp 1.316.667</td><td>Rp 1.041.667</td><td>Rp 275.000</td><td>Autodebet</td><td>AD-2026-1005</td><td><span class="badge rounded-pill text-bg-success">Lunas</span></td><td><a class="btn btn-sm btn-outline-secondary" href="kartu-piutang.html">Detail</a></td></tr><tr><td><span class='fw-semibold'>ke-6</span></td><td>10 Jul 2026</td><td>Rp 1.316.667</td><td>Rp 1.041.667</td><td>Rp 275.000</td><td>Autodebet</td><td>AD-2026-1006</td><td><span class="badge rounded-pill text-bg-success">Lunas</span></td><td><a class="btn btn-sm btn-outline-secondary" href="kartu-piutang.html">Detail</a></td></tr><tr><td><span class='fw-semibold'>ke-7</span></td><td>10 Agu 2026</td><td>Rp 1.316.667</td><td>Rp 1.041.667</td><td>Rp 275.000</td><td>Autodebet</td><td>AD-2026-1007</td><td><span class="badge rounded-pill text-bg-success">Lunas</span></td><td><a class="btn btn-sm btn-outline-secondary" href="kartu-piutang.html">Detail</a></td></tr><tr><td><span class='fw-semibold'>ke-8</span></td><td>10 Sep 2026</td><td>Rp 1.316.667</td><td>Rp 1.041.667</td><td>Rp 275.000</td><td>Autodebet</td><td>AD-2026-1008</td><td><span class="badge rounded-pill text-bg-success">Lunas</span></td><td><a class="btn btn-sm btn-outline-secondary" href="kartu-piutang.html">Detail</a></td></tr><tr><td><span class='fw-semibold'>ke-9</span></td><td>10 Okt 2026</td><td>Rp 1.316.667</td><td>Rp 1.041.667</td><td>Rp 275.000</td><td>Autodebet</td><td><span class="text-body-secondary">menunggu file bank</span></td><td><span class="badge rounded-pill text-bg-warning">Jatuh tempo hari ini</span></td><td><button class="btn btn-sm btn-primary" type="button">Bayar manual</button></td></tr><tr><td><span class='fw-semibold'>ke-10</span></td><td>10 Nov 2026</td><td>Rp 1.316.667</td><td>Rp 1.041.667</td><td>Rp 275.000</td><td>Autodebet</td><td><span class="text-body-secondary">&mdash;</span></td><td><span class="badge rounded-pill text-secondary-emphasis bg-secondary-subtle border border-secondary-subtle">Belum jatuh tempo</span></td><td><a class="btn btn-sm btn-outline-secondary" href="#">Rincian</a></td></tr><tr><td><span class='fw-semibold'>ke-11</span></td><td>10 Des 2026</td><td>Rp 1.316.667</td><td>Rp 1.041.667</td><td>Rp 275.000</td><td>Autodebet</td><td><span class="text-body-secondary">&mdash;</span></td><td><span class="badge rounded-pill text-secondary-emphasis bg-secondary-subtle border border-secondary-subtle">Belum jatuh tempo</span></td><td><a class="btn btn-sm btn-outline-secondary" href="#">Rincian</a></td></tr><tr><td><span class='fw-semibold'>ke-12</span></td><td>10 Jan 2027</td><td>Rp 1.316.667</td><td>Rp 1.041.667</td><td>Rp 275.000</td><td>Autodebet</td><td><span class="text-body-secondary">&mdash;</span></td><td><span class="badge rounded-pill text-secondary-emphasis bg-secondary-subtle border border-secondary-subtle">Belum jatuh tempo</span></td><td><a class="btn btn-sm btn-outline-secondary" href="#">Rincian</a></td></tr><tr><td><span class='fw-semibold'>ke-13</span></td><td>10 Feb 2027</td><td>Rp 1.316.667</td><td>Rp 1.041.667</td><td>Rp 275.000</td><td>Autodebet</td><td><span class="text-body-secondary">&mdash;</span></td><td><span class="badge rounded-pill text-secondary-emphasis bg-secondary-subtle border border-secondary-subtle">Belum jatuh tempo</span></td><td><a class="btn btn-sm btn-outline-secondary" href="#">Rincian</a></td></tr><tr><td><span class='fw-semibold'>ke-14</span></td><td>10 Mar 2027</td><td>Rp 1.316.667</td><td>Rp 1.041.667</td><td>Rp 275.000</td><td>Autodebet</td><td><span class="text-body-secondary">&mdash;</span></td><td><span class="badge rounded-pill text-secondary-emphasis bg-secondary-subtle border border-secondary-subtle">Belum jatuh tempo</span></td><td><a class="btn btn-sm btn-outline-secondary" href="#">Rincian</a></td></tr><tr><td><span class='fw-semibold'>ke-15</span></td><td>10 Apr 2027</td><td>Rp 1.316.667</td><td>Rp 1.041.667</td><td>Rp 275.000</td><td>Autodebet</td><td><span class="text-body-secondary">&mdash;</span></td><td><span class="badge rounded-pill text-secondary-emphasis bg-secondary-subtle border border-secondary-subtle">Belum jatuh tempo</span></td><td><a class="btn btn-sm btn-outline-secondary" href="#">Rincian</a></td></tr><tr><td><span class='fw-semibold'>ke-16</span></td><td>10 Mei 2027</td><td>Rp 1.316.667</td><td>Rp 1.041.667</td><td>Rp 275.000</td><td>Autodebet</td><td><span class="text-body-secondary">&mdash;</span></td><td><span class="badge rounded-pill text-secondary-emphasis bg-secondary-subtle border border-secondary-subtle">Belum jatuh tempo</span></td><td><a class="btn btn-sm btn-outline-secondary" href="#">Rincian</a></td></tr><tr><td><span class='fw-semibold'>ke-17</span></td><td>10 Jun 2027</td><td>Rp 1.316.667</td><td>Rp 1.041.667</td><td>Rp 275.000</td><td>Autodebet</td><td><span class="text-body-secondary">&mdash;</span></td><td><span class="badge rounded-pill text-secondary-emphasis bg-secondary-subtle border border-secondary-subtle">Belum jatuh tempo</span></td><td><a class="btn btn-sm btn-outline-secondary" href="#">Rincian</a></td></tr><tr><td><span class='fw-semibold'>ke-18</span></td><td>10 Jul 2027</td><td>Rp 1.316.667</td><td>Rp 1.041.667</td><td>Rp 275.000</td><td>Autodebet</td><td><span class="text-body-secondary">&mdash;</span></td><td><span class="badge rounded-pill text-secondary-emphasis bg-secondary-subtle border border-secondary-subtle">Belum jatuh tempo</span></td><td><a class="btn btn-sm btn-outline-secondary" href="#">Rincian</a></td></tr><tr><td><span class='fw-semibold'>ke-19</span></td><td>10 Agu 2027</td><td>Rp 1.316.667</td><td>Rp 1.041.667</td><td>Rp 275.000</td><td>Autodebet</td><td><span class="text-body-secondary">&mdash;</span></td><td><span class="badge rounded-pill text-secondary-emphasis bg-secondary-subtle border border-secondary-subtle">Belum jatuh tempo</span></td><td><a class="btn btn-sm btn-outline-secondary" href="#">Rincian</a></td></tr><tr><td><span class='fw-semibold'>ke-20</span></td><td>10 Sep 2027</td><td>Rp 1.316.667</td><td>Rp 1.041.667</td><td>Rp 275.000</td><td>Autodebet</td><td><span class="text-body-secondary">&mdash;</span></td><td><span class="badge rounded-pill text-secondary-emphasis bg-secondary-subtle border border-secondary-subtle">Belum jatuh tempo</span></td><td><a class="btn btn-sm btn-outline-secondary" href="#">Rincian</a></td></tr><tr><td><span class='fw-semibold'>ke-21</span></td><td>10 Okt 2027</td><td>Rp 1.316.667</td><td>Rp 1.041.667</td><td>Rp 275.000</td><td>Autodebet</td><td><span class="text-body-secondary">&mdash;</span></td><td><span class="badge rounded-pill text-secondary-emphasis bg-secondary-subtle border border-secondary-subtle">Belum jatuh tempo</span></td><td><a class="btn btn-sm btn-outline-secondary" href="#">Rincian</a></td></tr><tr><td><span class='fw-semibold'>ke-22</span></td><td>10 Nov 2027</td><td>Rp 1.316.667</td><td>Rp 1.041.667</td><td>Rp 275.000</td><td>Autodebet</td><td><span class="text-body-secondary">&mdash;</span></td><td><span class="badge rounded-pill text-secondary-emphasis bg-secondary-subtle border border-secondary-subtle">Belum jatuh tempo</span></td><td><a class="btn btn-sm btn-outline-secondary" href="#">Rincian</a></td></tr><tr><td><span class='fw-semibold'>ke-23</span></td><td>10 Des 2027</td><td>Rp 1.316.667</td><td>Rp 1.041.667</td><td>Rp 275.000</td><td>Autodebet</td><td><span class="text-body-secondary">&mdash;</span></td><td><span class="badge rounded-pill text-secondary-emphasis bg-secondary-subtle border border-secondary-subtle">Belum jatuh tempo</span></td><td><a class="btn btn-sm btn-outline-secondary" href="#">Rincian</a></td></tr><tr><td><span class='fw-semibold'>ke-24</span></td><td>10 Jan 2028</td><td>Rp 1.316.667</td><td>Rp 1.041.667</td><td>Rp 275.000</td><td>Autodebet</td><td><span class="text-body-secondary">&mdash;</span></td><td><span class="badge rounded-pill text-secondary-emphasis bg-secondary-subtle border border-secondary-subtle">Belum jatuh tempo</span></td><td><a class="btn btn-sm btn-outline-secondary" href="#">Rincian</a></td></tr></tbody><tfoot class="table-group-divider table-light">Total 24 cicilan &middot; 8 sudah dibayar &middot; sisa 16 cicilan. Angka konsisten dengan halaman Kartu Piutang.</tfoot></table></div></div></div>
+    <div class="card mb-4"><div class="card-header bg-body-tertiary d-flex justify-content-between align-items-center flex-wrap gap-2"><div><h2 class="h6 fw-bold mb-0">Cara membayar cicilan</h2><div class="small text-body-secondary">Dua sifat pinjaman: autodebet atau bayar per bulan (Langkah 10)</div></div><div class="d-flex flex-wrap gap-2"></div></div><div class="card-body "><ul class="nav nav-pills nav-fill mb-3" role="tablist">
+        <li class="nav-item" role="presentation"><button class="nav-link active" data-bs-toggle="pill"
+          data-bs-target="#cbA" type="button">Autodebet</button></li>
+        <li class="nav-item" role="presentation"><button class="nav-link" data-bs-toggle="pill"
+          data-bs-target="#cbB" type="button">Bayar per bulan</button></li>
+      </ul>
+      <div class="tab-content">
+        <div class="tab-pane fade show active" id="cbA" role="tabpanel">
+          <p class="small mb-2">Koperasi mengirim permintaan autodebet ke bank setiap tanggal 5. File hasil dari bank
+          berisi nama nasabah, NIK, dan status autodebet, lalu diunggah bendahara ke sistem untuk memperbarui kartu
+          piutang anggota.</p>
+          <dl class="row g-0 small mb-0">
+            <dt class="col-6 fw-normal text-body-secondary py-1 border-bottom">Rekening</dt>
+            <dd class="col-6 py-1 mb-0 border-bottom text-end">BSI 7100 2299 441</dd>
+            <dt class="col-6 fw-normal text-body-secondary py-1 border-bottom">Tanggal debet</dt>
+            <dd class="col-6 py-1 mb-0 border-bottom text-end">Tanggal 10 setiap bulan</dd>
+            <dt class="col-6 fw-normal text-body-secondary py-1 border-bottom">Sumber data kartu piutang</dt>
+            <dd class="col-6 py-1 mb-0 border-bottom text-end">File XLSX dari bank</dd>
+          </dl>
+        </div>
+        <div class="tab-pane fade" id="cbB" role="tabpanel">
+          <p class="small mb-2">Bayar transfer ke rekening koperasi, lalu unggah bukti transfer untuk diperiksa
+          bendahara.</p>
+          <input type="file" class="form-control form-control-sm mb-2">
+          <div class="form-text mb-2">Untuk cicilan ke-9 yang jatuh tempo hari ini.</div>
+          <button class="btn btn-sm btn-primary" type="button">Kirim bukti transfer</button>
+        </div>
+      </div></div></div>
+  </div>
+  <div class="col-xl-4">
+    <div class="card mb-4"><div class="card-header bg-body-tertiary d-flex justify-content-between align-items-center flex-wrap gap-2"><div><h2 class="h6 fw-bold mb-0">Pelunasan dipercepat</h2><div class="small text-body-secondary">Mekanisme pelunasan dini &amp; penalti di-set bendahara</div></div><div class="d-flex flex-wrap gap-2"></div></div><div class="card-body "><p class="small">Simulasi pelunasan dipercepat hari ini (10 Okt 2026) atas pinjaman
+      PJM-2026-0031:</p>
+      <dl class="row g-0 small mb-3">
+        <dt class="col-7 fw-normal text-body-secondary py-1 border-bottom">Sisa pokok (15 cicilan)</dt>
+        <dd class="col-5 py-1 mb-0 border-bottom text-end">Rp 16.666.667</dd>
+        <dt class="col-7 fw-normal text-body-secondary py-1 border-bottom">Penalti pelunasan dipercepat (1%)</dt>
+        <dd class="col-5 py-1 mb-0 border-bottom text-end">Rp 166.667</dd>
+        <dt class="col-7 fw-normal text-body-secondary py-1 border-bottom">Bunga berjalan (1 bulan)</dt>
+        <dd class="col-5 py-1 mb-0 border-bottom text-end">Rp 183.333</dd>
+        <dt class="col-7 fw-semibold py-1 border-bottom">Total yang harus dibayar</dt>
+        <dd class="col-5 fw-semibold py-1 mb-0 border-bottom text-end">Rp 17.016.667</dd>
+      </dl>
+      <div class="d-flex flex-wrap gap-2">
+        <button class="btn btn-sm btn-outline-primary" type="button" data-bs-toggle="modal" data-bs-target="#modalLunas">
+          <i class="bi bi-check2-circle"></i> Ajukan pelunasan dipercepat</button>
+        <button class="btn btn-sm btn-outline-secondary" type="button">Cetak surat permohonan</button>
+      </div></div></div>
+    <div class="card mb-4"><div class="card-header bg-body-tertiary d-flex justify-content-between align-items-center flex-wrap gap-2"><div><h2 class="h6 fw-bold mb-0">Denda &amp; kolektibilitas</h2></div><div class="d-flex flex-wrap gap-2"></div></div><div class="card-body "><ul class="list-group list-group-flush small">
+        <li class="list-group-item d-flex justify-content-between px-0">Denda keterlambatan bulan ini
+          <span class="fw-semibold text-success">Rp 0</span></li>
+        <li class="list-group-item d-flex justify-content-between px-0">Akumulasi denda pinjaman ini
+          <span class="fw-semibold">Rp 0</span></li>
+        <li class="list-group-item d-flex justify-content-between px-0">Riwayat keterlambatan
+          <span>0 dari 8 cicilan</span></li>
+        <li class="list-group-item d-flex justify-content-between px-0">Kolektibilitas
+          <span class="badge text-bg-success">Lancar</span></li>
+      </ul></div></div>
+    <div class="card mb-4"><div class="card-header bg-body-tertiary d-flex justify-content-between align-items-center flex-wrap gap-2"><div><h2 class="h6 fw-bold mb-0">Berkas pinjaman</h2></div><div class="d-flex flex-wrap gap-2"></div></div><div class="card-body "><ul class="list-group list-group-flush small">
+        <li class="list-group-item d-flex justify-content-between px-0">Perjanjian pinjaman
+          <a href="#">Lihat PDF</a></li>
+        <li class="list-group-item d-flex justify-content-between px-0">Bukti pencairan
+          <a href="#">Lihat PDF</a></li>
+        <li class="list-group-item d-flex justify-content-between px-0">Form kesediaan autodebet
+          <a href="#">Lihat PDF</a></li>
+      </ul></div></div>
+  </div>
+</div>
+</main>
+<footer class="border-top bg-body py-4 mt-5">
+  <div class="container-xxl small text-body-secondary d-flex justify-content-between flex-wrap gap-2">
+    <span><i class="bi bi-bank2"></i> KSU Mitra Sejahtera — Modul Simpan Pinjam (wireframe statis)</span>
+    <span>Bootstrap 5.3 · tanpa backend · data dummy untuk diskusi dengan programmer</span>
+  </div>
+</footer>
+<div class="modal fade" id="modalLunas" tabindex="-1" aria-labelledby="modalLunasLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="modalLunasLabel">Ajukan pelunasan dipercepat</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Tutup"></button>
+      </div>
+      <div class="modal-body">
+        <p class="small">Pinjaman PJM-2026-0031 akan ditutup dengan total pembayaran
+          <strong>Rp 17.016.667</strong> (sisa pokok + penalti 1% + bunga berjalan).</p>
+        <div class="mb-3">
+          <label class="form-label" for="alasanl">Alasan pelunasan dipercepat</label>
+          <textarea class="form-control" id="alasanl" rows="2"
+            placeholder="Contoh: menerima dana tunjangan tambahan."></textarea>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" id="setujul">
+          <label class="form-check-label small" for="setujul">Saya memahami penalti 1% dari sisa pokok sesuai
+            parameter produk.</label>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Batal</button>
+        <button type="button" class="btn btn-primary">Kirim permohonan ke bendahara</button>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

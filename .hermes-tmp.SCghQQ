@@ -1,0 +1,129 @@
+# ============================================================================
+#  .gitignore  —  Koperasi Wireframe (HTML statis + Bootstrap)
+#  Repo    : koperasi-wireframe
+#  Proyek  : modul_peminjaman (wireframe UI modul simpan pinjam)
+#  Catatan : SEMUA berkas di dalam modul_peminjaman/ adalah deliverable
+#            (dokumen wireframe), jadi TIDAK boleh di-ignore.
+#            Tidak ada komentar di ujung baris: gitignore menganggapnya bagian
+#            dari pola (pattern jadi tidak pernah cocok).
+# ============================================================================
+
+# ---------------------------------------------------------------------------
+# 1. Berkas & folder yang dibuat otomatis oleh macOS   <- permintaan utama
+# ---------------------------------------------------------------------------
+.DS_Store
+.DS_Store?
+.DS_*
+# AppleDouble: metadata resource-fork yang muncul saat salin/zip dari macOS
+._*
+.AppleDouble/
+.AppleDB
+.AppleDesktop
+.Spotlight-V100/
+.Trashes
+.Trashes/
+.fseventsd/
+.FSEventsd/
+.VolumeIcon.icns
+.DocumentRevisions-V100/
+.com.apple.timemachine.donotpresent
+Temporary Items/
+Network Trash Folder/
+.apdisk
+# ikon folder kustom macOS (nama berkasnya diakhiri karakter CR)
+Icon?
+lost+found/
+
+# ---------------------------------------------------------------------------
+# 2. Sampah OS lain (Windows/Linux) — agar aman bila repo dibuka lintas OS
+# ---------------------------------------------------------------------------
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+*.lnk
+
+# ---------------------------------------------------------------------------
+# 3. Editor & IDE
+# ---------------------------------------------------------------------------
+.vscode/
+.idea/
+# Local History VS Code
+.history/
+*.swp
+*.swo
+*~
+.project
+.settings/
+nbproject/
+
+# ---------------------------------------------------------------------------
+# 4. Berkas sementara aplikasi Office (Word/Excel/PowerPoint lock file)
+# ---------------------------------------------------------------------------
+~$*.doc
+~$*.docx
+~$*.xls
+~$*.xlsx
+~$*.ppt
+~$*.pptx
+
+# ---------------------------------------------------------------------------
+# 5. Node.js / tooling web (bila nanti ditambah: live-server, tailwind CLI, dll.)
+# ---------------------------------------------------------------------------
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+.cache/
+.parcel-cache/
+.npm/
+coverage/
+dist/
+build/
+.next/
+
+# ---------------------------------------------------------------------------
+# 6. Python (skrip generator wireframe / analisis)
+# ---------------------------------------------------------------------------
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+.venv/
+venv/
+env/
+.Python
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.ipynb_checkpoints/
+
+# ---------------------------------------------------------------------------
+# 7. Konfigurasi lokal & rahasia (jangan pernah ikut ter-push)
+# ---------------------------------------------------------------------------
+.env
+.env.*
+!.env.example
+*.local
+secrets*.json
+credentials.json
+token.json
+
+# ---------------------------------------------------------------------------
+# 8. Berkas log & sementara
+# ---------------------------------------------------------------------------
+*.log
+*.tmp
+*.temp
+*.bak
+*.orig
+*.diff
+*.patch
+*.pid
+
+# ---------------------------------------------------------------------------
+# 9. Cadangan lokal .gitignore lama (dibuat saat pemasangan berkas ini)
+# ---------------------------------------------------------------------------
+.gitignore.lama
+*.gitignore.lama

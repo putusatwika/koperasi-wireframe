@@ -1,0 +1,105 @@
+# ============================================================================
+#  .gitignore untuk folder deliverable modul_peminjaman/
+#  (aturan sama dengan .gitignore root repo koperasi-wireframe)
+#
+#  Semua berkas .html/.md di folder ini ADALAH deliverable wireframe —
+#  jangan sampai ter-ignore. Yang diabaikan hanya sampah hasil macOS,
+#  editor, dan sementara.
+# ============================================================================
+
+# --- 1. Otomatis macOS ---
+.DS_Store
+.DS_Store?
+.DS_*
+# AppleDouble: metadata resource-fork saat salin/zip dari macOS
+._*
+.AppleDouble/
+.AppleDB
+.AppleDesktop
+.Spotlight-V100/
+.Trashes
+.Trashes/
+.fseventsd/
+.FSEventsd/
+.VolumeIcon.icns
+.DocumentRevisions-V100/
+.com.apple.timemachine.donotpresent
+Temporary Items/
+Network Trash Folder/
+.apdisk
+# ikon folder kustom macOS (nama berkas diakhiri karakter CR)
+Icon?
+lost+found/
+
+# --- 2. Sampah OS lain ---
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+*.lnk
+
+# --- 3. Editor & IDE ---
+.vscode/
+.idea/
+.history/
+*.swp
+*.swo
+*~
+.project
+.settings/
+nbproject/
+
+# --- 4. Berkas sementara aplikasi Office ---
+~$*.doc
+~$*.docx
+~$*.xls
+~$*.xlsx
+~$*.ppt
+~$*.pptx
+
+# --- 5. Node.js / tooling web ---
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+.cache/
+.parcel-cache/
+.npm/
+coverage/
+dist/
+build/
+.next/
+
+# --- 6. Python ---
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+.venv/
+venv/
+env/
+.Python
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.ipynb_checkpoints/
+
+# --- 7. Konfigurasi lokal & rahasia ---
+.env
+.env.*
+!.env.example
+*.local
+secrets*.json
+credentials.json
+token.json
+
+# --- 8. Log & berkas sementara ---
+*.log
+*.tmp
+*.temp
+*.bak
+*.orig
+*.diff
+*.patch
+*.pid
