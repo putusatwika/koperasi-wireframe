@@ -6,6 +6,13 @@ use BackedEnum;
 use Filament\Pages\Page;
 use Filament\Support\Icons\Heroicon;
 use Modules\Dashboard\Services\DashboardService;
+use Modules\Keanggotaan\Filament\Resources\Anggotas\AnggotaResource;
+use Modules\Keuangan\Filament\Pages\InputKeuangan;
+use Modules\Pembayaran\Filament\Pages\BayarPinjaman;
+use Modules\Pembayaran\Filament\Pages\InputAutodebet;
+use Modules\Peminjaman\Filament\Pages\AjukanPeminjamanAnggota;
+use Modules\Peminjaman\Filament\Pages\SimulasiPeminjaman;
+use Modules\Peminjaman\Filament\Resources\SimulasiPeminjaman\SimulasiPeminjamanResource;
 use UnitEnum;
 
 class DashboardKoperasi extends Page
@@ -48,6 +55,7 @@ class DashboardKoperasi extends Page
         $periode = $service->periode($this->filter, $this->dari, $this->sampai);
 
         return [
+            'shortcuts' => $this->shortcuts(),
             'kas' => $service->kas(),
             'piutang' => $service->piutang(),
             'tunggakan' => $service->tunggakan(),
@@ -56,5 +64,78 @@ class DashboardKoperasi extends Page
             'periode' => $periode,
             'filter' => $this->filter,
         ];
+    }
+
+    /**
+     * @return array<int, array{label: string, url: string, icon: string, color: string}>
+     */
+    protected function shortcuts(): array
+    {
+        $shortcuts = [];
+
+        if (AnggotaResource::canCreate()) {
+            $shortcuts[] = [
+                'label' => 'Tambah Anggota',
+                'url' => AnggotaResource::getUrl('create'),
+                'icon' => 'heroicon-o-user-plus',
+                'color' => 'primary',
+            ];
+        }
+
+        if (AjukanPeminjamanAnggota::canAccess()) {
+            $shortcuts[] = [
+                'label' => 'Pengajuan Pinjaman Anggota',
+                'url' => AjukanPeminjamanAnggota::getUrl(),
+                'icon' => 'heroicon-o-document-plus',
+                'color' => 'gray',
+            ];
+        }
+
+        if (SimulasiPeminjaman::canAccess()) {
+            $shortcuts[] = [
+                'label' => 'Simulasi Kredit',
+                'url' => SimulasiPeminjaman::getUrl(),
+                'icon' => 'heroicon-o-calculator',
+                'color' => 'gray',
+            ];
+        }
+
+        if (SimulasiPeminjamanResource::canViewAny()) {
+            $shortcuts[] = [
+                'label' => 'Simulasi Pinjaman',
+                'url' => SimulasiPeminjamanResource::getUrl('index'),
+                'icon' => 'heroicon-o-calculator',
+                'color' => 'gray',
+            ];
+        }
+
+        if (BayarPinjaman::canAccess()) {
+            $shortcuts[] = [
+                'label' => 'Input Pembayaran',
+                'url' => BayarPinjaman::getUrl(),
+                'icon' => 'heroicon-o-banknotes',
+                'color' => 'gray',
+            ];
+        }
+
+        if (InputAutodebet::canAccess()) {
+            $shortcuts[] = [
+                'label' => 'Input Autodebet',
+                'url' => InputAutodebet::getUrl(),
+                'icon' => 'heroicon-o-arrow-up-tray',
+                'color' => 'gray',
+            ];
+        }
+
+        if (InputKeuangan::canAccess()) {
+            $shortcuts[] = [
+                'label' => 'Catat Keuangan',
+                'url' => InputKeuangan::getUrl(),
+                'icon' => 'heroicon-o-banknotes',
+                'color' => 'gray',
+            ];
+        }
+
+        return $shortcuts;
     }
 }

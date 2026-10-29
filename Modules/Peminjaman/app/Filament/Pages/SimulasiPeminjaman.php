@@ -35,15 +35,7 @@ class SimulasiPeminjaman extends Page
 
     public static function canAccess(): bool
     {
-        $user = auth()->user();
-
-        if (! ($user?->can('peminjaman.simulasi.view') ?? false)) {
-            return false;
-        }
-
-        $anggota = $user?->anggota;
-
-        return $anggota === null || $anggota->status === 'active';
+        return auth()->user()?->can('peminjaman.simulasi.view') ?? false;
     }
 
     public function form(Schema $schema): Schema

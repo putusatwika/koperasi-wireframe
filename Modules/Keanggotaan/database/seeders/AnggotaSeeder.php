@@ -48,25 +48,6 @@ class AnggotaSeeder extends Seeder
             ],
         );
 
-        User::query()
-            ->role('super_admin')
-            ->get()
-            ->each(function (User $superAdmin): void {
-                $anggota = Anggota::withTrashed()->firstOrCreate(
-                    ['user_id' => $superAdmin->getKey()],
-                    [
-                        'member_number' => 'AGT-SA-'.str_pad((string) $superAdmin->getKey(), 5, '0', STR_PAD_LEFT),
-                        'account_number' => 'SA'.str_pad((string) $superAdmin->getKey(), 10, '0', STR_PAD_LEFT),
-                        'joined_at' => now()->toDateString(),
-                        'status' => 'active',
-                    ],
-                );
-
-                if ($anggota->trashed()) {
-                    $anggota->restore();
-                }
-            });
-
         app(PermissionRegistrar::class)->forgetCachedPermissions();
     }
 }

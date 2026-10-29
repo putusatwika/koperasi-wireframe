@@ -47,6 +47,7 @@ class PortalAnggotaTest extends TestCase
     public function test_portal_is_permission_gated(): void
     {
         $user = $this->actingUser();
+        Anggota::factory()->create(['user_id' => $user->getKey()]);
 
         $this->assertFalse(PortalAnggota::canAccess());
 
@@ -60,6 +61,8 @@ class PortalAnggotaTest extends TestCase
     public function test_portal_requires_an_anggota_profile(): void
     {
         $this->actingUser(['dashboard.portal_anggota.view']);
+
+        $this->assertFalse(PortalAnggota::canAccess());
 
         $page = new PortalAnggota;
         $method = new \ReflectionMethod($page, 'getViewData');

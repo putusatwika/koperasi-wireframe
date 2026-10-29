@@ -9,5 +9,11 @@ class AnggotaTerdaftar
 {
     use Dispatchable;
 
-    public function __construct(public readonly Anggota $anggota) {}
+    /**
+     * @param  array{pokok?: float, wajib?: float}  $initialSavings
+     */
+    public function __construct(
+        public readonly Anggota $anggota,
+        public readonly array $initialSavings = [],
+    ) {}
 }

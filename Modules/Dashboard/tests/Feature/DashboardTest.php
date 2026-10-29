@@ -2,6 +2,7 @@
 
 namespace Modules\Dashboard\Tests\Feature;
 
+use App\Filament\Pages\Dashboard;
 use App\Models\AccountType;
 use App\Models\CoaAccount;
 use App\Models\Jurnal;
@@ -25,6 +26,7 @@ use Modules\Peminjaman\Enums\TujuanPeminjaman;
 use Modules\Peminjaman\Models\Peminjaman;
 use Modules\Peminjaman\Services\PeminjamanService;
 use Spatie\Permission\Models\Permission;
+use Spatie\Permission\Models\Role;
 use Spatie\Permission\PermissionRegistrar;
 use Tests\TestCase;
 
@@ -57,6 +59,25 @@ class DashboardTest extends TestCase
         $user->givePermissionTo('dashboard.dashboard.view');
 
         $this->assertTrue(DashboardKoperasi::canAccess());
+    }
+
+    public function test_dashboard_navigation_is_hidden_for_anggota_role(): void
+    {
+        $user = $this->actingUser();
+
+        $this->assertTrue(Dashboard::shouldRegisterNavigation());
+
+        $user->assignRole(Role::findOrCreate('anggota', 'web'));
+        app(PermissionRegistrar::class)->forgetCachedPermissions();
+
+        $this->assertFalse(Dashboard::shouldRegisterNavigation());
+    }
+
+    public function test_dashboard_navigation_is_hidden_for_bendahara_with_the_cooperative_dashboard(): void
+    {
+        $user = $this->actingUser(['dashboard.dashboard.view']);
+
+        $this->assertFalse(Dashboard::shouldRegisterNavigation());
     }
 
     public function test_cash_breakdown_sums_configured_cash_accounts(): void

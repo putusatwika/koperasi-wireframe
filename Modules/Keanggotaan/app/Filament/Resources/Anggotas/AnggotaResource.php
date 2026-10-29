@@ -58,7 +58,12 @@ class AnggotaResource extends Resource
 
     public static function getEloquentQuery(): Builder
     {
-        return parent::getEloquentQuery()->with('user');
+        return parent::getEloquentQuery()
+            ->with('user')
+            ->whereDoesntHave(
+                'user.roles',
+                fn (Builder $query): Builder => $query->where('name', 'super_admin'),
+            );
     }
 
     public static function canViewAny(): bool

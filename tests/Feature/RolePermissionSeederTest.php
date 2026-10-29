@@ -30,6 +30,18 @@ class RolePermissionSeederTest extends TestCase
         }
     }
 
+    public function test_bendahara_can_manage_members(): void
+    {
+        $this->seed(RolePermissionSeeder::class);
+
+        $bendahara = Role::findByName('bendahara');
+
+        $this->assertTrue($bendahara->hasPermissionTo('keanggotaan.anggota.viewAny'));
+        $this->assertTrue($bendahara->hasPermissionTo('keanggotaan.anggota.create'));
+        $this->assertTrue($bendahara->hasPermissionTo('keanggotaan.anggota.update'));
+        $this->assertFalse($bendahara->hasPermissionTo('keanggotaan.anggota.delete'));
+    }
+
     public function test_bendahara_manages_cash_while_ketua_and_pengawas_may_only_view_it(): void
     {
         $this->seed(RolePermissionSeeder::class);

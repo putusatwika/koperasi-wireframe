@@ -14,7 +14,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 use Modules\Keanggotaan\Database\Factories\AnggotaFactory;
 use Modules\Pembayaran\Models\Pembayaran;
 
-#[Fillable(['user_id', 'member_number', 'account_number', 'identity_number', 'phone', 'address', 'joined_at', 'status'])]
+#[Fillable(['user_id', 'member_number', 'account_number', 'bank_name', 'identity_number', 'phone', 'occupation', 'income', 'address', 'notes', 'joined_at', 'status'])]
 class Anggota extends Model
 {
     use HasFactory, HasModuleTable, SoftDeletes;
@@ -33,6 +33,7 @@ class Anggota extends Model
     {
         return [
             'joined_at' => 'date',
+            'income' => 'decimal:2',
         ];
     }
 

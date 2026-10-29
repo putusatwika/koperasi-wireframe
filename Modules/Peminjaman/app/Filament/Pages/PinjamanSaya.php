@@ -25,7 +25,9 @@ class PinjamanSaya extends Page
 
     public static function canAccess(): bool
     {
-        return auth()->user()?->can('peminjaman.kartu_piutang.view') ?? false;
+        $user = auth()->user();
+
+        return ($user?->can('peminjaman.kartu_piutang.view') ?? false) && $user?->anggota !== null;
     }
 
     /** @return array<string, mixed> */

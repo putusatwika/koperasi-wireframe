@@ -11,6 +11,6 @@ class CreateInitialSavings
 
     public function handle(AnggotaTerdaftar $event): void
     {
-        $this->service->registerInitialSavings($event->anggota);
+        $this->service->registerInitialSavings($event->anggota, $event->initialSavings);
     }
 }

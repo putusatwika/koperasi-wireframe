@@ -12,12 +12,9 @@ use Modules\Peminjaman\Filament\Pages\KartuPiutang;
 use Modules\Peminjaman\Filament\Pages\PinjamanSaya;
 use Modules\Peminjaman\Filament\Pages\SimulasiPeminjaman;
 use Modules\Simpanan\Filament\Pages\SimpananSaya;
-use UnitEnum;
 
 class PortalAnggota extends Page
 {
-    protected static string|UnitEnum|null $navigationGroup = 'Dashboard';
-
     protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedHome;
 
     protected static ?string $navigationLabel = 'Portal Anggota';
@@ -28,7 +25,9 @@ class PortalAnggota extends Page
 
     public static function canAccess(): bool
     {
-        return auth()->user()?->can('dashboard.portal_anggota.view') ?? false;
+        $user = auth()->user();
+
+        return ($user?->can('dashboard.portal_anggota.view') ?? false) && $user?->anggota !== null;
     }
 
     /** @return array<string, mixed> */

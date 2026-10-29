@@ -7,7 +7,6 @@ use Filament\Http\Middleware\Authenticate;
 use Filament\Http\Middleware\AuthenticateSession;
 use Filament\Http\Middleware\DisableBladeIconComponents;
 use Filament\Http\Middleware\DispatchServingFilamentEvent;
-use Filament\Pages\Dashboard;
 use Filament\Panel;
 use Filament\PanelProvider;
 use Filament\Support\Colors\Color;
@@ -19,6 +18,8 @@ use Illuminate\Foundation\Http\Middleware\PreventRequestForgery;
 use Illuminate\Routing\Middleware\SubstituteBindings;
 use Illuminate\Session\Middleware\StartSession;
 use Illuminate\View\Middleware\ShareErrorsFromSession;
+use Modules\Dashboard\Filament\Pages\DashboardKoperasi;
+use Modules\Dashboard\Filament\Pages\PortalAnggota;
 
 class UserPanelProvider extends PanelProvider
 {
@@ -29,6 +30,11 @@ class UserPanelProvider extends PanelProvider
             ->id('user')
             ->plugin(ModulesPlugin::make())
             ->path('')
+            ->homeUrl(fn (): ?string => match (true) {
+                auth()->user()?->hasRole('anggota') => PortalAnggota::getUrl(),
+                auth()->user()?->can('dashboard.dashboard.view') => DashboardKoperasi::getUrl(),
+                default => null,
+            })
             ->viteTheme('resources/css/filament/user/theme.css')
             ->login()
             ->colors([
@@ -37,13 +43,12 @@ class UserPanelProvider extends PanelProvider
             ->discoverResources(in: app_path('Filament/Resources'), for: 'App\Filament\Resources')
             ->discoverPages(in: app_path('Filament/Pages'), for: 'App\Filament\Pages')
             ->navigationGroups([
+                'Dashboard',
                 'Core',
                 'Report',
                 'Sistem',
             ])
-            ->pages([
-                Dashboard::class,
-            ])
+            ->pages([])
             ->discoverWidgets(in: app_path('Filament/Widgets'), for: 'App\Filament\Widgets')
             ->widgets([
                 AccountWidget::class,

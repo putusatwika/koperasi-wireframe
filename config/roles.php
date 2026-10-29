@@ -54,6 +54,8 @@ return [
             'pembayaran.coa_config.update',
             'keanggotaan.anggota.viewAny',
             'keanggotaan.anggota.view',
+            'keanggotaan.anggota.create',
+            'keanggotaan.anggota.update',
             'keuangan.kategori.viewAny',
             'keuangan.kategori.view',
             'keuangan.kategori.create',

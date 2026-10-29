@@ -119,11 +119,13 @@
                 </table>
             </div>
 
-            <div class="mt-4">
-                <x-filament::button type="button" wire:click="continueApplication">
-                    Lanjutkan ke Pengajuan
-                </x-filament::button>
-            </div>
+            @if (\Modules\Peminjaman\Filament\Pages\AjukanPeminjaman::canAccess())
+                <div class="mt-4">
+                    <x-filament::button type="button" wire:click="continueApplication">
+                        Lanjutkan ke Pengajuan
+                    </x-filament::button>
+                </div>
+            @endif
         </x-filament::section>
     @endif
 </x-filament-panels::page>

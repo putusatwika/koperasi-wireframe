@@ -23,7 +23,7 @@ class InputKeuangan extends Page
 
     protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedArrowDownTray;
 
-    protected static ?string $navigationLabel = 'Input Kas';
+    protected static ?string $navigationLabel = 'Catat Keuangan';
 
     protected static ?int $navigationSort = 10;
 

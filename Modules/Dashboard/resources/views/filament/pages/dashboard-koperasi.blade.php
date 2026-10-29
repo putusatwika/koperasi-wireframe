@@ -3,6 +3,26 @@
         $formatRupiah = fn (mixed $value): string => 'Rp '.number_format((float) $value, 2, ',', '.');
     @endphp
 
+    @if ($shortcuts !== [])
+        <x-filament::section>
+            <x-slot name="heading">Aksi Cepat</x-slot>
+            <x-slot name="description">Shortcut ke menu yang sering digunakan.</x-slot>
+
+            <div class="flex flex-wrap gap-3">
+                @foreach ($shortcuts as $shortcut)
+                    <x-filament::button
+                        tag="a"
+                        href="{{ $shortcut['url'] }}"
+                        icon="{{ $shortcut['icon'] }}"
+                        color="{{ $shortcut['color'] }}"
+                    >
+                        {{ $shortcut['label'] }}
+                    </x-filament::button>
+                @endforeach
+            </div>
+        </x-filament::section>
+    @endif
+
     <x-filament::section>
         <x-slot name="heading">Kas Koperasi</x-slot>
         <x-slot name="description">Total kas saat ini dan rincian per akun kas.</x-slot>

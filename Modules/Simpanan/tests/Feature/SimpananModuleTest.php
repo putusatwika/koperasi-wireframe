@@ -79,6 +79,40 @@ class SimpananModuleTest extends TestCase
             ->count());
     }
 
+    public function test_registration_initial_savings_payment_can_activate_the_member(): void
+    {
+        $this->actingUser(['simpanan.kewajiban.update']);
+        $this->configureCoa();
+        $this->seed(JenisSimpananSeeder::class);
+
+        $anggota = Anggota::factory()->create(['status' => 'pending']);
+
+        app(SimpananService::class)->registerInitialSavings($anggota, [
+            'pokok' => 100000,
+            'wajib' => 50000,
+        ]);
+
+        $this->assertSame('active', $anggota->refresh()->status);
+
+        $this->assertSame(2, KewajibanSimpanan::query()
+            ->where('anggota_id', $anggota->getKey())
+            ->where('status', StatusKewajiban::Paid->value)
+            ->count());
+
+        $this->assertSame(2, SimpananAkun::query()
+            ->where('anggota_id', $anggota->getKey())
+            ->where('saldo', '>', 0)
+            ->count());
+
+        $saldo = SimpananAkun::query()
+            ->where('anggota_id', $anggota->getKey())
+            ->orderBy('id')
+            ->pluck('saldo')
+            ->all();
+
+        $this->assertSame(['100000.00', '50000.00'], $saldo);
+    }
+
     public function test_deposit_and_withdrawal_update_balance_and_post_journals(): void
     {
         $this->actingUser(['simpanan.transaksi.create']);
@@ -220,6 +254,7 @@ class SimpananModuleTest extends TestCase
     public function test_filament_screens_are_permission_gated(): void
     {
         $user = $this->actingUser();
+        Anggota::factory()->create(['user_id' => $user->getKey()]);
 
         $this->assertFalse(JenisSimpananResource::canViewAny());
         $this->assertFalse(InputSimpanan::canAccess());

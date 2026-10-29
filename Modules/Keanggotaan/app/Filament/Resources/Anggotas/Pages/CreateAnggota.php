@@ -16,4 +16,12 @@ class CreateAnggota extends CreateRecord
     {
         return app(AnggotaService::class)->create($data);
     }
+
+    /** @param  array<string, mixed>  $data */
+    protected function mutateFormDataBeforeCreate(array $data): array
+    {
+        $data['member_number'] = app(AnggotaService::class)->generateMemberNumber();
+
+        return $data;
+    }
 }

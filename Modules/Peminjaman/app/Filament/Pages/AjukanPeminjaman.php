@@ -87,7 +87,7 @@ class AjukanPeminjaman extends Page
 
         $anggota = $user?->anggota;
 
-        return $anggota === null || $anggota->status === 'active';
+        return $anggota !== null && $anggota->status === 'active';
     }
 
     public function form(Schema $schema): Schema

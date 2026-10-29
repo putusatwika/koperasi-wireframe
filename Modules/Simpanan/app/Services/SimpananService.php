@@ -27,8 +27,10 @@ class SimpananService
 
     /**
      * Open the mandatory savings accounts and first obligations for a newly registered member.
+     *
+     * @param  array{pokok?: float|int|string|null, wajib?: float|int|string|null}  $initialSavings
      */
-    public function registerInitialSavings(Anggota $anggota): void
+    public function registerInitialSavings(Anggota $anggota, array $initialSavings = []): void
     {
         $now = CarbonImmutable::now();
         $jenisList = JenisSimpanan::query()->where('is_active', true)->get();
@@ -53,10 +55,55 @@ class SimpananService
             }
         }
 
+        $this->payRegistrationSavings($anggota, $initialSavings);
+
         if (! $this->hasPaidMandatory($anggota)) {
             $anggota->update(['status' => 'pending']);
         } else {
             $this->syncActivationStatus($anggota);
+        }
+    }
+
+    /**
+     * Record the optional pokok and wajib savings payment taken when a member registers.
+     *
+     * @param  array{pokok?: float|int|string|null, wajib?: float|int|string|null}  $amounts
+     */
+    public function payRegistrationSavings(Anggota $anggota, array $amounts): void
+    {
+        $categories = [
+            'pokok' => KategoriSimpanan::Pokok,
+            'wajib' => KategoriSimpanan::Wajib,
+        ];
+
+        foreach ($categories as $key => $kategori) {
+            $nominal = round((float) ($amounts[$key] ?? 0), 2);
+
+            if ($nominal <= 0) {
+                continue;
+            }
+
+            $jenis = JenisSimpanan::query()
+                ->where('is_active', true)
+                ->where('kategori', $kategori->value)
+                ->first();
+
+            if ($jenis === null) {
+                continue;
+            }
+
+            $kewajiban = KewajibanSimpanan::query()
+                ->where('anggota_id', $anggota->getKey())
+                ->where('jenis_simpanan_id', $jenis->getKey())
+                ->where('status', StatusKewajiban::Pending->value)
+                ->orderBy('id')
+                ->first();
+
+            if ($kewajiban === null) {
+                continue;
+            }
+
+            $this->bayarKewajiban($kewajiban, $nominal);
         }
     }
 

@@ -15,6 +15,8 @@ use Modules\Peminjaman\Enums\JenisBungaPeminjaman;
 use Modules\Peminjaman\Enums\StatusPeminjaman;
 use Modules\Peminjaman\Filament\Pages\AjukanPeminjaman;
 use Modules\Peminjaman\Filament\Pages\AjukanPeminjamanAnggota;
+use Modules\Peminjaman\Filament\Pages\KartuPiutang;
+use Modules\Peminjaman\Filament\Pages\PinjamanSaya;
 use Modules\Peminjaman\Filament\Pages\SimulasiPeminjaman;
 use Modules\Peminjaman\Filament\Resources\DaftarPeminjamans\DaftarPeminjamanResource;
 use Modules\Peminjaman\Filament\Resources\JenisPinjaman\JenisPinjamanResource;
@@ -386,6 +388,7 @@ class PeminjamanModuleTest extends TestCase
     {
         $user = User::factory()->create();
         $this->actingAs($user);
+        Anggota::factory()->create(['user_id' => $user->getKey()]);
 
         $this->assertFalse(PengajuanPeminjamanResource::canViewAny());
         $this->assertFalse(DaftarPeminjamanResource::canViewAny());
@@ -415,6 +418,36 @@ class PeminjamanModuleTest extends TestCase
         $user->givePermissionTo(Permission::findOrCreate('peminjaman.pengajuan.create_any'));
 
         $this->assertTrue(PengajuanPeminjamanResource::canViewAny());
+    }
+
+    public function test_pending_member_can_open_the_simulation_page_but_not_apply_for_a_loan(): void
+    {
+        $user = User::factory()->create();
+        Anggota::factory()->create([
+            'user_id' => $user->getKey(),
+            'status' => 'pending',
+        ]);
+
+        $user->givePermissionTo([
+            Permission::findOrCreate('peminjaman.simulasi.view'),
+            Permission::findOrCreate('peminjaman.pengajuan.create'),
+        ]);
+
+        $this->actingAs($user);
+
+        $this->assertTrue(SimulasiPeminjaman::canAccess());
+        $this->assertFalse(AjukanPeminjaman::canAccess());
+    }
+
+    public function test_super_admin_without_a_member_profile_cannot_open_self_service_pages(): void
+    {
+        $user = User::factory()->create();
+        $user->assignRole(Role::findOrCreate('super_admin'));
+        $this->actingAs($user);
+
+        $this->assertFalse(AjukanPeminjaman::canAccess());
+        $this->assertFalse(PinjamanSaya::canAccess());
+        $this->assertFalse(KartuPiutang::canAccess());
     }
 
     public function test_create_any_can_submit_for_another_member_but_not_for_self(): void

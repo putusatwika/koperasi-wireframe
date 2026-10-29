@@ -25,7 +25,9 @@ class SimpananSaya extends Page
 
     public static function canAccess(): bool
     {
-        return auth()->user()?->can('simpanan.portal_anggota.view') ?? false;
+        $user = auth()->user();
+
+        return ($user?->can('simpanan.portal_anggota.view') ?? false) && $user?->anggota !== null;
     }
 
     /** @return array<string, mixed> */
