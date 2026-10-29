@@ -1,0 +1,1 @@
+Task Filament 06 — Tambahkan satu proses conditional form untuk metode pembayaran pada `PeminjamanForm`: pilihan `autodebet` atau `bayar_bulanan` harus mengatur field rekening dan tanggal autodebet, dengan validasi server-side dan test untuk setiap cabang; gunakan permission personal yang sudah ada dan jangan menjadikan label role wireframe sebagai authorization.

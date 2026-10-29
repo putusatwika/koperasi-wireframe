@@ -1,0 +1,16 @@
+{
+    "name": "Keuangan",
+    "alias": "keuangan",
+    "version": "1.2.0",
+    "description": "Kas operasional: kategori serta transaksi pendapatan dan pengeluaran koperasi.",
+    "requires": [],
+    "keywords": [],
+    "priority": 0,
+    "providers": [
+        "Modules\\Keuangan\\Providers\\KeuanganServiceProvider"
+    ],
+    "filament": {
+        "plugin": "Modules\\Keuangan\\Filament\\KeuanganPlugin"
+    },
+    "files": []
+}

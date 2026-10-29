@@ -1,0 +1,1 @@
+Task Filament 20 — Selaraskan satu proses `PersetujuanPencairanResource`/view dengan `ketua/persetujuan.html`: sediakan aksi approve, revisi, dan reject dengan catatan atau alasan wajib, gunakan `peminjaman.persetujuan.approve_ketua` dan `peminjaman.persetujuan.reject`, lalu uji seluruh transisi dan data audit.

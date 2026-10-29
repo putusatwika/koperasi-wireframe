@@ -1,0 +1,1 @@
+Task Filament 08 — Tambahkan satu proses conditional kolateral dan pernyataan anggota: jenis, nilai, nomor bukti, pemilik, dan checkbox persetujuan harus muncul/valid hanya saat produk atau keperluan membutuhkan jaminan, lalu simpan hasil persetujuan pada pengajuan dan uji bypass validasi melalui service/action.

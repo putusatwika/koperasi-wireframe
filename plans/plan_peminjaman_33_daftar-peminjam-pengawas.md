@@ -1,0 +1,1 @@
+Task Filament 33 — Buat satu table read-only yang memetakan `pengawas/daftar-peminjam.html`: tampilkan anggota, simpanan, pokok, sisa pokok, progres, kolektibilitas, dan status dengan filter serta export yang diotorisasi permission report; uji bahwa tidak ada create/update/delete dan query tidak terbatas pada role.

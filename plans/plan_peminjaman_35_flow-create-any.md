@@ -1,0 +1,1 @@
+Task Filament 35 — Setelah seluruh proses personal disetujui dan lulus test, gunakan proses yang sama untuk page anggota lain dengan `peminjaman.pengajuan.create_any`: tambahkan hanya Select anggota aktif lain, pertahankan form/status/audit personal, tolak anggota sendiri atau nonaktif di service, dan uji authorization serta data target tanpa memakai role bendahara.

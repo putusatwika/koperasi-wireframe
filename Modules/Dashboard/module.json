@@ -1,0 +1,21 @@
+{
+    "name": "Dashboard",
+    "alias": "dashboard",
+    "version": "1.1.0",
+    "description": "Ringkasan koperasi: kas, piutang, tunggakan, denda, dan keuangan per role.",
+    "requires": [
+        "Peminjaman",
+        "Pembayaran",
+        "Simpanan",
+        "Keuangan"
+    ],
+    "keywords": [],
+    "priority": 0,
+    "providers": [
+        "Modules\\Dashboard\\Providers\\DashboardServiceProvider"
+    ],
+    "filament": {
+        "plugin": "Modules\\Dashboard\\Filament\\DashboardPlugin"
+    },
+    "files": []
+}

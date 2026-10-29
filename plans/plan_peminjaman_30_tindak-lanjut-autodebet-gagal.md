@@ -1,0 +1,1 @@
+Task Filament 30 — Buat satu resource/detail action yang memetakan `admin/autodebet-gagal.html`: tampilkan alasan gagal, anggota, aksi tindak lanjut, tanggal, dan catatan, simpan hasil kontak serta status selesai menggunakan permission import/payment yang disetujui, lalu uji perubahan status dan audit tindak lanjut.

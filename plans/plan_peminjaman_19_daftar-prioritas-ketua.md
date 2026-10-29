@@ -1,0 +1,1 @@
+Task Filament 19 — Buat satu table/resource untuk `ketua/daftar-peminjam.html`: tampilkan pengajuan yang sudah direkomendasikan dengan urutan prioritas keperluan, dampak kas, nominal, dan anggota menggunakan permission view/persetujuan yang sesuai; uji sorting prioritas, filter status, dan pembatasan query.

@@ -1,0 +1,1 @@
+Task Filament 15 — Buat satu `Page`/widget dashboard yang memetakan `admin/dashboard.html`: tampilkan antrian simulasi, verifikasi, rekomendasi, pencairan, dan autodebet berdasarkan permission yang dimiliki user, bukan role; setiap shortcut harus mengarah ke resource Filament yang benar dan diuji dengan authorization serta count query.

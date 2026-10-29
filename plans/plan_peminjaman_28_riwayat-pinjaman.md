@@ -1,0 +1,1 @@
+Task Filament 28 — Buat satu resource/table riwayat yang memetakan `anggota/riwayat.html`: pisahkan pinjaman aktif dan tertutup, tampilkan pencairan per tahun serta legalitas, dan sediakan export hanya jika permission report tersedia; uji filter status, ownership, dan hasil agregasi.

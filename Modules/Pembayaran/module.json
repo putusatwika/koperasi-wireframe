@@ -1,0 +1,19 @@
+{
+    "name": "Pembayaran",
+    "alias": "pembayaran",
+    "version": "1.3.0",
+    "description": "Pencatatan pembayaran pinjaman dan autodebet anggota.",
+    "requires": [
+        "Peminjaman",
+        "Keanggotaan"
+    ],
+    "keywords": [],
+    "priority": 0,
+    "providers": [
+        "Modules\\Pembayaran\\Providers\\PembayaranServiceProvider"
+    ],
+    "filament": {
+        "plugin": "Modules\\Pembayaran\\Filament\\PembayaranPlugin"
+    },
+    "files": []
+}

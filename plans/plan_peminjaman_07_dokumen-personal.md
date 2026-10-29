@@ -1,0 +1,1 @@
+Task Filament 07 — Rapikan satu proses upload dokumen pada form personal berdasarkan `anggota/pengajuan-form.html`: KTP, penghasilan, dokumen autodebet, kuasa potong, dan dokumen pendukung harus wajib/kondisional sesuai data pengajuan, mengikuti disk/ukuran project setelah diverifikasi; uji validasi tipe, ukuran, kondisi wajib, dan akses upload dengan PHPUnit.

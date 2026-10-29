@@ -1,0 +1,1 @@
+Task Filament 25 — Buat satu proses action/form pembayaran manual dari halaman pinjaman aktif: terima nominal, tanggal, bukti transfer, dan catatan, cocokkan ke cicilan berikutnya, update saldo serta status, dan uji validasi nominal, pembayaran ganda, bukti wajib, serta permission pemilik/petugas.

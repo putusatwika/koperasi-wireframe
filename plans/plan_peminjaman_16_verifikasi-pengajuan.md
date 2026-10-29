@@ -1,0 +1,1 @@
+Task Filament 16 — Selaraskan satu proses `PemeriksaanPeminjamanResource` dengan `admin/pengajuan.html`: pemeriksa memakai `peminjaman.pemeriksaan.process` untuk memeriksa kas, dokumen, sifat pembayaran, analisis, dan sikap pemeriksa; aksi minta kelengkapan memakai permission reject/proses yang disetujui dan diuji untuk status `SUBMITTED` serta `IN_REVIEW`.

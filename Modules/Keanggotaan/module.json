@@ -1,0 +1,12 @@
+{
+    "name": "Keanggotaan",
+    "alias": "keanggotaan",
+    "version": "1.4.0",
+    "description": "Pendaftaran dan pengelolaan data anggota koperasi.",
+    "keywords": [],
+    "priority": 0,
+    "providers": [
+        "Modules\\Keanggotaan\\Providers\\KeanggotaanServiceProvider"
+    ],
+    "files": []
+}

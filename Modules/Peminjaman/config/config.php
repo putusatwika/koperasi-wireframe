@@ -1,0 +1,68 @@
+<?php
+
+return [
+    'name' => 'Peminjaman',
+    'permissions' => [
+        'peminjaman.simulasi.view',
+        'peminjaman.simulasi_pinjaman.viewAny',
+        'peminjaman.simulasi_pinjaman.view',
+        'peminjaman.daftar_peminjaman.viewAny',
+        'peminjaman.daftar_peminjaman.view',
+        'peminjaman.daftar_peminjaman.lunas',
+        'peminjaman.pengajuan.viewAny',
+        'peminjaman.pengajuan.view',
+        'peminjaman.pengajuan.create',
+        'peminjaman.pengajuan.create_any',
+        'peminjaman.pengajuan.update',
+        'peminjaman.pengajuan.delete',
+        'peminjaman.pengajuan.cancel',
+        'peminjaman.pengajuan.cancel_approve',
+        'peminjaman.pemeriksaan.viewAny',
+        'peminjaman.pemeriksaan.view',
+        'peminjaman.pemeriksaan.process',
+        'peminjaman.pemeriksaan.reject',
+        'peminjaman.pengajuan.approve_bendahara',
+        'peminjaman.persetujuan.viewAny',
+        'peminjaman.persetujuan.view',
+        'peminjaman.persetujuan.approve',
+        'peminjaman.persetujuan.approve_ketua',
+        'peminjaman.persetujuan.reject',
+        'peminjaman.persetujuan.disburse',
+        'peminjaman.report_pencairan.view',
+        'peminjaman.kartu_piutang.view',
+        'peminjaman.coa_config.viewAny',
+        'peminjaman.coa_config.create',
+        'peminjaman.coa_config.update',
+        'peminjaman.jenis_pinjaman.viewAny',
+        'peminjaman.jenis_pinjaman.view',
+        'peminjaman.jenis_pinjaman.create',
+        'peminjaman.jenis_pinjaman.update',
+        'peminjaman.jenis_pinjaman.delete',
+    ],
+    'approval_workflows' => [
+        'loan' => [
+            [
+                'key' => 'verification',
+                'name' => 'Verifikasi Bendahara',
+                'permission' => 'peminjaman.pengajuan.approve_bendahara',
+            ],
+            [
+                'key' => 'ketua_approval',
+                'name' => 'Persetujuan Ketua',
+                'permission' => 'peminjaman.persetujuan.approve_ketua',
+            ],
+            [
+                'key' => 'disbursement',
+                'name' => 'Pencairan',
+                'permission' => 'peminjaman.persetujuan.disburse',
+            ],
+        ],
+        'cancellation' => [
+            [
+                'key' => 'cancellation_approval',
+                'name' => 'Persetujuan Pembatalan',
+                'permission' => 'peminjaman.pengajuan.cancel_approve',
+            ],
+        ],
+    ],
+];

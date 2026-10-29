@@ -1,0 +1,1 @@
+Task Filament 18 — Pecah `admin/parameter.html` menjadi satu proses konfigurasi Filament yang memakai resource `JenisPinjaman` dan page konfigurasi yang sudah ada: kelola bunga, plafon, tenor, denda, penalti, kolateral, dan sifat pembayaran dengan permission CRUD parameter yang tersedia; uji idempotensi, cast enum, validasi rentang, dan audit perubahan.

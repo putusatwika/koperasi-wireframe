@@ -1,0 +1,1 @@
+Task Filament 11 — Buat satu proses status personal yang memetakan `anggota/pengajuan-status.html` ke view/resource Filament: tampilkan riwayat pemrosesan, revisi, penolakan, dan langkah berikutnya hanya untuk anggota pemilik menggunakan query ownership dan `peminjaman.pengajuan.view`; uji setiap status dan kebocoran data antaranggota.

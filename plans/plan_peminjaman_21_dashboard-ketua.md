@@ -1,0 +1,1 @@
+Task Filament 21 — Buat satu `Page`/widget dashboard yang memetakan `ketua/dashboard.html`: hitung antrian keputusan, posisi kas, revisi yang diminta, dan ringkasan portofolio dari resource yang sudah ada, tampilkan shortcut hanya jika permission view/persetujuan dimiliki, dan uji visibility serta query agregat.

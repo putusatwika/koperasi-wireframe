@@ -1,0 +1,1 @@
+Task Filament 26 — Buat satu action/form pelunasan dipercepat dari `anggota/pinjaman-aktif.html`: hitung penalti berdasarkan parameter produk, minta alasan dan persetujuan, buat permintaan untuk diproses permission yang sesuai, dan uji perhitungan, status, serta penolakan tanpa menggunakan role.

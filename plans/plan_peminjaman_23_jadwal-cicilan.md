@@ -1,0 +1,1 @@
+Task Filament 23 — Setelah pencairan, buat satu proses service/resource yang membentuk jadwal cicilan dari snapshot simulasi untuk ditampilkan pada `anggota/pinjaman-aktif.html`: uji metode flat, efektif, anuitas, saldo akhir nol, pembulatan, serta keterkaitan jadwal dengan pinjaman yang sudah `DISBURSED`.

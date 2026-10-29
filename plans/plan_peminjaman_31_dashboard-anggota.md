@@ -1,0 +1,1 @@
+Task Filament 31 — Buat satu dashboard anggota yang memetakan `anggota/dashboard.html`: tampilkan cicilan aktif, pengajuan terakhir, riwayat, simpanan, indikator penilaian, dan tindakan yang perlu dilakukan menggunakan ownership query dan permission view personal; uji agregasi tanpa membocorkan data anggota lain.

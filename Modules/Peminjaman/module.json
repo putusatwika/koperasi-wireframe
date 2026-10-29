@@ -1,0 +1,15 @@
+{
+    "name": "Peminjaman",
+    "alias": "peminjaman",
+    "version": "1.24.0",
+    "description": "Simulasi, pengajuan, persetujuan, dan pencairan pinjaman koperasi.",
+    "requires": [
+        "Keanggotaan"
+    ],
+    "keywords": [],
+    "priority": 0,
+    "providers": [
+        "Modules\\Peminjaman\\Providers\\PeminjamanServiceProvider"
+    ],
+    "files": []
+}

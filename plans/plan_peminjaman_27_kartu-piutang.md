@@ -1,0 +1,1 @@
+Task Filament 27 — Buat satu resource/infolist kartu piutang yang memetakan `anggota/kartu-piutang.html`: tampilkan saldo, mutasi, cicilan, pembayaran, dan sumber update untuk satu pinjaman milik anggota, gunakan ownership query dan permission view, lalu uji saldo berjalan, urutan mutasi, dan akses antaranggota.

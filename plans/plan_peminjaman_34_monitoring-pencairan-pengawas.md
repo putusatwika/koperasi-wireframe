@@ -1,0 +1,1 @@
+Task Filament 34 — Buat satu table read-only yang memetakan `pengawas/pencairan.html`: tampilkan tanggal, bukti, pinjaman, anggota, nominal, biaya, dana bersih, metode, kelengkapan, dan status pemeriksaan dengan permission report; uji hanya data pencairan, export terotorisasi, dan tidak adanya mutation action.

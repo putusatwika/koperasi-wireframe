@@ -1,0 +1,30 @@
+{
+    "name": "nwidart/simpanan",
+    "description": "",
+    "authors": [
+        {
+            "name": "Nicolas Widart",
+            "email": "n.widart@gmail.com"
+        }
+    ],
+    "extra": {
+        "laravel": {
+            "providers": [],
+            "aliases": {
+
+            }
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "Modules\\Simpanan\\": "app/",
+            "Modules\\Simpanan\\Database\\Factories\\": "database/factories/",
+            "Modules\\Simpanan\\Database\\Seeders\\": "database/seeders/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Modules\\Simpanan\\Tests\\": "tests/"
+        }
+    }
+}

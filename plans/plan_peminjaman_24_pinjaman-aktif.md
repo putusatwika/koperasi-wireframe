@@ -1,0 +1,1 @@
+Task Filament 24 — Buat satu resource/page anggota untuk `anggota/pinjaman-aktif.html`: tampilkan jadwal, cara bayar, denda, berkas, dan aksi pembayaran/pelunasan hanya untuk pemilik anggota dengan permission view yang ditetapkan, lalu uji ownership, status aktif, dan pembatasan aksi pada pinjaman belum cair.

@@ -1,0 +1,1 @@
+Task Filament 32 — Buat satu dashboard read-only yang memetakan `pengawas/dashboard.html`: tampilkan temuan, audit, kualitas portofolio, dan ringkasan keuangan dengan permission report/audit yang ditetapkan, tanpa action perubahan data; uji bahwa user tanpa permission tidak dapat mengaksesnya.

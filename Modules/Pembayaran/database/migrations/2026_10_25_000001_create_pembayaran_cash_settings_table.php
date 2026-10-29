@@ -1,0 +1,34 @@
+<?php
+
+use App\Support\Concerns\UsesModuleTable;
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
+
+return new class extends Migration
+{
+    use UsesModuleTable;
+
+    /**
+     * Run the migrations.
+     */
+    public function up(): void
+    {
+        Schema::create($this->moduleTable('Pembayaran', 'cash_settings'), function (Blueprint $table): void {
+            $table->id();
+            $table->decimal('opening_balance', 30, 2)->default(0);
+            $table->date('opening_date')->nullable();
+            $table->foreignId('created_by')->nullable()->constrained('users')->nullOnDelete();
+            $table->foreignId('updated_by')->nullable()->constrained('users')->nullOnDelete();
+            $table->timestamps();
+        });
+    }
+
+    /**
+     * Reverse the migrations.
+     */
+    public function down(): void
+    {
+        Schema::dropIfExists($this->moduleTable('Pembayaran', 'cash_settings'));
+    }
+};
