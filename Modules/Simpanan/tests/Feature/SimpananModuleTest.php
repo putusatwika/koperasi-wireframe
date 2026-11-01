@@ -7,6 +7,7 @@ use App\Models\CoaAccount;
 use App\Models\Jurnal;
 use App\Models\User;
 use Carbon\CarbonImmutable;
+use Filament\Schemas\Schema as FilamentSchema;
 use Illuminate\Foundation\Testing\LazilyRefreshDatabase;
 use Illuminate\Support\Facades\Schema;
 use InvalidArgumentException;
@@ -17,8 +18,9 @@ use Modules\Simpanan\Enums\PeriodikSimpanan;
 use Modules\Simpanan\Enums\SimpananCOAConfigEnum;
 use Modules\Simpanan\Enums\StatusKewajiban;
 use Modules\Simpanan\Enums\TipeTransaksiSimpanan;
-use Modules\Simpanan\Filament\Pages\InputSimpanan;
+use Modules\Simpanan\Filament\Pages\SetorSimpanan;
 use Modules\Simpanan\Filament\Pages\SimpananSaya;
+use Modules\Simpanan\Filament\Pages\TarikSimpanan;
 use Modules\Simpanan\Filament\Resources\JenisSimpanan\JenisSimpananResource;
 use Modules\Simpanan\Models\CoaConfig;
 use Modules\Simpanan\Models\JenisSimpanan;
@@ -251,13 +253,86 @@ class SimpananModuleTest extends TestCase
         app(SimpananService::class)->tarik($akun, 100000);
     }
 
+    public function test_withdrawable_accounts_list_balances_and_flag_unavailable_products(): void
+    {
+        $anggota = Anggota::factory()->create();
+        $otherAnggota = Anggota::factory()->create();
+        $service = app(SimpananService::class);
+
+        $sukarela = $this->sukarelaProduct();
+        $akunSukarela = $service->openAccount($anggota, $sukarela);
+        $akunSukarela->update(['saldo' => 250000]);
+
+        $berjangka = $this->sukarelaProduct([
+            'kode' => 'BERJANGKA',
+            'nama' => 'Simpanan Berjangka',
+            'kategori' => KategoriSimpanan::Berjangka,
+            'tenor_bulan' => 12,
+        ]);
+        $akunBerjangka = $service->openAccount($anggota, $berjangka);
+        $akunBerjangka->update(['saldo' => 500000]);
+
+        $kosong = $this->sukarelaProduct([
+            'kode' => 'KOSONG',
+            'nama' => 'Simpanan Kosong',
+        ]);
+        $akunKosong = $service->openAccount($anggota, $kosong);
+
+        $nonaktif = $this->sukarelaProduct([
+            'kode' => 'NONAKTIF',
+            'nama' => 'Simpanan Nonaktif',
+        ]);
+        $akunNonaktif = $service->openAccount($anggota, $nonaktif);
+        $akunNonaktif->update(['status' => 'inactive', 'saldo' => 100000]);
+
+        $akunLain = $service->openAccount($otherAnggota, $this->sukarelaProduct([
+            'kode' => 'SUKARELA-LAIN',
+            'nama' => 'Simpanan Anggota Lain',
+        ]));
+        $akunLain->update(['saldo' => 300000]);
+
+        $rows = collect($service->akunUntukPenarikan($anggota))->keyBy('akun_id');
+
+        $this->assertCount(3, $rows);
+        $this->assertTrue($rows[$akunSukarela->getKey()]['bisa_ditarik']);
+        $this->assertSame('250000.00', $rows[$akunSukarela->getKey()]['saldo']);
+        $this->assertFalse($rows[$akunBerjangka->getKey()]['bisa_ditarik']);
+        $this->assertSame('Simpanan berjangka belum jatuh tempo.', $rows[$akunBerjangka->getKey()]['alasan_tidak_bisa']);
+        $this->assertFalse($rows[$akunKosong->getKey()]['bisa_ditarik']);
+        $this->assertSame('Saldo simpanan kosong.', $rows[$akunKosong->getKey()]['alasan_tidak_bisa']);
+        $this->assertFalse($rows->has($akunNonaktif->getKey()));
+        $this->assertFalse($rows->has($akunLain->getKey()));
+    }
+
+    public function test_matured_term_deposit_is_available_for_withdrawal(): void
+    {
+        $anggota = Anggota::factory()->create();
+        $service = app(SimpananService::class);
+        $berjangka = $this->sukarelaProduct([
+            'kode' => 'BERJANGKA-JATUH',
+            'nama' => 'Simpanan Berjangka Jatuh Tempo',
+            'kategori' => KategoriSimpanan::Berjangka,
+            'tenor_bulan' => 12,
+        ]);
+
+        $akun = $service->openAccount($anggota, $berjangka);
+        $akun->update(['saldo' => 500000, 'jatuh_tempo' => now()->subDay()->toDateString()]);
+
+        $row = collect($service->akunUntukPenarikan($anggota))->firstWhere('akun_id', $akun->getKey());
+
+        $this->assertNotNull($row);
+        $this->assertTrue($row['bisa_ditarik']);
+        $this->assertNull($row['alasan_tidak_bisa']);
+    }
+
     public function test_filament_screens_are_permission_gated(): void
     {
         $user = $this->actingUser();
         Anggota::factory()->create(['user_id' => $user->getKey()]);
 
         $this->assertFalse(JenisSimpananResource::canViewAny());
-        $this->assertFalse(InputSimpanan::canAccess());
+        $this->assertFalse(SetorSimpanan::canAccess());
+        $this->assertFalse(TarikSimpanan::canAccess());
         $this->assertFalse(SimpananSaya::canAccess());
 
         Permission::findOrCreate('simpanan.jenis_simpanan.viewAny', 'web');
@@ -272,8 +347,23 @@ class SimpananModuleTest extends TestCase
         ]);
 
         $this->assertTrue(JenisSimpananResource::canViewAny());
-        $this->assertTrue(InputSimpanan::canAccess());
+        $this->assertTrue(SetorSimpanan::canAccess());
+        $this->assertTrue(TarikSimpanan::canAccess());
         $this->assertTrue(SimpananSaya::canAccess());
+    }
+
+    public function test_setor_and_tarik_forms_can_be_built(): void
+    {
+        $this->actingUser(['simpanan.transaksi.create']);
+
+        $setorSchema = FilamentSchema::make();
+        (new SetorSimpanan)->form($setorSchema);
+
+        $tarikSchema = FilamentSchema::make();
+        (new TarikSimpanan)->form($tarikSchema);
+
+        $this->assertNotEmpty($setorSchema->getComponents());
+        $this->assertNotEmpty($tarikSchema->getComponents());
     }
 
     private function actingUser(array $permissions = []): User

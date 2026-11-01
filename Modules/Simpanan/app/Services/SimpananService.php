@@ -374,6 +374,53 @@ class SimpananService
     }
 
     /**
+     * Active savings accounts owned by a member, including withdrawal eligibility.
+     *
+     * @return array<int, array{
+     *     akun_id: int,
+     *     nomor_rekening: string,
+     *     produk: string,
+     *     kategori: string,
+     *     saldo: string,
+     *     jatuh_tempo: string|null,
+     *     bisa_ditarik: bool,
+     *     alasan_tidak_bisa: string|null
+     * }>
+     */
+    public function akunUntukPenarikan(Anggota $anggota): array
+    {
+        return SimpananAkun::query()
+            ->with('jenisSimpanan')
+            ->where('anggota_id', $anggota->getKey())
+            ->where('status', 'active')
+            ->orderBy('id')
+            ->get()
+            ->map(function (SimpananAkun $akun): array {
+                $saldo = (float) $akun->saldo;
+                $jenis = $akun->jenisSimpanan;
+                $alasan = match (true) {
+                    $saldo <= 0 => 'Saldo simpanan kosong.',
+                    $jenis?->kategori === KategoriSimpanan::Berjangka
+                        && $akun->jatuh_tempo !== null
+                        && $akun->jatuh_tempo->isFuture() => 'Simpanan berjangka belum jatuh tempo.',
+                    default => null,
+                };
+
+                return [
+                    'akun_id' => $akun->getKey(),
+                    'nomor_rekening' => $akun->nomor_rekening,
+                    'produk' => $jenis?->nama ?? '-',
+                    'kategori' => $jenis?->kategori?->value ?? '-',
+                    'saldo' => (string) $akun->saldo,
+                    'jatuh_tempo' => $akun->jatuh_tempo?->toDateString(),
+                    'bisa_ditarik' => $alasan === null,
+                    'alasan_tidak_bisa' => $alasan,
+                ];
+            })
+            ->all();
+    }
+
+    /**
      * @param  array<string, mixed>  $meta
      */
     private function record(SimpananAkun $akun, TipeTransaksiSimpanan $tipe, float $nominal, array $meta = []): TransaksiSimpanan

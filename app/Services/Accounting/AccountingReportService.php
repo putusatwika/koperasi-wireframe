@@ -71,6 +71,114 @@ class AccountingReportService
         ];
     }
 
+    /**
+     * Profit and loss summary for a period, grouped by the two-digit parent COA.
+     *
+     * @return array{
+     *     from: string,
+     *     to: string,
+     *     pendapatan: array<int, array{code: string, name: string, amount: string}>,
+     *     beban: array<int, array{code: string, name: string, amount: string}>,
+     *     total_pendapatan: string,
+     *     total_beban: string,
+     *     laba_rugi: string
+     * }
+     */
+    public function labaRugi(CarbonImmutable $from, CarbonImmutable $to): array
+    {
+        $accounts = CoaAccount::query()
+            ->with('accountType')
+            ->whereHas('accountType', fn (Builder $query): Builder => $query->whereIn('code', ['REVENUE', 'EXPENSE']))
+            ->withSum([
+                'jurnals as debit_total' => fn (Builder $query): Builder => $query
+                    ->where('position', 'DEBIT')
+                    ->where($this->postedBetween($from, $to)),
+            ], 'amount')
+            ->withSum([
+                'jurnals as credit_total' => fn (Builder $query): Builder => $query
+                    ->where('position', 'CREDIT')
+                    ->where($this->postedBetween($from, $to)),
+            ], 'amount')
+            ->orderBy('code')
+            ->get();
+
+        /** @var array<string, array{type: string, amount: int, has_movement: bool}> $groups */
+        $groups = [];
+
+        foreach ($accounts as $account) {
+            $code = (string) $account->code;
+
+            if (strlen($code) < 2) {
+                continue;
+            }
+
+            $prefix = substr($code, 0, 2);
+            $debitCents = $this->toCents($account->debit_total);
+            $creditCents = $this->toCents($account->credit_total);
+            $amountCents = $account->accountType->code === 'REVENUE'
+                ? $creditCents - $debitCents
+                : $debitCents - $creditCents;
+
+            if (! isset($groups[$prefix])) {
+                $groups[$prefix] = [
+                    'type' => $account->accountType->code,
+                    'amount' => 0,
+                    'has_movement' => false,
+                ];
+            }
+
+            $groups[$prefix]['amount'] += $amountCents;
+            $groups[$prefix]['has_movement'] = $groups[$prefix]['has_movement']
+                || $debitCents !== 0
+                || $creditCents !== 0;
+        }
+
+        $pendapatan = [];
+        $beban = [];
+        $totalPendapatanCents = 0;
+        $totalBebanCents = 0;
+
+        foreach ($groups as $prefix => $group) {
+            if (! $group['has_movement']) {
+                continue;
+            }
+
+            $parent = $accounts->first(
+                fn (CoaAccount $account): bool => (string) $account->code === $prefix.'00'
+                    && $account->accountType->code === $group['type']
+            ) ?? $accounts->first(
+                fn (CoaAccount $account): bool => str_starts_with((string) $account->code, $prefix)
+                    && $account->accountType->code === $group['type']
+            );
+
+            $row = [
+                'code' => $parent?->code ?? $prefix.'00',
+                'name' => $parent?->name ?? "Akun {$prefix}",
+                'amount' => $this->formatCents($group['amount']),
+            ];
+
+            if ($group['type'] === 'REVENUE') {
+                $pendapatan[] = $row;
+                $totalPendapatanCents += $group['amount'];
+
+                continue;
+            }
+
+            $beban[] = $row;
+            $totalBebanCents += $group['amount'];
+        }
+
+        return [
+            'from' => $from->toDateString(),
+            'to' => $to->toDateString(),
+            'pendapatan' => $pendapatan,
+            'beban' => $beban,
+            'total_pendapatan' => $this->formatCents($totalPendapatanCents),
+            'total_beban' => $this->formatCents($totalBebanCents),
+            'laba_rugi' => $this->formatCents($totalPendapatanCents - $totalBebanCents),
+        ];
+    }
+
     private function postedBetween(CarbonImmutable $from, CarbonImmutable $to): array
     {
         return [

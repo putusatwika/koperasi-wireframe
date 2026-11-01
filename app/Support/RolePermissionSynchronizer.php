@@ -17,6 +17,7 @@ class RolePermissionSynchronizer
         'dashboard',
         'notifications',
         'restore',
+        'report',
     ];
 
     /**

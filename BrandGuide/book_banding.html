@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Panduan visual dan UI untuk website koperasi digital modern: warna, tipografi, layout, komponen, formulir, tabel, dan tema.">
+  <meta name="theme-color" content="#f5f6f2">
+  <title>Brand Book — Koperasi Digital</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      color-scheme: light;
+      --page: #f5f6f2;
+      --surface: #ffffff;
+      --surface-muted: #eef1eb;
+      --ink: #17211d;
+      --ink-soft: #66716b;
+      --line: #e2e7df;
+      --brand: #176b4a;
+      --brand-strong: #10563b;
+      --brand-soft: #e4f2e9;
+      --accent: #d3a94f;
+      --accent-soft: #f8f0db;
+      --success: #218255;
+      --success-soft: #e6f4eb;
+      --warning: #a76b12;
+      --warning-soft: #fff3da;
+      --danger: #bd4b43;
+      --danger-soft: #fbe9e6;
+      --info: #356a9a;
+      --info-soft: #e8f1f8;
+      --shadow-card: 0 2px 10px rgba(28, 48, 37, .055), 0 1px 2px rgba(28, 48, 37, .04);
+      --shadow-float: 0 12px 30px rgba(28, 48, 37, .12);
+      --radius-sm: 8px;
+      --radius-md: 14px;
+      --radius-lg: 22px;
+      --font-body: "DM Sans", sans-serif;
+      --font-display: "Manrope", sans-serif;
+      --content-width: 1160px;
+    }
+
+    [data-theme="dark"] {
+      color-scheme: dark;
+      --page: #111815;
+      --surface: #19221d;
+      --surface-muted: #202b25;
+      --ink: #edf2ed;
+      --ink-soft: #a1aea5;
+      --line: #2e3b33;
+      --brand: #69c392;
+      --brand-strong: #8bd6aa;
+      --brand-soft: #1d382b;
+      --accent: #e1bd6b;
+      --accent-soft: #3a3220;
+      --success: #79d29e;
+      --success-soft: #1d382b;
+      --warning: #e8bb67;
+      --warning-soft: #3a3220;
+      --danger: #f18c80;
+      --danger-soft: #3d2523;
+      --info: #86bde8;
+      --info-soft: #203448;
+      --shadow-card: 0 2px 12px rgba(0, 0, 0, .18);
+      --shadow-float: 0 12px 30px rgba(0, 0, 0, .3);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: 92px; }
+    body {
+      margin: 0;
+      background: var(--page);
+      color: var(--ink);
+      font: 17px/1.65 var(--font-body);
+      -webkit-font-smoothing: antialiased;
+      transition: background-color .2s ease, color .2s ease;
+    }
+    a { color: inherit; text-decoration: none; }
+    button, input, select { font: inherit; }
+    button { color: inherit; }
+    :focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; }
+    .wrap { width: min(var(--content-width), calc(100% - 48px)); margin-inline: auto; }
+    .topbar {
+      position: sticky; inset-block-start: 0; z-index: 20;
+      background: color-mix(in srgb, var(--page) 90%, transparent);
+      border-bottom: 1px solid var(--line); backdrop-filter: blur(16px);
+    }
+    .topbar-inner { min-height: 72px; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+    .brand-lockup { display: inline-flex; align-items: center; gap: 11px; font: 800 15px/1.15 var(--font-display); letter-spacing: -.03em; }
+    .brand-mark {
+      width: 36px; aspect-ratio: 1; display: grid; place-items: center; border-radius: 12px;
+      background: var(--brand); color: var(--page); font-size: 15px;
+    }
+    .brand-lockup small { display: block; margin-top: 4px; color: var(--ink-soft); font: 500 11px/1.2 var(--font-body); letter-spacing: .12em; text-transform: uppercase; }
+    .nav-links { display: flex; align-items: center; gap: 4px; }
+    .nav-links a, .theme-toggle {
+      border: 0; border-radius: 9px; padding: 9px 11px; background: transparent;
+      color: var(--ink-soft); font-size: 14px; font-weight: 600; transition: background .18s ease, color .18s ease;
+    }
+    .nav-links a:hover, .nav-links a:focus-visible, .theme-toggle:hover { background: var(--surface-muted); color: var(--ink); }
+    .theme-toggle { border: 1px solid var(--line); cursor: pointer; white-space: nowrap; }
+    .hero { padding: 88px 0 70px; border-bottom: 1px solid var(--line); }
+    .eyebrow { color: var(--brand); font-size: 12px; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; }
+    .hero-grid { display: grid; grid-template-columns: minmax(0, 1.3fr) minmax(260px, .7fr); gap: 64px; align-items: end; }
+    h1, h2, h3, h4 { margin: 0; font-family: var(--font-display); letter-spacing: -.045em; line-height: 1.16; }
+    h1 { max-width: 720px; margin-top: 18px; font-size: clamp(42px, 7vw, 76px); font-weight: 700; }
+    h1 span { color: var(--brand); }
+    .hero-copy { max-width: 620px; margin: 23px 0 0; color: var(--ink-soft); font-size: 17px; }
+    .hero-note { padding: 22px; border: 1px solid var(--line); border-radius: var(--radius-md); background: var(--surface); box-shadow: var(--shadow-card); }
+    .hero-note strong { display: block; margin-bottom: 8px; font: 700 14px var(--font-display); }
+    .hero-note p { margin: 0; color: var(--ink-soft); font-size: 14px; }
+    .hero-meta { margin-top: 28px; color: var(--ink-soft); font-size: 13px; }
+    main { padding-bottom: 70px; }
+    .section { padding: 76px 0 0; }
+    .section-head { display: flex; justify-content: space-between; gap: 28px; align-items: end; margin-bottom: 28px; }
+    .section-head h2 { margin-top: 8px; font-size: clamp(28px, 4vw, 38px); }
+    .section-head p { max-width: 470px; margin: 0; color: var(--ink-soft); font-size: 15px; }
+    .section-index { color: var(--ink-soft); font: 600 12px var(--font-body); letter-spacing: .1em; }
+    .grid-2 { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; }
+    .grid-3 { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; }
+    .panel { padding: 24px; border: 1px solid var(--line); border-radius: var(--radius-md); background: var(--surface); box-shadow: var(--shadow-card); }
+    .panel h3 { margin-bottom: 9px; font-size: 18px; }
+    .muted { color: var(--ink-soft); }
+    .small { font-size: 14px; }
+    .swatch-list { display: grid; gap: 10px; }
+    .swatch { display: grid; grid-template-columns: 44px 1fr auto; align-items: center; gap: 12px; min-width: 0; }
+    .swatch-color { width: 44px; height: 40px; border-radius: 10px; border: 1px solid var(--line); }
+    .swatch-label { font-size: 14px; font-weight: 700; }
+    .swatch-use { display: block; color: var(--ink-soft); font-size: 12px; font-weight: 400; }
+    code { color: var(--ink-soft); font: 12px/1.5 ui-monospace, SFMono-Regular, Menlo, monospace; }
+    .color-note { display: flex; gap: 12px; margin-top: 18px; padding: 13px 15px; border-radius: 10px; background: var(--brand-soft); color: var(--ink); font-size: 13px; }
+    .type-sample { padding: 17px 0; border-top: 1px solid var(--line); }
+    .type-sample:first-of-type { border-top: 0; padding-top: 0; }
+    .type-label { color: var(--ink-soft); font-size: 12px; }
+    .type-display { margin: 4px 0 2px; font: 700 30px/1.2 var(--font-display); letter-spacing: -.04em; }
+    .type-body { font-size: 16px; }
+    .type-scale { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; margin-top: 16px; }
+    .scale-item { padding: 11px; border-radius: 9px; background: var(--surface-muted); font-size: 13px; }
+    .scale-item strong { display: block; font-size: 15px; }
+    .layout-visual { display: grid; grid-template-columns: 1fr 2fr 1fr; gap: 8px; min-height: 106px; margin: 18px 0; }
+    .layout-visual span { display: grid; place-items: center; border: 1px dashed var(--brand); border-radius: 9px; background: var(--brand-soft); color: var(--brand); font-size: 12px; font-weight: 600; }
+    .token-row { display: flex; flex-wrap: wrap; gap: 9px; margin-top: 14px; }
+    .token { padding: 8px 10px; border: 1px solid var(--line); border-radius: 8px; color: var(--ink-soft); font-size: 13px; }
+    .spacing-system { display: grid; gap: 12px; margin-top: 18px; }
+    .spacing-item { display: grid; grid-template-columns: 72px minmax(0, 1fr) 42px; align-items: center; gap: 12px; }
+    .spacing-name { color: var(--ink-soft); font-size: 13px; font-weight: 600; }
+    .spacing-track { height: 22px; display: flex; align-items: center; }
+    .spacing-bar { height: 12px; min-width: 4px; border-radius: 99px; background: var(--brand); }
+    .spacing-value { color: var(--ink-soft); font: 13px ui-monospace, SFMono-Regular, Menlo, monospace; text-align: right; }
+    .image-demo { position: relative; overflow: hidden; aspect-ratio: 16 / 9; margin: 16px 0; border: 1px solid var(--line); border-radius: var(--radius-md); background: linear-gradient(180deg, #cce4dc 0%, #e8eee0 58%, #b4c9a7 59%, #829e74 100%); box-shadow: var(--shadow-card); }
+    .image-demo::before { content: ""; position: absolute; width: 28%; aspect-ratio: 1; top: 13%; right: 12%; border-radius: 50%; background: #e6c876; }
+    .image-hill { position: absolute; width: 78%; height: 62%; left: -8%; bottom: -28%; border-radius: 50% 50% 0 0; background: #628b68; transform: rotate(-8deg); }
+    .image-hill.back { width: 82%; height: 48%; left: 36%; bottom: -20%; background: #759675; transform: rotate(9deg); }
+    .image-house { position: absolute; width: 21%; height: 34%; left: 42%; bottom: 17%; border-radius: 4px 4px 0 0; background: #f5f2e7; box-shadow: 0 5px 12px rgba(27, 47, 34, .16); }
+    .image-house::before { content: ""; position: absolute; left: -12%; top: -25%; width: 124%; height: 45%; background: #8e6148; clip-path: polygon(50% 0, 100% 100%, 0 100%); }
+    .image-house::after { content: ""; position: absolute; left: 42%; bottom: 0; width: 20%; height: 42%; background: #a4baa0; }
+    .image-caption { position: absolute; right: 10px; bottom: 10px; padding: 5px 8px; border-radius: 6px; background: rgba(17, 24, 21, .74); color: white; font-size: 12px; }
+    .image-rules { display: grid; gap: 9px; margin: 12px 0 0; padding-left: 20px; color: var(--ink-soft); font-size: 14px; }
+    .code-sample { display: block; overflow-x: auto; margin-top: 14px; padding: 12px; border: 1px solid var(--line); border-radius: 9px; background: var(--surface-muted); color: var(--ink); font-size: 12px; white-space: pre; }
+    .sample-nav { display: flex; justify-content: space-between; align-items: center; gap: 14px; padding: 13px; border: 1px solid var(--line); border-radius: 12px; background: var(--surface-muted); }
+    .sample-nav .brand-lockup { font-size: 14px; }
+    .sample-nav .brand-mark { width: 30px; border-radius: 9px; }
+    .sample-nav-links { display: flex; gap: 15px; color: var(--ink-soft); font-size: 12px; font-weight: 600; }
+    .sample-nav-links .current { color: var(--brand); }
+    .nav-rules { display: grid; gap: 9px; margin: 16px 0 0; padding-left: 18px; color: var(--ink-soft); font-size: 14px; }
+    .btn-row { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; margin: 17px 0; }
+    .btn {
+      min-height: 42px; display: inline-flex; justify-content: center; align-items: center; gap: 8px;
+      padding: 0 16px; border: 1px solid transparent; border-radius: 10px;
+      background: var(--brand); color: #fff; font-size: 14px; font-weight: 700; cursor: pointer;
+      transition: transform .18s ease, box-shadow .18s ease, background-color .18s ease, border-color .18s ease;
+    }
+    [data-theme="dark"] .btn:not(.btn-secondary):not(.btn-quiet) { color: #10251a; }
+    .btn:hover { transform: translateY(-2px); background: var(--brand-strong); box-shadow: var(--shadow-float); }
+    .btn:active { transform: translateY(0); box-shadow: none; }
+    .btn-secondary { border-color: var(--line); background: var(--surface); color: var(--ink); }
+    .btn-secondary:hover { border-color: var(--brand); background: var(--brand-soft); color: var(--ink); box-shadow: none; }
+    .btn-quiet { background: transparent; color: var(--brand); }
+    .btn-quiet:hover { background: var(--brand-soft); box-shadow: none; }
+    .btn:disabled { opacity: .48; cursor: not-allowed; transform: none; box-shadow: none; }
+    .badge { display: inline-flex; align-items: center; gap: 5px; padding: 5px 9px; border-radius: 999px; background: var(--success-soft); color: var(--success); font-size: 12px; font-weight: 700; }
+    .badge.pending { background: var(--warning-soft); color: var(--warning); }
+    .badge.review { background: var(--info-soft); color: var(--info); }
+    .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+    .field { display: grid; gap: 6px; }
+    .field.full { grid-column: 1 / -1; }
+    .field label { font-size: 14px; font-weight: 700; }
+    .field input, .field select, .searchbox input, .filter-select {
+      width: 100%; min-height: 42px; padding: 9px 12px; border: 1px solid var(--line);
+      border-radius: 9px; background: var(--surface); color: var(--ink); font-size: 14px;
+    }
+    .field input::placeholder, .searchbox input::placeholder { color: var(--ink-soft); opacity: .78; }
+    .field input:focus, .field select:focus, .searchbox input:focus, .filter-select:focus { outline: 2px solid var(--brand); outline-offset: 1px; border-color: transparent; }
+    .field-hint { color: var(--ink-soft); font-size: 12px; }
+    .form-actions { display: flex; align-items: center; gap: 10px; margin-top: 16px; }
+    .table-panel { padding: 0; overflow: hidden; }
+    .table-top { display: flex; justify-content: space-between; align-items: center; gap: 16px; padding: 20px 22px; border-bottom: 1px solid var(--line); }
+    .table-top h3 { margin: 0; }
+    .table-tools { display: flex; gap: 9px; }
+    .searchbox { position: relative; width: min(230px, 34vw); }
+    .searchbox input { padding-left: 34px; }
+    .search-icon { position: absolute; top: 50%; left: 12px; transform: translateY(-50%); color: var(--ink-soft); font-size: 14px; pointer-events: none; }
+    .filter-select { width: auto; min-width: 125px; }
+    .table-scroll { overflow-x: auto; }
+    table { width: 100%; border-collapse: collapse; text-align: left; white-space: nowrap; }
+    th { padding: 12px 20px; background: var(--surface-muted); color: var(--ink-soft); font-size: 12px; letter-spacing: .08em; text-transform: uppercase; }
+    td { padding: 14px 20px; border-top: 1px solid var(--line); font-size: 14px; }
+    tbody tr { transition: background .15s ease; }
+    tbody tr:hover { background: var(--surface-muted); }
+    .member { display: flex; align-items: center; gap: 10px; font-weight: 700; }
+    .avatar { width: 30px; height: 30px; display: grid; place-items: center; border-radius: 50%; background: var(--brand-soft); color: var(--brand); font-size: 11px; font-weight: 700; }
+    .amount { font-variant-numeric: tabular-nums; font-weight: 700; }
+    .table-empty { padding: 26px; color: var(--ink-soft); text-align: center; font-size: 14px; }
+    .table-foot { display: flex; justify-content: space-between; gap: 12px; padding: 13px 20px; border-top: 1px solid var(--line); color: var(--ink-soft); font-size: 12px; }
+    .principle { min-height: 150px; }
+    .principle-number { display: block; margin-bottom: 18px; color: var(--brand); font: 700 13px var(--font-display); }
+    .principle p { margin: 8px 0 0; color: var(--ink-soft); font-size: 14px; }
+    .footer { margin-top: 78px; padding: 24px 0; border-top: 1px solid var(--line); color: var(--ink-soft); font-size: 12px; }
+
+    @media (max-width: 800px) {
+      .nav-links { display: none; }
+      .hero-grid { grid-template-columns: 1fr; gap: 28px; }
+      .hero-note { max-width: 520px; }
+      .section-head { align-items: start; flex-direction: column; }
+      .grid-3 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    }
+    @media (max-width: 600px) {
+      .wrap { width: min(100% - 32px, var(--content-width)); }
+      .topbar-inner { min-height: 64px; }
+      .hero { padding: 58px 0 46px; }
+      .hero-copy { font-size: 15px; }
+      .section { padding-top: 54px; }
+      .grid-2, .grid-3 { grid-template-columns: 1fr; }
+      .panel { padding: 19px; }
+      .sample-nav { align-items: flex-start; }
+      .sample-nav-links { display: none; }
+      .table-top { align-items: flex-start; flex-direction: column; padding: 17px; }
+      .table-tools { width: 100%; }
+      .searchbox { width: 100%; flex: 1; }
+      .filter-select { min-width: 110px; }
+      th, td { padding: 12px 14px; }
+      .form-grid { grid-template-columns: 1fr; }
+      .field.full { grid-column: auto; }
+      .form-actions { flex-wrap: wrap; }
+      .table-foot { flex-direction: column; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; }
+    }
+    @media print {
+      .topbar { position: static; backdrop-filter: none; }
+      .theme-toggle, .table-tools, .form-actions { display: none !important; }
+      body { background: #fff; color: #17211d; }
+      .panel, .hero-note { box-shadow: none; }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="wrap topbar-inner">
+      <a class="brand-lockup" href="#atas" aria-label="Kembali ke bagian atas">
+        <span class="brand-mark" aria-hidden="true">K</span>
+        <span>KOPERASI DIGITAL<small>Panduan identitas & UI</small></span>
+      </a>
+      <nav class="nav-links" aria-label="Navigasi utama">
+        <a href="#warna">Warna</a>
+        <a href="#tipografi">Tipografi</a>
+        <a href="#layout">Layout</a>
+        <a href="#komponen">Komponen</a>
+        <a href="#data">Tabel</a>
+      </nav>
+      <button class="theme-toggle" id="themeToggle" type="button" aria-label="Aktifkan tema gelap">◐ <span id="themeLabel">Mode gelap</span></button>
+    </div>
+  </header>
+
+  <section class="hero" id="atas">
+    <div class="wrap hero-grid">
+      <div>
+        <div class="eyebrow">Brand book · edisi 01</div>
+        <h1>Koperasi tumbuh, <span>bersama.</span></h1>
+        <p class="hero-copy">Sistem visual untuk pengalaman koperasi digital yang terasa tepercaya, terbuka, dan mudah digunakan—dari halaman informasi hingga transaksi anggota.</p>
+        <div class="hero-meta">PRINSIP DESAIN &nbsp; / &nbsp; JELAS · MANUSIAWI · AMANAH</div>
+      </div>
+      <aside class="hero-note">
+        <strong>Arah visual</strong>
+        <p>Terinspirasi dari editorial digital modern: komposisi lapang, tipografi tegas, warna gelap-hijau yang matang, dan informasi penting yang mudah dipindai. Identitas ini dirancang khusus untuk koperasi.</p>
+      </aside>
+    </div>
+  </section>
+
+  <main class="wrap">
+    <section class="section" id="warna">
+      <div class="section-head">
+        <div><div class="eyebrow">01 / Identitas</div><h2>Sistem warna</h2></div>
+        <p>Hijau menyampaikan pertumbuhan dan kepercayaan. Gunakan warna aksen sebagai penanda, bukan sebagai dekorasi yang bersaing dengan data.</p>
+      </div>
+      <div class="grid-2">
+        <article class="panel">
+          <h3>Warna inti</h3>
+          <p class="muted small">Peran warna dirancang agar konsisten pada tema terang dan gelap.</p>
+          <div class="swatch-list">
+            <div class="swatch"><span class="swatch-color" style="background:#176b4a"></span><span class="swatch-label">Hijau koperasi<span class="swatch-use">Aksi utama, tautan, identitas</span></span><code>#176B4A</code></div>
+            <div class="swatch"><span class="swatch-color" style="background:#17211d"></span><span class="swatch-label">Arang<span class="swatch-use">Teks utama, header kontras</span></span><code>#17211D</code></div>
+            <div class="swatch"><span class="swatch-color" style="background:#d3a94f"></span><span class="swatch-label">Emas hangat<span class="swatch-use">Sorotan terbatas, apresiasi</span></span><code>#D3A94F</code></div>
+            <div class="swatch"><span class="swatch-color" style="background:#f5f6f2"></span><span class="swatch-label">Kertas<span class="swatch-use">Latar halaman terang</span></span><code>#F5F6F2</code></div>
+          </div>
+          <div class="color-note"><strong>60 / 30 / 10</strong><span>Netral sebagai dasar, hijau untuk navigasi dan aksi, aksen emas hanya untuk detail bernilai tinggi.</span></div>
+        </article>
+        <article class="panel">
+          <h3>Warna status</h3>
+          <p class="muted small">Pasangkan warna dengan label atau ikon; jangan mengandalkan warna saja.</p>
+          <div class="swatch-list">
+            <div class="swatch"><span class="swatch-color" style="background:#218255"></span><span class="swatch-label">Berhasil<span class="swatch-use">Pembayaran diterima, aktif</span></span><code>#218255</code></div>
+            <div class="swatch"><span class="swatch-color" style="background:#a76b12"></span><span class="swatch-label">Perlu perhatian<span class="swatch-use">Menunggu, segera jatuh tempo</span></span><code>#A76B12</code></div>
+            <div class="swatch"><span class="swatch-color" style="background:#bd4b43"></span><span class="swatch-label">Gagal / bahaya<span class="swatch-use">Kesalahan, aksi destruktif</span></span><code>#BD4B43</code></div>
+            <div class="swatch"><span class="swatch-color" style="background:#356a9a"></span><span class="swatch-label">Informasi<span class="swatch-use">Petunjuk dan status netral</span></span><code>#356A9A</code></div>
+          </div>
+          <div class="token-row"><span class="token">Kontras teks normal ≥ 4.5:1</span><span class="token">Fokus selalu terlihat</span><span class="token">Warna semantik konsisten</span></div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="tipografi">
+      <div class="section-head">
+        <div><div class="eyebrow">02 / Suara visual</div><h2>Tipografi</h2></div>
+        <p>Gunakan keluarga sans-serif yang ramah layar. Ukuran dan bobot membentuk hierarki, bukan banyak jenis huruf.</p>
+      </div>
+      <div class="grid-2">
+        <article class="panel">
+          <h3>Manrope + DM Sans</h3>
+          <p class="muted small">Manrope untuk judul dan angka penting. DM Sans untuk isi, label, dan kontrol antarmuka.</p>
+          <div class="type-sample"><span class="type-label">DISPLAY / 700</span><div class="type-display">Dana tumbuh bersama</div></div>
+          <div class="type-sample"><span class="type-label">BODY / 400</span><div class="type-body">Setiap anggota berhak memahami perkembangan simpanan dan manfaat koperasi dengan jelas.</div></div>
+          <div class="token-row"><span class="token">Judul: Manrope 600–800</span><span class="token">Isi: DM Sans 400–600</span></div>
+        </article>
+        <article class="panel">
+          <h3>Skala yang disarankan</h3>
+          <p class="muted small">Gunakan skala responsif; isi utama nyaman dibaca di layar kecil.</p>
+          <div class="type-scale">
+            <div class="scale-item"><strong>Display · 48–76 px</strong>Hero / pesan utama</div>
+            <div class="scale-item"><strong>H1 · 32–44 px</strong>Judul halaman</div>
+            <div class="scale-item"><strong>H2 · 26–36 px</strong>Judul bagian</div>
+            <div class="scale-item"><strong>Body · 16–18 px</strong>Konten utama</div>
+            <div class="scale-item"><strong>Label · 13–14 px</strong>Kontrol / tabel</div>
+            <div class="scale-item"><strong>Caption · min. 12 px</strong>Metadata sekunder</div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="layout">
+      <div class="section-head">
+        <div><div class="eyebrow">03 / Ruang</div><h2>Layout & jarak</h2></div>
+        <p>Berikan ruang bernapas pada informasi finansial. Batasi lebar baca dan gunakan ritme jarak yang berulang.</p>
+      </div>
+      <div class="grid-3">
+        <article class="panel">
+          <h3>Grid responsif</h3>
+          <div class="layout-visual" aria-label="Ilustrasi kolom layout"><span>3 kolom</span><span>Konten utama</span><span>3 kolom</span></div>
+          <p class="muted small">Container maksimum 1160 px. Desktop 12 kolom, tablet 6, ponsel 4; gutter 20–24 px.</p>
+        </article>
+        <article class="panel">
+          <h3>Skala jarak 4 px</h3>
+          <p class="muted small">Semua jarak mengikuti kelipatan 4 px. Panjang bar menunjukkan ukuran relatif; gunakan token yang sama di seluruh halaman.</p>
+          <div class="spacing-system" aria-label="Visual skala jarak">
+            <div class="spacing-item"><span class="spacing-name">2XS · rapat</span><span class="spacing-track"><span class="spacing-bar" style="width:6.25%"></span></span><span class="spacing-value">4 px</span></div>
+            <div class="spacing-item"><span class="spacing-name">XS · ikon</span><span class="spacing-track"><span class="spacing-bar" style="width:12.5%"></span></span><span class="spacing-value">8 px</span></div>
+            <div class="spacing-item"><span class="spacing-name">SM · kontrol</span><span class="spacing-track"><span class="spacing-bar" style="width:18.75%"></span></span><span class="spacing-value">12 px</span></div>
+            <div class="spacing-item"><span class="spacing-name">MD · isi</span><span class="spacing-track"><span class="spacing-bar" style="width:25%"></span></span><span class="spacing-value">16 px</span></div>
+            <div class="spacing-item"><span class="spacing-name">LG · card</span><span class="spacing-track"><span class="spacing-bar" style="width:37.5%"></span></span><span class="spacing-value">24 px</span></div>
+            <div class="spacing-item"><span class="spacing-name">XL · grup</span><span class="spacing-track"><span class="spacing-bar" style="width:50%"></span></span><span class="spacing-value">32 px</span></div>
+            <div class="spacing-item"><span class="spacing-name">2XL · section</span><span class="spacing-track"><span class="spacing-bar" style="width:75%"></span></span><span class="spacing-value">48 px</span></div>
+            <div class="spacing-item"><span class="spacing-name">3XL · halaman</span><span class="spacing-track"><span class="spacing-bar" style="width:100%"></span></span><span class="spacing-value">64 px</span></div>
+          </div>
+          <div class="token-row"><span class="token">Jarak komponen: 8–16 px</span><span class="token">Jarak section: 48–64 px</span></div>
+        </article>
+        <article class="panel">
+          <h3>Card & elevasi</h3>
+          <p class="muted small">Latar permukaan kontras lembut, garis pembatas halus, radius 14 px. Shadow tipis hanya untuk memisahkan lapisan; hindari efek berat.</p>
+          <div class="token-row"><span class="token">Radius 8 / 14 / 22 px</span><span class="token">Shadow 0 2px 10px · 6%</span></div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="gambar">
+      <div class="section-head">
+        <div><div class="eyebrow">04 / Aset visual</div><h2>Pedoman gambar</h2></div>
+        <p>Gunakan gambar yang membantu anggota memahami layanan dan kegiatan koperasi. Crop, radius, dan treatment visual harus konsisten pada terang maupun gelap.</p>
+      </div>
+      <div class="grid-2">
+        <article class="panel">
+          <h3>Crop konsisten, tepi lembut</h3>
+          <p class="muted small">Contoh frame 16:9 untuk kartu konten. Gunakan rasio berbeda hanya bila perannya memang berbeda, misalnya avatar 1:1.</p>
+          <div class="image-demo" role="img" aria-label="Contoh ilustrasi gambar lanskap di dalam frame crop 16 banding 9 dengan sudut membulat dan shadow tipis">
+            <span class="image-hill"></span><span class="image-hill back"></span><span class="image-house"></span><span class="image-caption">Frame 16:9</span>
+          </div>
+          <div class="token-row"><span class="token">Radius 14 px</span><span class="token">Outline 1 px</span><span class="token">Shadow tipis</span></div>
+        </article>
+        <article class="panel">
+          <h3>Aturan penggunaan</h3>
+          <ul class="image-rules">
+            <li>Gunakan <code>aspect-ratio</code> yang konsisten per jenis kartu; crop dengan <code>object-fit: cover</code>.</li>
+            <li>Atur <code>object-position</code> agar wajah atau fokus utama tidak terpotong. Jangan meregangkan gambar.</li>
+            <li>Pakai radius 14 px, outline 1 px warna garis, dan shadow tipis sesuai token card.</li>
+            <li>Sediakan teks alternatif yang menjelaskan isi gambar; gambar dekoratif gunakan alt kosong.</li>
+            <li>Hindari teks penting langsung di atas gambar. Jika perlu, gunakan overlay kontras dan uji keterbacaan.</li>
+          </ul>
+          <code class="code-sample">&lt;img src="kegiatan-koperasi.jpg"
+  alt="Anggota mengikuti rapat koperasi"
+  style="width:100%; aspect-ratio:16/9;
+  object-fit:cover; object-position:center;
+  border:1px solid var(--line);
+  border-radius:var(--radius-md);
+  box-shadow:var(--shadow-card);"&gt;</code>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="navigasi">
+      <div class="section-head">
+        <div><div class="eyebrow">05 / Orientasi</div><h2>Navigasi</h2></div>
+        <p>Anggota harus selalu tahu sedang berada di mana dan bagaimana kembali ke ringkasan akun.</p>
+      </div>
+      <article class="panel">
+        <div class="sample-nav">
+          <a class="brand-lockup" href="#atas"><span class="brand-mark">K</span><span>KOPERASI<small>BERSAMA TUMBUH</small></span></a>
+          <div class="sample-nav-links"><span class="current">Ringkasan</span><span>Simpanan</span><span>Pinjaman</span><span>Aktivitas</span></div>
+          <span class="avatar" aria-label="Profil anggota">AR</span>
+        </div>
+        <ul class="nav-rules">
+          <li>Utamakan navigasi utama maksimal 5–7 tujuan; tandai halaman aktif dengan teks dan indikator yang jelas.</li>
+          <li>Di ponsel, gunakan menu ringkas yang mudah dijangkau dan tetap sediakan label teks untuk ikon.</li>
+          <li>Profil, notifikasi, dan bantuan konsisten posisinya. Jangan menyembunyikan tindakan penting hanya di hover.</li>
+        </ul>
+      </article>
+    </section>
+
+    <section class="section" id="komponen">
+      <div class="section-head">
+        <div><div class="eyebrow">06 / Pola UI</div><h2>Komponen & interaksi</h2></div>
+        <p>Komponen terasa responsif, tetapi tenang. Setiap aksi memiliki state normal, hover, fokus, ditekan, dan dinonaktifkan.</p>
+      </div>
+      <div class="grid-2">
+        <article class="panel">
+          <h3>Tombol & status</h3>
+          <p class="muted small">Gunakan satu aksi primer per konteks. Hover menaikkan tombol sedikit dan menambah shadow tipis.</p>
+          <div class="btn-row"><button class="btn" type="button">Ajukan pinjaman <span aria-hidden="true">→</span></button><button class="btn btn-secondary" type="button">Lihat rincian</button><button class="btn btn-quiet" type="button">Batal</button></div>
+          <div class="btn-row"><span class="badge">● Aktif</span><span class="badge pending">● Menunggu</span><span class="badge review">● Ditinjau</span></div>
+          <p class="muted small">Target sentuh minimum 44 × 44 px. Aksi destruktif memakai gaya peringatan dan konfirmasi yang menjelaskan dampaknya.</p>
+        </article>
+        <article class="panel">
+          <h3>Formulir anggota</h3>
+          <p class="muted small">Label selalu terlihat. Sertakan format yang diharapkan, validasi spesifik, dan pesan kesalahan dekat field.</p>
+          <form id="demoForm">
+            <div class="form-grid">
+              <div class="field"><label for="nama">Nama lengkap</label><input id="nama" name="nama" type="text" placeholder="Contoh: Aulia Rahman" autocomplete="name" required></div>
+              <div class="field"><label for="jenis">Jenis simpanan</label><select id="jenis" name="jenis"><option>Simpanan wajib</option><option>Simpanan sukarela</option></select></div>
+              <div class="field full"><label for="nominal">Nominal (Rp)</label><input id="nominal" name="nominal" type="number" min="10000" step="1000" placeholder="Minimal Rp10.000" aria-describedby="nominalHint"><span class="field-hint" id="nominalHint">Tampilkan biaya dan ketentuan sebelum konfirmasi.</span></div>
+            </div>
+            <div class="form-actions"><button class="btn" type="submit">Lanjutkan</button><button class="btn btn-secondary" type="reset">Bersihkan</button><span class="field-hint" id="formMessage" role="status" aria-live="polite"></span></div>
+          </form>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="data">
+      <div class="section-head">
+        <div><div class="eyebrow">07 / Informasi</div><h2>Tabel, pencarian & filter</h2></div>
+        <p>Optimalkan keterbacaan angka dan kemudahan menemukan data. Contoh di bawah dapat dicari dan difilter langsung.</p>
+      </div>
+      <div class="panel table-panel">
+        <div class="table-top">
+          <div><h3>Aktivitas simpanan</h3><span class="muted small">Transaksi anggota terkini</span></div>
+          <div class="table-tools">
+            <label class="searchbox"><span class="search-icon" aria-hidden="true">⌕</span><input id="tableSearch" type="search" placeholder="Cari nama atau transaksi" aria-label="Cari nama atau transaksi"></label>
+            <select class="filter-select" id="statusFilter" aria-label="Filter berdasarkan status">
+              <option value="all">Semua status</option><option value="Selesai">Selesai</option><option value="Diproses">Diproses</option><option value="Ditinjau">Ditinjau</option>
+            </select>
+          </div>
+        </div>
+        <div class="table-scroll">
+          <table>
+            <thead><tr><th>Anggota</th><th>Jenis transaksi</th><th>Tanggal</th><th>Nominal</th><th>Status</th></tr></thead>
+            <tbody id="activityRows">
+              <tr data-status="Selesai"><td><span class="member"><span class="avatar">AR</span>Aulia Rahman</span></td><td>Simpanan wajib</td><td>12 Okt 2026</td><td class="amount">Rp 250.000</td><td><span class="badge">Selesai</span></td></tr>
+              <tr data-status="Diproses"><td><span class="member"><span class="avatar">DP</span>Dewi Puspita</span></td><td>Simpanan sukarela</td><td>11 Okt 2026</td><td class="amount">Rp 500.000</td><td><span class="badge pending">Diproses</span></td></tr>
+              <tr data-status="Selesai"><td><span class="member"><span class="avatar">BS</span>Bima Santoso</span></td><td>Angsuran pinjaman</td><td>10 Okt 2026</td><td class="amount">Rp 750.000</td><td><span class="badge">Selesai</span></td></tr>
+              <tr data-status="Ditinjau"><td><span class="member"><span class="avatar">NS</span>Nadia Sari</span></td><td>Penarikan sukarela</td><td>09 Okt 2026</td><td class="amount">Rp 150.000</td><td><span class="badge review">Ditinjau</span></td></tr>
+              <tr data-status="Selesai"><td><span class="member"><span class="avatar">FH</span>Fajar Hidayat</span></td><td>Simpanan wajib</td><td>08 Okt 2026</td><td class="amount">Rp 250.000</td><td><span class="badge">Selesai</span></td></tr>
+            </tbody>
+          </table>
+          <div class="table-empty" id="tableEmpty" hidden>Tidak ada transaksi yang cocok dengan pencarian atau filter ini.</div>
+        </div>
+        <div class="table-foot"><span id="resultCount" aria-live="polite">Menampilkan 5 transaksi</span><span>Angka contoh untuk demonstrasi</span></div>
+      </div>
+      <div class="grid-3" style="margin-top:18px">
+        <article class="panel principle"><span class="principle-number">01 / STRUKTUR</span><h3>Kolom secukupnya</h3><p>Urutkan berdasarkan kepentingan. Pada layar kecil, izinkan gulir horizontal dan jaga kolom pertama tetap informatif.</p></article>
+        <article class="panel principle"><span class="principle-number">02 / KETERBACAAN</span><h3>Angka mudah dipindai</h3><p>Ratakan nominal ke kanan, gunakan pemisah ribuan, dan pertahankan lebar digit yang konsisten.</p></article>
+        <article class="panel principle"><span class="principle-number">03 / KENDALI</span><h3>Search & filter jelas</h3><p>Labelkan pencarian, tunjukkan jumlah hasil, sediakan kondisi kosong, dan jangan menghapus filter tanpa pemberitahuan.</p></article>
+      </div>
+    </section>
+
+    <section class="section" id="tema">
+      <div class="section-head">
+        <div><div class="eyebrow">08 / Aksesibilitas</div><h2>Mode terang & gelap</h2></div>
+        <p>Kontrol tema di kanan atas dapat dicoba. Tema pilihan disimpan di perangkat dan menghormati preferensi sistem pada kunjungan pertama.</p>
+      </div>
+      <div class="grid-2">
+        <article class="panel"><h3>Aturan tema</h3><p class="muted small">Semua permukaan, teks, garis, dan status menggunakan token semantik agar perubahan tema tetap konsisten. Hindari membalik warna logo atau mengandalkan hitam murni.</p></article>
+        <article class="panel"><h3>Gerak & fokus</h3><p class="muted small">Sediakan indikator fokus yang terlihat, state non-warna untuk status, dan hormati pengaturan reduced motion. Pastikan konten tetap berfungsi tanpa animasi.</p></article>
+      </div>
+    </section>
+  </main>
+  <footer class="footer"><div class="wrap">Koperasi Digital · Panduan desain untuk pengalaman anggota yang amanah dan mudah dipahami.</div></footer>
+
+  <script>
+    const root = document.documentElement;
+    const themeToggle = document.getElementById("themeToggle");
+    const themeLabel = document.getElementById("themeLabel");
+    const storedTheme = localStorage.getItem("koperasi-theme");
+    const initialTheme = storedTheme || (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+
+    function setTheme(theme) {
+      root.dataset.theme = theme;
+      themeLabel.textContent = theme === "dark" ? "Mode terang" : "Mode gelap";
+      themeToggle.setAttribute("aria-label", theme === "dark" ? "Aktifkan tema terang" : "Aktifkan tema gelap");
+      document.querySelector('meta[name="theme-color"]').content = theme === "dark" ? "#111815" : "#f5f6f2";
+    }
+    setTheme(initialTheme);
+    themeToggle.addEventListener("click", () => {
+      const nextTheme = root.dataset.theme === "dark" ? "light" : "dark";
+      setTheme(nextTheme);
+      localStorage.setItem("koperasi-theme", nextTheme);
+    });
+
+    const searchInput = document.getElementById("tableSearch");
+    const statusFilter = document.getElementById("statusFilter");
+    const rows = [...document.querySelectorAll("#activityRows tr")];
+    const emptyState = document.getElementById("tableEmpty");
+    const resultCount = document.getElementById("resultCount");
+    function filterRows() {
+      const query = searchInput.value.trim().toLocaleLowerCase("id");
+      const status = statusFilter.value;
+      let visible = 0;
+      rows.forEach((row) => {
+        const matchesText = row.textContent.toLocaleLowerCase("id").includes(query);
+        const matchesStatus = status === "all" || row.dataset.status === status;
+        const show = matchesText && matchesStatus;
+        row.hidden = !show;
+        if (show) visible += 1;
+      });
+      emptyState.hidden = visible !== 0;
+      resultCount.textContent = `Menampilkan ${visible} dari ${rows.length} transaksi`;
+    }
+    searchInput.addEventListener("input", filterRows);
+    statusFilter.addEventListener("change", filterRows);
+    document.getElementById("demoForm").addEventListener("submit", (event) => {
+      event.preventDefault();
+      const form = event.currentTarget;
+      if (!form.reportValidity()) return;
+      document.getElementById("formMessage").textContent = "Contoh formulir siap ditinjau.";
+    });
+    document.getElementById("demoForm").addEventListener("reset", () => {
+      document.getElementById("formMessage").textContent = "";
+    });
+  </script>
+</body>
+</html>
